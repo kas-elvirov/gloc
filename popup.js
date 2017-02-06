@@ -1,20 +1,19 @@
 document.addEventListener( 'DOMContentLoaded', function() {
     var checkPageButton = document.getElementById( 'check');
+    
+
     checkPageButton.addEventListener( 'click', function() {
+        
+        getLinesOfCode();
 
-        chrome.tabs.getSelected( null, function(tab) {
-            d = document;
-
-            var f = d.createElement( 'form' );
-            f.action = 'http://gtmetrix.com/analyze.html?bm';
-            f.method = 'post';
-            var i = d.createElement( 'input' );
-            i.type = 'hidden';
-            i.name = 'url';
-            i.value = tab.url;
-            f.appendChild( i );
-            d.body.appendChild( f );
-            f.submit();
-        } );
+        function getLinesOfCode() {
+            // Line counter
+            fetch( 'https://api.github.com/repos/artem-solovev/swap/stats/contributors' )
+                .then( response => response.json() )
+                .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
+                .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount) )
+            .then( lines => ( document.getElementById( 'counter' ).innerHTML = lines ) );
+            // Or:      .then(lines => window.alert(lines))
+        }
     }, false);
 }, false);
