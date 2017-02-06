@@ -13,7 +13,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
                 .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
                 .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount) )
             .then( lines => ( document.getElementById( 'counter' ).innerHTML = lines ) );
-            // Or:      .then(lines => window.alert(lines))
         }
     }, false);
 }, false);
