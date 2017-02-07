@@ -26,13 +26,20 @@ document.addEventListener( 'DOMContentLoaded', function() {
         function getLinesOfCode( link ) {
             var apiLink = 'https://api.github.com/repos' + link + '/stats/contributors';
 
-            document.getElementById( 'counter' ).innerHTML = 'Wait a minute...';
+            document.getElementById( 'counter' ).innerHTML = '...';
+            document.getElementById( 'loading' ).style.display = 'block';
+
+
 
             fetch( apiLink )
                 .then( response => response.json() )
                 .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
                 .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount) )
                 .then( lines => ( document.getElementById( 'counter' ).innerHTML = lines ) );
+
+
+            setTimeout( function() { document.getElementById( 'loading' ).style.display = 'none'; }, 1000);
+
         }
     }, false);
 }, false);

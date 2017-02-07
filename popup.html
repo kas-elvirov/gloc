@@ -57,12 +57,60 @@
                 color: #457fca;
             }
 
+
+            /* Loading bar */
+            @keyframes loading {
+                50% {
+                    transform: translateX(0%);
+                }
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+            body {
+                background: #333;
+            }
+
+            .loading {
+                position: relative;
+                left: 0;
+                top: 50%;
+                width: 100%;
+                height: 4px;
+                overflow: hidden;
+                background: DeepSkyBlue;
+                box-shadow: 0 2px 0 black;
+            }
+            .loading:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transform: translateX(-100%);
+                background: DeepPink;
+                animation: loading 3s ease infinite;
+            }
+
+            .text {
+                position: absolute;
+                top: -3rem;
+                left: 1rem;
+                color: #ccc;
+                font: 3rem/1 monospace;
+            }
+
+
         </style>
     </head>
     <body>
         <h1 class="title">Get lines of code</h1>
 
         <p id="counter" class="widget">0</p>
+
+        <div id="loading" class="loading" style="display: none;"><span class="text">loading…</span></div>
+
 
         <p>lines of code</p>
 
