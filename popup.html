@@ -7,16 +7,67 @@
 
             body {
                 width: 250px;
-                height: 500px;
+                height: auto;
+                //background-color: #242939;
+                background-image: linear-gradient(to left, rgb(65, 41, 90), rgb(47, 7, 67));
+                padding: 8px;
+                font: 'Tahoma', Tahoma, sans-serif;
+                color: #fff;
+            }
+
+            .title {
+                text-align: center;
+            }
+
+            .btn {
+                text-transform: uppercase;
+                text-align: center;
+                transition: all .3s;
+            }
+
+            .btn:hover {
+                box-shadow: 4px 4px 4px rgb(235, 51, 73);
+            }
+
+            .btn-counter {
+                background-image: linear-gradient(to left, rgb(235, 51, 73), rgb(244, 92, 67));
+                padding: 16px 0;
+                color: #fff;
+                width: 100%;
+                font-size: 36px;
+                border: none;
+                margin-bottom: 16px;
+            }
+
+            .widget {
+                background-image: linear-gradient(to left, rgb(66, 39, 90), rgb(115, 75, 109));
+                padding: 24px 0;
+                margin: 16px 0;
+                width: 100%;
+                font-size: 52px;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .tip {
+                padding: 24px 0;
+                margin-bottom: 16px;
+                text-transform: uppercase;
+                font-size: 12px;
+                color: #457fca;
             }
 
         </style>
     </head>
     <body>
-        <h1>Check your number</h1>
+        <h1 class="title">Get lines of code</h1>
 
-        <p id="counter">Hello world</p>
+        <p id="counter" class="widget">0</p>
 
-        <button id="check">Click me!</button>
+        <p>lines of code</p>
+
+        <button id="check" class="btn btn-counter"><img src=code.svg width="48px"/></button>
+
+        <span class="tip">Go to any repo, for example: https://github.com/artem-solovev/piranha</span>
     </body>
 </html>
