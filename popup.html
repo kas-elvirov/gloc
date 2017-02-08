@@ -14,7 +14,10 @@
                 color: #fff;
             }
 
-            .title {
+            .title,
+            .project-name {
+                display: block;
+                position: relative;
                 margin-left: 16px;
                 font-weight: 100;
                 color: #d3d3d3;
@@ -131,6 +134,7 @@
     </head>
     <body>
         <h1 class="title">Piranha</h1>
+        <h3 id="project-name" class="project-name">project name</h3>
 
         <div class="loading-bar">
             <div id="loading" class="loading" style="display: none;"></div>
@@ -140,10 +144,11 @@
 
             <p id="counter" class="widget">0</p>
 
-            <button id="check" class="btn btn-counter"><img src=code.svg width="48px"/></button>
+            <button id="cnt-button" class="btn btn-counter"><img src=code.svg width="48px"/></button>
         </div>
 
         <div class="wrapper footer">
+
 
             <span class="tip">Go to any repo, for example: <a href="https://github.com/artem-solovev/piranha" target="_blank">https://github.com/artem-solovev/piranha</a></span>
 
