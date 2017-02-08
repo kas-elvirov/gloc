@@ -29,11 +29,14 @@
                 background-color: #22313F;
                 height: 170px;
                 line-height: 110px;
+                z-index: 300;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
             }
 
             .footer {
                 height: 150px;
                 background-color: #fff;
+                z-index: 100;
             }
 
             .btn {
@@ -45,7 +48,7 @@
             .btn-counter {
                 position: absolute;
                 display: block;
-                top: -40px;
+                bottom: -56px;
                 right: 16px;
                 background-color: #E91E63;
                 padding: 16px;
@@ -53,7 +56,8 @@
                 border: none;
                 margin-bottom: 16px;
                 border-radius: 50%;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+                box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                z-index: 400;
             }
 
             .btn-counter:hover {
@@ -136,10 +140,10 @@
 
             <p id="counter" class="widget">0</p>
 
+            <button id="check" class="btn btn-counter"><img src=code.svg width="48px"/></button>
         </div>
 
         <div class="wrapper footer">
-            <button id="check" class="btn btn-counter"><img src=code.svg width="48px"/></button>
 
             <span class="tip">Go to any repo, for example: <a href="https://github.com/artem-solovev/piranha" target="_blank">https://github.com/artem-solovev/piranha</a></span>
 
