@@ -18,8 +18,8 @@ document.addEventListener( 'DOMContentLoaded', function() {
             partOfUrl = tabs[0].url.match( exprForPartOfUrl );
 
             var projectName = partOfUrl.toString().split( "/" );
-            document.getElementById( 'project-name' ).innerHTML += projectName[2];
-            document.getElementById( 'project-author' ).innerHTML +=  projectName[1];
+            document.getElementById( 'project-name' ).innerHTML = '- repository: ' + projectName[2];
+            document.getElementById( 'project-author' ).innerHTML = '- author: ' + projectName[1];
 
             getLinesOfCode( partOfUrl );
 
