@@ -6,17 +6,34 @@
         <style type="text/css">
 
             body {
+                background-color: #22313F;
                 width: 250px;
-                height: auto;
-                //background-color: #242939;
-                background-image: linear-gradient(to left, rgb(65, 41, 90), rgb(47, 7, 67));
-                padding: 8px;
-                font: 'Tahoma', Tahoma, sans-serif;
+                margin: 0;
+                padding: 0;
+                font-family: monospace;
                 color: #fff;
             }
 
             .title {
-                text-align: center;
+                margin-left: 16px;
+                font-weight: 100;
+                color: #d3d3d3;
+            }
+
+            .wrapper {
+                display: block;
+                position: relative;
+            }
+
+            .header {
+                background-color: #22313F;
+                height: 170px;
+                line-height: 110px;
+            }
+
+            .footer {
+                height: 150px;
+                background-color: #fff;
             }
 
             .btn {
@@ -25,24 +42,26 @@
                 transition: all .3s;
             }
 
-            .btn:hover {
-                box-shadow: 4px 4px 4px rgb(235, 51, 73);
-            }
-
             .btn-counter {
-                background-image: linear-gradient(to left, rgb(235, 51, 73), rgb(244, 92, 67));
-                padding: 16px 0;
+                position: absolute;
+                display: block;
+                top: -40px;
+                right: 16px;
+                background-color: #E91E63;
+                padding: 16px;
                 color: #fff;
-                width: 100%;
-                font-size: 36px;
                 border: none;
                 margin-bottom: 16px;
+                border-radius: 50%;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+            }
+
+            .btn-counter:hover {
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
             }
 
             .widget {
-                background-image: linear-gradient(to left, rgb(66, 39, 90), rgb(115, 75, 109));
-                padding: 24px 0;
-                margin: 16px 0;
+                //background-color: #283593;
                 width: 100%;
                 font-size: 52px;
                 font-weight: 700;
@@ -50,11 +69,11 @@
             }
 
             .tip {
-                padding: 24px 0;
-                margin-bottom: 16px;
-                text-transform: uppercase;
+                padding: 53px 16px;
                 font-size: 12px;
                 color: #457fca;
+                display: block;
+                position: relative;
             }
 
 
@@ -67,8 +86,9 @@
                     transform: translateX(100%);
                 }
             }
-            body {
-                background: #333;
+
+            .loading-bar {
+                height: 4px;
             }
 
             .loading {
@@ -93,29 +113,39 @@
                 animation: loading 3s ease infinite;
             }
 
-            .text {
+
+            .copyright {
                 position: absolute;
-                top: -3rem;
-                left: 1rem;
-                color: #ccc;
-                font: 3rem/1 monospace;
+                display: block;
+                bottom: 16px;
+                left: 16px;
+                color: #2d2d2d;
             }
 
 
         </style>
     </head>
     <body>
-        <h1 class="title">Get lines of code</h1>
+        <h1 class="title">Piranha</h1>
 
-        <p id="counter" class="widget">0</p>
+        <div class="loading-bar">
+            <div id="loading" class="loading" style="display: none;"></div>
+        </div>
 
-        <div id="loading" class="loading" style="display: none;"><span class="text">loading…</span></div>
+        <div class="wrapper header">
+
+            <p id="counter" class="widget">0</p>
+
+        </div>
+
+        <div class="wrapper footer">
+            <button id="check" class="btn btn-counter"><img src=code.svg width="48px"/></button>
+
+            <span class="tip">Go to any repo, for example: <a href="https://github.com/artem-solovev/piranha" target="_blank">https://github.com/artem-solovev/piranha</a></span>
+
+            <span class="copyright"> Developed by <a href="https://github.com/artem-solovev/piranha" target="_blank">Artem Solovev</a> 2017</span>
+        </div>
 
 
-        <p>lines of code</p>
-
-        <button id="check" class="btn btn-counter"><img src=code.svg width="48px"/></button>
-
-        <span class="tip">Go to any repo, for example: https://github.com/artem-solovev/piranha</span>
     </body>
 </html>
