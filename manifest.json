@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
 
-    "name": "Piranha",
-    "description": "This extension counts line of code on ...",
+    "name": "Gloc",
+    "description": "Counts the number of lines of code of a project from github project page.",
     "version": "1.0",
 
     "browser_action": {
