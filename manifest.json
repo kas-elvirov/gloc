@@ -3,7 +3,7 @@
 
     "name": "Gloc - github counter lines of code",
     "description": "Counts the number of lines of code of a project from github project page.",
-    "version": "1.0.2",
+    "version": "2.0.0",
 
     "browser_action": {
         "default_icon": "icon.png",
@@ -14,9 +14,19 @@
         "200": "icon.png"
     },
 
+    "content_scripts": [{
+        "matches": ["*://github.com/*"],
+        "js": ["inject.script.js"]
+    }],
+
+    "web_accessible_resources": [
+        "main.js"
+    ],
+
     "permissions": [
         "tabs",
         "activeTab",
+        "<all_urls>",
         "https://ajax.googleapis.com/"
     ]
 }
