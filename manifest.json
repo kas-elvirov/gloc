@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
 
-    "name": "Gloc",
+    "name": "Gloc - github counter lines of code",
     "description": "Counts the number of lines of code of a project from github project page.",
-    "version": "1.0",
+    "version": "1.0.1",
 
     "browser_action": {
         "default_icon": "icon.png",
