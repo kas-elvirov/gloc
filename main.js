@@ -38,8 +38,8 @@ var main = function(){
     /**
      * Mapping from file extension to lines of code
      */
-    var ext_to_count_map = {};
-    var link_to_file_map = {};
+    var extToCountMap = {};
+    var linkToFileMap = {};
 
     function httpGetAsync( theUrl, callback ) {
         var xmlHttp = new XMLHttpRequest();
@@ -57,7 +57,7 @@ var main = function(){
     /**
      * Gets lines of code from link
      */
-    function getLocFromLink( link, file_ext ) {
+    function getLocFromLink( link, fileExt ) {
 
         function callback( data ) {
             var loc = data.match( /\d+ lines/g );
@@ -72,31 +72,31 @@ var main = function(){
 
             console.log( link.href + " " + String( loc ) );
 
-            addOrCreate( ext_to_count_map, file_ext, loc );
+            addOrCreate( extToCountMap, fileExt, loc );
 
-            drawLocData();
+            getLinesOfCodeInCurrentDir();
 
             // idk why, but this appears to work better than just just setting link.innerHTML
             document.getElementById( link.id ).innerHTML = link.title + " <span style='color:#888'> " + loc + " lines</span>";
 
-            link_to_file_map[link.href] = data;
+            linkToFileMap[link.href] = data;
         }
 
         httpGetAsync( link.href, callback );
     }
 
     function stringifyDict( dict ) {
-        var str_arr = [];
+        var strArr = [];
 
         var totalLoc = 0;
 
         for ( key in dict ) {
-            str_arr.push( key + " - " + String( dict[key] ) );
+            strArr.push( key + " - " + String( dict[key] ) );
             totalLoc += dict[key];
-            str_arr.sort();
+            strArr.sort();
         }
 
-        return  totalLoc + "<br /> <span class='user-mention'>By extensions:</span><br /> &nbsp;"  + str_arr.join( ",<br />&nbsp;" );
+        return  totalLoc + "<br /> <span class='user-mention'>By extensions:</span><br /> &nbsp;"  + strArr.join( ",<br />&nbsp;" );
     }
 
     var links = document.getElementsByClassName( "js-navigation-open" );
@@ -105,48 +105,51 @@ var main = function(){
     // and querying for the element with the class "file"
     function get_code( htmlStr ) {
 
-        var temp_div = document.createElement( "div" );
-        temp_div.style.display = "none";
-        var shadow = temp_div.createShadowRoot();
+        var tempDiv = document.createElement( "div" );
+        tempDiv.style.display = "none";
+        var shadow = tempDiv.createShadowRoot();
         shadow.innerHTML = htmlStr;
         var file = shadow.querySelector( ".file" );
         console.log( file );
         var code = file.outerHTML;
-        temp_div.remove();
+        tempDiv.remove();
 
         return code;
     }
 
-    var display_id = "Gloc-counter";
+    var domId = "Gloc-counter";
 
-    function drawLocData() {
-        var commit_tease = document.getElementsByClassName( "commit-tease" )[0];
-        var locDisplay = document.getElementById( display_id );
+    /**
+     * Shows info about lines of code in current directory
+     */
+    function getLinesOfCodeInCurrentDir() {
+        var commitTease = document.getElementsByClassName( "commit-tease" )[0];
+        var locDisplay = document.getElementById( domId );
 
         if ( !locDisplay ) {
             var locDisplay = document.createElement( "div" );
-            locDisplay.id = display_id;
-            commit_tease.appendChild( locDisplay );
+            locDisplay.id = domId;
+            commitTease.appendChild( locDisplay );
         }
 
-        locDisplay.innerHTML = "<hr /><span class='user-mention'>Total lines in the current directory:</span> " + stringifyDict( ext_to_count_map );
+        locDisplay.innerHTML = "<hr /><span class='user-mention'>Total lines in the current directory:</span> " + stringifyDict( extToCountMap );
     }
 
-    var file_links = document.getElementsByClassName( "js-navigation-open" );
+    var fileLinks = document.getElementsByClassName( "js-navigation-open" );
 
-    for ( var i = 0; i < file_links.length; i++ ) {
+    for ( var i = 0; i < fileLinks.length; i++ ) {
 
-        var link = file_links[i];
+        var link = fileLinks[i];
         var title = link.title;
 
         if ( title === "" || typeof( title ) !== typeof( "str" ) ) continue;
 
-        var file_ext = title.split( "." );
+        var fileExt = title.split( "." );
 
-        file_ext = file_ext[file_ext.length - 1];
+        fileExt = fileExt[fileExt.length - 1];
 
-        if ( acceptableExtensions.indexOf( file_ext ) != -1 ) {
-            getLocFromLink( link, file_ext );
+        if ( acceptableExtensions.indexOf( fileExt ) != -1 ) {
+            getLocFromLink( link, fileExt );
         }
     }
 };
