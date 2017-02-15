@@ -2,20 +2,23 @@ var main = function(){
 
     /**
      * File extensions which plugin counts
+     *
+     * https://www.file-extensions.org/filetype/extension/name/source-code-and-script-files
      */
     var acceptableExtensions = [ "as", "asm", "asp", "aspx",
                                 "bash", "bat",
                                 "c", "cbl", "cc", "cfc", "clj", "cs", "css", "cpp",
-                                "dart", "d", "dpr",
-                                "el",
+                                "dart", "d", "do", "dpr",
+                                "el", "ejs",
                                 "f90",
                                 "gitignore",
                                 "h", "hs", "hpp", "html",
-                                "java", "js", "json", "lisp", "lua",
+                                "java", "js", "json", "jsp",
+                                "lisp", "lua",
                                 "m", "md", "mk",
                                 "pas", "php", "pl", "prl", "pxd", "py", "pyx",
                                 "r", "rb",
-                                "s", "scala", "sh", "sql", "swift", "svg",
+                                "s", "ss", "scala", "ser", "sh", "sql", "swift", "svg",
                                 "tmpl",
                                 "vb",
                                 "win",
