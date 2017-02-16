@@ -15,12 +15,20 @@
             }
 
             .project-meta {
-                display: block;
                 position: relative;
                 margin: 16px 16px 0 16px;
                 font-weight: 100;
                 color: #d3d3d3;
 
+            }
+
+            .project-path {
+                color: #d3d3d3;
+                word-wrap: break-word;
+            }
+
+            .terminal-meta {
+                color: #00BCD4;
             }
 
             .underscore {
@@ -161,12 +169,15 @@
         </style>
     </head>
     <body>
-        <h3 id="project-name" class="project-meta"> repository: </h3>
-        <h3 id="project-author" class="project-meta"> author: </h3>
-        <h3 id="project-author" class="project-meta underscore"> _ </h3>
+        <h3 class="project-meta terminal-meta">gloc@gloc-ext: <span id="project-author" class="project-path"></span><span id="project-name" class="project-path"></span>
+        </h3>
+        <!-- class="project-meta">$ gloc run</h3>
+<h3></h3>
+<h3></h3-->
+        <h3 class="project-meta underscore"> _ </h3>
 
-        <div class="loading-bar" style="display: none;">
-            <div id="loading" class="loading"></div>
+        <div class="loading-bar">
+            <div id="loading" class="loading" style="display: none;"></div>
         </div>
 
         <div class="wrapper header">
