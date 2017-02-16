@@ -18,8 +18,15 @@ document.addEventListener( 'DOMContentLoaded', function() {
             partOfUrl = tabs[0].url.match( exprForPartOfUrl );
 
             var projectName = partOfUrl.toString().split( "/" );
-            document.getElementById( 'project-author' ).innerHTML = '~/' + projectName[1];
-            document.getElementById( 'project-name' ).innerHTML = '/' + projectName[2];
+
+            var url = 'https://api.github.com/repos/' + projectName[1] + '/' + projectName[2];
+
+            fetch(url).then(function(response) {
+                return response.json();
+            }).then(function(response) {
+                document.getElementById('project-info').innerHTML = '~/' + response.full_name;
+            });
+
 
             getLinesOfCode( partOfUrl );
 
