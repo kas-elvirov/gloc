@@ -3,8 +3,8 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
     checkPageButton.addEventListener( 'click', function() {
 
-        var url;
-        var result
+        var currentURL;
+        var isGithubRepo;
         var partOfUrl;
 
         var expression = /(https)+[:]+[\//(\w+)]+(github.com)+[\/]+([A-Za-z0-9-_])+[\/]+([A-Za-z0-9-_])+/igm;
@@ -12,44 +12,58 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
 
         chrome.tabs.query( { 'active': true, 'lastFocusedWindow': true }, function ( tabs ) {
-            url = tabs[0].url;
+            currentURL = tabs[0].url;
 
-            result = url.match( expression ) ? true : false;
-            partOfUrl = tabs[0].url.match( exprForPartOfUrl );
+            isGithubRepo = currentURL.match( expression ) ? true : false;
 
-            var projectName = partOfUrl.toString().split( "/" );
+            if ( isGithubRepo ) {
+                partOfUrl = tabs[0].url.match( exprForPartOfUrl );
 
-            var url = 'https://api.github.com/repos/' + projectName[1] + '/' + projectName[2];
+                var projectName = partOfUrl.toString().split( "/" );
 
-            fetch(url).then(function(response) {
-                return response.json();
-            }).then(function(response) {
-                document.getElementById('project-info').innerHTML = '~/' + response.full_name;
-            });
+                var urlWithProjectInfo = 'https://api.github.com/repos/' + projectName[1] + '/' + projectName[2];
+
+                fetch( urlWithProjectInfo ).then( function( response ) {
+                    return response.json();
+                }).then(function( response ) {
+
+                    if ( undefined === response.full_name ) {
+                        document.getElementById( 'project-info' ).innerHTML = errWrongPage();
+                    } else {
+                        document.getElementById( 'project-info' ).innerHTML = '~/' + response.full_name;
+                    }
+                });
 
 
-            getLinesOfCode( partOfUrl );
-
+                drawLinesOfCode( partOfUrl, "counter" );
+            } else {
+                document.getElementById('project-info').innerHTML = errWrongPage();
+            }
         });
 
-        function getLinesOfCode( link ) {
+
+        /**
+         * Draw lines of code in needed place
+         *
+         * @param string link - part of the url in format ( /username/repos )
+         * @param string id - element's id ( where to insert info about lines of code )
+         */
+        function drawLinesOfCode( link, id ) {
             var apiLink = 'https://api.github.com/repos' + link + '/stats/contributors';
 
-
-            document.getElementById( 'counter' ).innerHTML = '...';
-            document.getElementById( 'loading' ).style.display = 'block';
-
-
+            document.getElementById( id ).innerHTML = '...';
+            displayElementById( 'loading', 'block' );
 
             fetch( apiLink )
                 .then( response => response.json() )
                 .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
-                .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount) )
-            //.then( lines => ( document.getElementById( 'counter' ).innerHTML = lines ) )
-                .then( lines => ( animateValue( "counter", 0, lines, 1000 ) ) )
-                .then( setTimeout( function() { document.getElementById( 'loading' ).style.display = 'none' }, 2000) );
-
+                .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount ) )
+                .then( lines => ( animateValue( id, 0, lines, 1000 ) ) )
+                .then( setTimeout( function() {
+                displayElementById( 'loading', 'none' );
+            }, 2000) );
         }
+
 
         /**
          * Animated counter
@@ -91,6 +105,27 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
             timer = setInterval(run, stepTime);
             run();
+        }
+
+
+        /**
+         * Returns error text about Wrong page
+         *
+         * @return string(html) - text about Wrong page
+         */
+        function errWrongPage() {
+            return '<span style="color:#FFC107"><br />Oops ^_^<br />Wrong page. Try this later.</span>';
+        }
+
+
+        /**
+         * Shows or hides element by ID
+         *
+         * @param string id - element's id
+         * @param string display - display property
+         */
+        function displayElementById( id, display ) {
+            document.getElementById( id ).style.display = display;
         }
 
 
