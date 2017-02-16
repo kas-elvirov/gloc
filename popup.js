@@ -61,7 +61,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
                 .then( lines => ( animateValue( id, 0, lines, 1000 ) ) )
                 .then( setTimeout( function() {
                 displayElementById( 'loading', 'none' );
-            }, 2000) );
+            }, 980 ) );
         }
 
 
