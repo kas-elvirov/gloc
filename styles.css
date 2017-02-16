@@ -13,7 +13,7 @@
  * 1.0. GLOBAL
  */
 body {
-    background-color: #22313F;
+    background-color: #212121;
     width: 250px;
     margin: 0;
     padding: 0;
@@ -27,7 +27,7 @@ body {
 }
 
 .header {
-    background-color: #22313F;
+    background-color: #212121;
     height: 170px;
     line-height: 110px;
     z-index: 300;
