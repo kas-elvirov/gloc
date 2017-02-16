@@ -96,7 +96,7 @@ var main = function(){
             strArr.sort();
         }
 
-        return  totalLoc + "<br /> <span class='user-mention'>By extensions:</span><br /> &nbsp;"  + strArr.join( ",<br />&nbsp;" );
+        return totalLoc + "<br /> <span class='user-mention'>By extensions:</span><br /> &nbsp;"  + strArr.join( ",<br />&nbsp;"  );
     }
 
     var links = document.getElementsByClassName( "js-navigation-open" );
@@ -135,6 +135,29 @@ var main = function(){
         locDisplay.innerHTML = "<hr /><span class='user-mention'>Total lines in the current directory:</span> " + stringifyDict( extToCountMap );
     }
 
+    function drawLinesOfCode() {
+
+        var expression = /(https)+[:]+[\//(\w+)]+(github.com)+[\/]+([A-Za-z0-9-_])+[\/]+([A-Za-z0-9-_])+/igm;
+        var exprForPartOfUrl = /[\/]+([A-Za-z0-9-_])+[\/]+([A-Za-z0-9-_])+/igm;
+
+        currentURL = window.location.href;
+
+        isGithubRepo = currentURL.match( expression ) ? true : false;
+
+        if ( isGithubRepo ) {
+            partOfUrl = currentURL.match( exprForPartOfUrl );
+
+            var apiLink = 'https://api.github.com/repos' + partOfUrl + '/stats/contributors';
+
+            fetch( apiLink )
+                .then( response => response.json() )
+                .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
+                .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount ) )
+                .then( lines => document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong style='color:#e44B23'>" + lines + "</strong> lines of code" );
+        }
+    }
+
+
     var fileLinks = document.getElementsByClassName( "js-navigation-open" );
 
     for ( var i = 0; i < fileLinks.length; i++ ) {
@@ -152,6 +175,8 @@ var main = function(){
             getLocFromLink( link, fileExt );
         }
     }
+
+    drawLinesOfCode();
 };
 
 main();

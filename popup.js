@@ -35,7 +35,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
                 });
 
 
-                drawLinesOfCode( partOfUrl, "counter" );
+                drawLinesOfCodeByUrl( partOfUrl, "counter" );
             } else {
                 document.getElementById('project-info').innerHTML = errWrongPage();
             }
@@ -48,7 +48,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
          * @param string link - part of the url in format ( /username/repos )
          * @param string id - element's id ( where to insert info about lines of code )
          */
-        function drawLinesOfCode( link, id ) {
+        function drawLinesOfCodeByUrl( link, id ) {
             var apiLink = 'https://api.github.com/repos' + link + '/stats/contributors';
 
             document.getElementById( id ).innerHTML = '...';

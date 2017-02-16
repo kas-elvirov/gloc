@@ -1,10 +1,17 @@
-var scriptElement = document.createElement( 'script' );
+var mainJS = document.createElement( 'script' );
+var popupJS = document.createElement( 'script' );
 
 
-scriptElement.src = chrome.extension.getURL( 'main.js' );
+mainJS.src = chrome.extension.getURL( 'main.js' );
+popupJS.src = chrome.extension.getURL( 'popup.js' );
 
-scriptElement.onload = function() {
+mainJS.onload = function() {
     this.parentNode.removeChild( this );
 };
 
-( document.head || document.documentElement ).appendChild( scriptElement );
+popupJS.onload = function() {
+    this.parentNode.removeChild( this );
+};
+
+( document.head || document.documentElement ).appendChild( mainJS );
+( document.head || document.documentElement ).appendChild( popupJS );
