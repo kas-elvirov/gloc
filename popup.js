@@ -1,8 +1,8 @@
 document.addEventListener( 'DOMContentLoaded', function() {
     var checkPageButton = document.getElementById( 'cnt-button');
 
-    checkPageButton.addEventListener( 'click', function() {
 
+    checkPageButton.addEventListener( 'click', function() {
         var currentURL;
         var isGithubRepo;
         var partOfUrl;
@@ -33,7 +33,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
                         document.getElementById( 'project-info' ).innerHTML = '~/' + response.full_name;
                     }
                 });
-
 
                 drawLinesOfCodeByUrl( partOfUrl, "counter" );
             } else {
@@ -75,18 +74,20 @@ document.addEventListener( 'DOMContentLoaded', function() {
          *
          * author http://stackoverflow.com/a/16994725/5124009
          */
-        function animateValue(id, start, end, duration) {
+        function animateValue( id, start, end, duration ) {
             // assumes integer values for start and end
+            var obj = document.getElementById( id );
 
-            var obj = document.getElementById(id);
             var range = end - start;
+
             // no timer shorter than 50ms (not really visible any way)
             var minTimer = 50;
+
             // calc step time to show all interediate values
-            var stepTime = Math.abs(Math.floor(duration / range));
+            var stepTime = Math.abs( Math.floor( duration / range ) );
 
             // never go below minTimer
-            stepTime = Math.max(stepTime, minTimer);
+            stepTime = Math.max( stepTime, minTimer );
 
             // get current time and calculate desired end time
             var startTime = new Date().getTime();
@@ -95,11 +96,12 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
             function run() {
                 var now = new Date().getTime();
-                var remaining = Math.max((endTime - now) / duration, 0);
-                var value = Math.round(end - (remaining * range));
+                var remaining = Math.max( ( endTime - now ) / duration, 0 );
+                var value = Math.round( end - ( remaining * range ) );
                 obj.innerHTML = value;
-                if (value == end) {
-                    clearInterval(timer);
+
+                if ( value == end ) {
+                    clearInterval( timer );
                 }
             }
 
@@ -127,8 +129,5 @@ document.addEventListener( 'DOMContentLoaded', function() {
         function displayElementById( id, display ) {
             document.getElementById( id ).style.display = display;
         }
-
-
-
     }, false);
 }, false);
