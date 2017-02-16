@@ -32,8 +32,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
         });
 
-        /* "https://api.github.com/repos/artem-solovev/artfolio" */
-
         function getLinesOfCode( link ) {
             var apiLink = 'https://api.github.com/repos' + link + '/stats/contributors';
 
