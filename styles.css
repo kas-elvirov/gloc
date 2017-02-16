@@ -1,3 +1,17 @@
+/*
+ * TABLE OF CONTENTS
+ *
+ *
+ * 1.0. GLOBAL
+ *  1.1. KEYFRAMES
+ * 2.0. MAIN
+ *
+ */
+
+
+/**
+ * 1.0. GLOBAL
+ */
 body {
     background-color: #22313F;
     width: 250px;
@@ -5,29 +19,6 @@ body {
     padding: 0;
     font-family: monospace;
     color: #fff;
-}
-
-.project-meta {
-    position: relative;
-    margin: 16px 16px 0 16px;
-    font-weight: 100;
-    color: #d3d3d3;
-
-}
-
-.project-path {
-    color: #d3d3d3;
-    word-wrap: break-word;
-}
-
-.terminal-meta {
-    color: #00BCD4;
-}
-
-.underscore {
-    color: #fff;
-    -webkit-animation: pulsar 1s 0s linear infinite;
-    animation: pulsar 1s 0s linear infinite;
 }
 
 .wrapper {
@@ -53,6 +44,70 @@ body {
     text-transform: uppercase;
     text-align: center;
     transition: all .3s;
+}
+
+
+/**
+ * 1.1. KEYFRAMES
+ */
+/* Pulsar effect */
+@keyframes pulsar {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Loading effect */
+@keyframes loading {
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+/**
+ * 2.0. MAIN
+ */
+.project-meta {
+    position: relative;
+    margin: 16px 16px 0 16px;
+    font-weight: 100;
+    color: #d3d3d3;
+
+}
+
+.project-path {
+    color: #d3d3d3;
+    word-wrap: break-word;
+}
+
+.terminal-meta {
+    color: #00BCD4;
+}
+
+.code {
+    color: #183691;
+    background-color: #f7f7f7;
+}
+
+.comment {
+    background-color: #f7f7f7;
+    color: #969896;
+}
+
+.underscore {
+    color: #fff;
+    -webkit-animation: pulsar 1s 0s linear infinite;
+    animation: pulsar 1s 0s linear infinite;
 }
 
 .btn-counter {
@@ -90,16 +145,6 @@ body {
     position: relative;
 }
 
-.code {
-    color: #183691;
-    background-color: #f7f7f7;
-}
-
-.comment {
-    background-color: #f7f7f7;
-    color: #969896;
-}
-
 .loading-bar {
     height: 40px;
 }
@@ -114,6 +159,7 @@ body {
     background: DeepSkyBlue;
     box-shadow: 0 2px 0 black;
 }
+
 .loading:before {
     content: "";
     position: absolute;
@@ -126,38 +172,10 @@ body {
     animation: loading 3s ease infinite;
 }
 
-
 .copyright {
     position: absolute;
     display: block;
     bottom: 16px;
     left: 16px;
     color: #2d2d2d;
-}
-
-/*
-* Pulsar effect
-*/
-@keyframes pulsar {
-    0% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-/*
-* Loading effect
-*/
-@keyframes loading {
-    50% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
 }
