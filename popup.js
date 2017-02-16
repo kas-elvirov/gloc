@@ -114,7 +114,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
          * @return string(html) - text about Wrong page
          */
         function errWrongPage() {
-            return '<span style="color:#FFC107"><br />Oops ^_^<br />Wrong page. Try this later.</span>';
+            return '<span class="error-text"><br />Oops ^_^<br />Wrong page. Try this later.</span>';
         }
 
 

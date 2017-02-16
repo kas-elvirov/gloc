@@ -99,6 +99,10 @@ body {
     background-color: #f7f7f7;
 }
 
+.error-text {
+    color: #F48FB1;
+}
+
 .comment {
     background-color: #f7f7f7;
     color: #969896;
