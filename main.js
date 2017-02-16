@@ -153,7 +153,7 @@ var main = function(){
                 .then( response => response.json() )
                 .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
                 .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount ) )
-                .then( lines => document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong style='color:#e44B23'>" + lines + "</strong> lines of code" );
+                .then( lines => document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong style='color:#55a532'>" + lines + "</strong> lines of code" );
         }
     }
 
