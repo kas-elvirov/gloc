@@ -26,6 +26,7 @@ var main = function(){
                                 "yaml", "yml"
                                ];
 
+
     function addOrCreate( dictIn, keyIn, valueIn ) {
 
         if ( keyIn in dictIn ) {
@@ -41,6 +42,7 @@ var main = function(){
     var extToCountMap = {};
     var linkToFileMap = {};
 
+
     function httpGetAsync( theUrl, callback ) {
         var xmlHttp = new XMLHttpRequest();
 
@@ -53,6 +55,7 @@ var main = function(){
         xmlHttp.open( "GET", theUrl, true );
         xmlHttp.send( null );
     }
+
 
     /**
      * Gets lines of code from link
@@ -85,6 +88,7 @@ var main = function(){
         httpGetAsync( link.href, callback );
     }
 
+
     function stringifyDict( dict ) {
         var strArr = [];
 
@@ -100,6 +104,7 @@ var main = function(){
     }
 
     var links = document.getElementsByClassName( "js-navigation-open" );
+
 
     // parses only the code file out of [htmlStr] by writing it into shadow DOM
     // and querying for the element with the class "file"
@@ -119,6 +124,7 @@ var main = function(){
 
     var domId = "Gloc-counter";
 
+
     /**
      * Shows info about lines of code in current directory
      */
@@ -134,6 +140,7 @@ var main = function(){
 
         locDisplay.innerHTML = "<hr /><span class='user-mention'>Total lines in the current directory:</span> " + stringifyDict( extToCountMap );
     }
+
 
     function drawLinesOfCode() {
 
