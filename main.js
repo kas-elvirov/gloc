@@ -160,7 +160,7 @@ var main = function(){
                 .then( response => response.json() )
                 .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
                 .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount ) )
-                .then( lines => document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong class='text-white state-open rounded-1 ml-2 px-1'>" + lines + "</strong> lines of code" );
+                .then( lines => document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" + lines + "</strong> lines of code" );
         }
     }
 
