@@ -19,6 +19,7 @@ var main = function(){
                                 "pas", "php", "pl", "prl", "pxd", "py", "pyx",
                                 "r", "rb",
                                 "s", "ss", "scala", "ser", "sh", "sql", "swift", "svg",
+                                "ts",
                                 "tmpl",
                                 "vb",
                                 "win",
@@ -154,13 +155,20 @@ var main = function(){
         if ( isGithubRepo ) {
             partOfUrl = currentURL.match( exprForPartOfUrl );
 
-            var apiLink = 'https://api.github.com/repos' + partOfUrl + '/stats/contributors';
+            var apiLink = 'https://api.github.com/repos' + partOfUrl + '/stats/code_frequency';
 
             fetch( apiLink )
+                .then( x=> x.json())
+                .then( x=> document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" +
+                x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ) + "</strong> lines of code"
+                     );
+
+            /*
+                --OLD ALGORITHM--
                 .then( response => response.json() )
                 .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
                 .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount ) )
-                .then( lines => document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" + lines + "</strong> lines of code" );
+                .then( lines => document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" + lines + "</strong> lines of code" );*/
         }
     }
 
