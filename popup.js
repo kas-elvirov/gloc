@@ -48,27 +48,14 @@ document.addEventListener( 'DOMContentLoaded', function() {
          * @param string id - element's id ( where to insert info about lines of code )
          */
         function drawLinesOfCodeByUrl( link, id ) {
-            var apiLink = 'https://api.github.com/repos' + link + '/stats/contributors';
+            var apiLink = 'https://api.github.com/repos' + link + '/stats/code_frequency';
 
             document.getElementById( id ).innerHTML = '...';
             displayElementById( 'loading', 'block' );
 
-            fetch( apiLink )
+            fetch( apiLink ) 
                 .then( x=> x.json())
-                .then( x=> ( animateValue( id, 0, 
-                                          x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ),
-                                          1000 )
-                           )
-                      .then( setTimeout( function() {
-                displayElementById( 'loading', 'none' );
-            }, 980 ) );
-
-
-                      fetch( apiLink )
-                .then( response => response.json() )
-                .then( contributors => contributors.map( contributor => contributor.weeks.reduce( ( lineCount, week ) => lineCount + week.a - week.d, 0) ) )
-                .then( lineCounts => lineCounts.reduce( ( lineTotal, lineCount ) => lineTotal + lineCount ) )
-                .then( lines => ( animateValue( id, 0, lines, 1000 ) ) )
+                .then( x=> animateValue( id, 0,  parseInt( x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ) ), 1000 ) )
                 .then( setTimeout( function() {
                 displayElementById( 'loading', 'none' );
             }, 980 ) );
