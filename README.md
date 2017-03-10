@@ -1,3 +1,8 @@
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)]()
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)]()
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)]()
+___
+
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
 ## **Current version: 4.0.0** ( 2017, 7 march )
 
