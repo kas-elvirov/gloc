@@ -67,7 +67,7 @@ var main = function(){
             var loc = data.match( /\d+ lines/g );
 
             if ( !loc || loc.length == 0 ) {
-                console.log( "File " + url + " too big to display lines of code" );
+                console.log( "File " + link + " too big to display lines of code" );
 
                 return;
             }
@@ -159,9 +159,16 @@ var main = function(){
 
             fetch( apiLink )
                 .then( x=> x.json())
-                .then( x=> document.getElementsByClassName( "public" )[0].innerHTML += "<br/><strong class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" +
-                      x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ) + "</strong> lines of code"
-                     );
+                .then(
+                document.getElementById( 'gloc' ) ?
+                x=> document.getElementById( "gloc" ).innerHTML = "<span id='gloc' class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" +
+                x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ) + " lines of code</span>"
+                :
+                x=> document.getElementsByClassName( "public" )[0].innerHTML += "<span id='gloc' class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" +
+                x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ) + " lines of code</span>"
+
+
+            );
         }
     }
 
@@ -184,7 +191,11 @@ var main = function(){
         }
     }
 
+    setInterval( function() {
     drawLinesOfCode();
+    }, 300 );
+
+
 };
 
 main();
