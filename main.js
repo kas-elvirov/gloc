@@ -157,6 +157,8 @@ var main = function(){
 
             var apiLink = 'https://api.github.com/repos' + partOfUrl + '/stats/code_frequency';
 
+            var x = null;
+
             fetch( apiLink )
                 .then( x=> x.json())
                 .then(
@@ -192,7 +194,7 @@ var main = function(){
     }
 
     setInterval( function() {
-    drawLinesOfCode();
+        drawLinesOfCode();
     }, 300 );
 
 
