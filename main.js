@@ -193,7 +193,7 @@ var main = function(){
 
     setInterval( function() {
         drawLinesOfCode();
-    }, 300 );
+    }, 3000 );
 
 
 };
