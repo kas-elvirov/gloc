@@ -191,9 +191,7 @@ var main = function(){
         }
     }
 
-    setInterval( function() {
-        drawLinesOfCode();
-    }, 3000 );
+    drawLinesOfCode();
 
 
 };
