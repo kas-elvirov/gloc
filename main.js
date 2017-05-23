@@ -161,10 +161,10 @@ var main = function(){
                 .then( x=> x.json())
                 .then(
                 document.getElementById( 'gloc' ) ?
-                x=> document.getElementById( "gloc" ).innerHTML = "<span id='gloc' class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" +
+                x=> document.getElementById( "gloc" ).innerHTML = "<span id='gloc' class='text-white state-open rounded-1 ml-2 px-1' style='background: #282e34; color: #fff'>" +
                 x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ) + " lines of code</span>"
                 :
-                x=> document.getElementsByClassName( "public" )[0].innerHTML += "<span id='gloc' class='text-white state-open rounded-1 ml-2 px-1' style='background: linear-gradient( #E91E63, #00BCD4 ); color: #fff'>" +
+                x=> document.getElementsByClassName( "public" )[0].innerHTML += "<span id='gloc' class='text-white state-open rounded-1 ml-2 px-1' style='background: #282e34; color: #fff'>" +
                 x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ) + " lines of code</span>"
 
 
