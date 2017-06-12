@@ -53,9 +53,14 @@ document.addEventListener( 'DOMContentLoaded', function() {
             document.getElementById( id ).innerHTML = '...';
             displayElementById( 'loading', 'block' );
 
-            fetch( apiLink ) 
+            fetch( apiLink )
                 .then( x=> x.json())
-                .then( x=> animateValue( id, 0,  parseInt( x.reduce( ( total,changes ) => total + changes[1] + changes[2], 0 ) ), 1000 ) )
+                .then( x=> animateValue( id, 0,  parseInt( x.reduce( ( total,changes ) => {
+                  total += changes[1] + changes[2];
+                  console.log( changes[1] + ' + ' + changes[2] + ' = ' + (changes[1]+ changes[2]) );
+                  console.log( "total value = " + total );
+                  return total;
+                }, 0 ) ), 1000 ) )
                 .then( setTimeout( function() {
                 displayElementById( 'loading', 'none' );
             }, 980 ) );
