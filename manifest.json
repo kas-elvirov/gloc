@@ -2,6 +2,7 @@
   "manifest_version": 2,
 
   "name": "Github GLOC",
+  "short_name": "Gloc",
   "author": "Artem Solovev",
   "description": "Counts the number of lines of code.",
   "version": "5.2.3",
