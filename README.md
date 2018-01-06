@@ -16,8 +16,8 @@ Github lines of code counter (GLOC). Counts the number of lines of code of a pro
 
 
 ## Screens
-![Extension screen](screenshot.png)
-![Pop up screen](popup_screen.png)
+![Extension screen](img/screenshot.png)
+![Pop up screen](img/spopup_screen.png)
 
 
 ## Installation
