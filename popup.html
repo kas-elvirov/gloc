@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Gloc</title>
-        <script src = "js/popup.js"></script>
-        <link href = "styles.css" rel= "stylesheet">
-    </head>
-    <body>
-        <h3 class = "project-meta terminal-meta">gloc@gloc-ext: <span id = "project-info" class = "project-path"></span>
-            <br/>
-            <span class = "underscore">_</span>
-        </h3>
 
-        <div class = "loading-bar">
-            <div id = "loading" class = "loading" style = "display: none;"></div>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>GLOC</title>
+</head>
 
-        <div class = "wrapper header">
+<body>
+    <h3>Personal access token</h3>
+    <p>GitHub GLOC uses GitHub API. By default it makes unauthenticated requests to the GitHub API, set personal
+        access token if you want to:</p>
+    <ul>
+        <li>Access a private repository</li>
+        <li>Bypass the rate limit of unauthenticated requests</li>
+    </ul>
 
-            <p id = "counter" class = "widget">0</p>
+    <input type="text" id="githubToken" placeholder="Personal access token" />
 
-            <button id = "cnt-button" class = "btn btn-counter"><img src = "img/code.svg" width = "48px"/></button>
-        </div>
+    <input type="button" id="save" value="Save" />
 
-        <div class = "wrapper footer">
+    <a href="https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC" target="_blank">create token.</a>
+    <span>Or copy from </span></span><a href="https://github.com/settings/tokens" target="_blank">your list.</a>
+    
+    <script src="js/options.js"></script>
+</body>
 
-
-            <span class = "tip">
-                <pre class = "comment">// Go to any repo, for example: <br /></pre>
-                <pre class = "code">https://github.com/username/repo</pre>
-            </span>
-
-            <span class = "copyright">I you like us, <a href="https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki/reviews">rate us</a> ^_^</span>
-        </div>
-
-
-    </body>
 </html>
