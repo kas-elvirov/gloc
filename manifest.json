@@ -4,7 +4,7 @@
   "name": "Github GLOC",
   "author": "Artem Solovev",
   "description": "Counts the number of lines of code.",
-  "version": "5.0.0",
+  "version": "5.0.1",
 
   "options_ui": {
     "page": "popup.html",

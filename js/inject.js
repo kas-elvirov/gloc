@@ -43,7 +43,7 @@ function getGloc( repo, tries ) {
         return Promise.reject( new Error( "Too many requests to API !" ) );
     }
 
-    var url = "https://api.github.com/repos" + repo + "/stats/code_frequency";
+    let url = "https://api.github.com/repos" + repo + "/stats/code_frequency";
 
     if ( githubToken != null ) {
         url += "?access_token=" + githubToken;

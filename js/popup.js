@@ -12,7 +12,10 @@ chrome.storage.sync.get( 'githubToken', function ( result ) {
             return;
         }
 
-        chrome.storage.sync.set( { 'githubToken' : document.getElementById( 'githubToken' ).value }, function () {
+        var token = {};
+        token['githubToken'] = document.getElementById( 'githubToken' ).value;
+
+        chrome.storage.sync.set( token, function () {
 
             alert('Personal access token saved.');
         } );
