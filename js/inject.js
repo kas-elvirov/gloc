@@ -14,11 +14,11 @@ function insertCounter() {
     const $reposMetaContent = $( '.repository-meta-content' );
 
     if ( $reposMetaContent.length !== 0) {
-        $reposMetaContent.append("<span class='github-gloc' style='background: #282e34; color: #fff'></span>");
+        $reposMetaContent.append(" <div class='box' style = 'font-size: 0; font-family: Verdana;'><span style = 'background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;'>lines</span><span class='github-gloc' style = 'background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;'></span></div> ");
         const $gloc = $('.github-gloc');
 
         getGloc( location.pathname, 5 )
-            .then( lines => $gloc.text( lines + " lines of code"))
+            .then( lines => $gloc.text( lines ))
             .catch( e => console.log( e ) );
     }
 
@@ -29,7 +29,7 @@ function insertCounter() {
 
 function appendGloc() {
     getGloc( $( this ).attr( 'href' ), 5 )
-        .then( lines => $( this).append( "<span style='background: #282e34; color: #fff'>(" + lines + " lines of code)</span>" ) )
+        .then( lines => $( this).append( "<div class='box' style = 'font-size: 0; font-family: Verdana;'><span style = 'background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;'>lines</span><span class='github-gloc' style = 'background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;'>" + lines + "</span></div>" ) )
         .catch( e => console.log( e ) );
 }
 
