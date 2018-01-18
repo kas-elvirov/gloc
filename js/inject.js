@@ -17,7 +17,9 @@ function insertCounter() {
         $reposMetaContent.append(" <div class='box' style = 'font-size: 0; font-family: Verdana;'><span style = 'background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;'>lines</span><span class='github-gloc' style = 'background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;'></span></div> ");
         const $gloc = $('.github-gloc');
 
-        getGloc( location.pathname, 5 )
+        let repo = location.pathname
+        repo = repo.endsWith('/') ? repo.slice(0, -1) : repo
+        getGloc( repo, 5 )
             .then( lines => $gloc.text( lines ))
             .catch( e => console.log( e ) );
     }
