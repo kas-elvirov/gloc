@@ -5,7 +5,7 @@
   "short_name": "Gloc",
   "author": "Artem Solovev",
   "description": "Counts the number of lines of code.",
-  "version": "5.3.0",
+  "version": "6.0.0",
 
   "options_ui": {
     "page": "popup.html",
