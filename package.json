@@ -1,0 +1,26 @@
+{
+  "name": "gloc",
+  "version": "6.0.0",
+  "description": "Extension counts the number of lines of code in GitHub pages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artem-solovev/gloc.git"
+  },
+  "keywords": [
+    "code",
+    "counter"
+  ],
+  "author": "Artem Solovev",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/artem-solovev/gloc/issues"
+  },
+  "homepage": "https://github.com/artem-solovev/gloc#readme",
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  }
+}
