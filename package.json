@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/artem-solovev/gloc#readme",
   "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1"
   }
 }
