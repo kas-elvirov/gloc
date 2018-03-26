@@ -93,6 +93,10 @@ const getLocForCurrentDir = () => {
         'xml',
         'yaml', 'yml'];
 
+    // Get links for files in current directory (swith them into array)
+    const nodeList = document.querySelectorAll( 'tbody .js-navigation-open' );
+    const fileLinks = Array.prototype.slice.call( nodeList );
+
 
     function addOrCreate( dictIn, keyIn, valueIn ) {
 
@@ -190,23 +194,38 @@ const getLocForCurrentDir = () => {
         locDisplay.innerHTML = "<hr /><span class='user-mention'>Total lines in the current directory:</span> " + stringifyDict( extToCountMap );
     }
 
-    var fileLinks = document.getElementsByClassName( "js-navigation-open" );
+    /**
+     * Retrieves file's extension
+     * @param {object} link - <a> tag
+     * @return {string}
+     */
+    const getExtension = ( link ) => {
+        console.log( link );
+        const title = link.title;
+        const fileExt = title.split( '.' );
 
-    for ( var i = 0; i < fileLinks.length; i++ ) {
+        return fileExt[fileExt.length - 1];
+    };
 
-        var link = fileLinks[i];
-        var title = link.title;
+    /**
+     * Checks link's object
+     * @param {object} link - <a> tag
+     * @return {boolean}
+     */
+    const isAcceptableFile = ( link ) => {
+        const fileExt = getExtension( link );
+        const hasTitle = link.title !== '';
+        const hasProperType = typeof( link.title ) === typeof( 'str' );
+        const isAcceptableFile = acceptableExtensions.indexOf( fileExt ) != -1;
 
-        if ( title === "" || typeof( title ) !== typeof( "str" ) ) continue;
+        return ( hasTitle || hasProperType ) && ( isAcceptableFile );
+    };
 
-        var fileExt = title.split( "." );
-
-        fileExt = fileExt[fileExt.length - 1];
-
-        if ( acceptableExtensions.indexOf( fileExt ) != -1 ) {
-            getLocFromLink( link, fileExt );
-        }
-    }
+    fileLinks.filter( ( link ) => {
+        return isAcceptableFile( link );
+    } ).map( ( link ) => {
+        getLocFromLink( link, getExtension( link ) );
+    } );
 };
 
 getLocForCurrentDir();
