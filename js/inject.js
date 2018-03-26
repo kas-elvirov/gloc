@@ -1,5 +1,15 @@
-var githubToken;
+/**
+ * https://github.com/artem-solovev/gloc
+ *
+ * Licensed GPL-2.0 © Artem Solovev
+ */
 
+/**
+ * Accepted abbreviations
+ * - LOC - lines of code
+ */
+
+var githubToken;
 
 chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
     if ( result && result['x-github-token'] != null ) githubToken = result['x-github-token'];
