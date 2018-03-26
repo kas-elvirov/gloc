@@ -8,11 +8,10 @@
   "version": "6.0.0",
 
   "options_ui": {
-    "page": "popup.html",
-    "chrome_style": true
+    "page": "options.html"
   },
 
-  "options_page": "popup.html",
+  "options_page": "options.html",
 
   "content_scripts": [{
     "matches": [

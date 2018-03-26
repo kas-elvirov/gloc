@@ -1,6 +1,6 @@
 var githubToken;
 
-chrome.storage.sync.get( 'githubToken', function ( result ) {
+chrome.storage.sync.get( 'x-gloc-github-token', function ( result ) {
     if ( result && result.githubToken != null ) githubToken = result.githubToken;
 
     insertCounter();
