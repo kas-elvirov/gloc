@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Github Plus | Home</title>
+    <style type="text/css">
+        h4 {
+            color: #666;
+        }
+
+        .background-grey {
+            background: #f5f5f5;
+        }
+
+        .border--thin-grey {
+            border: 1px solid #e2e1e1;
+        }
+
+        .padding--10 {
+            padding: 10px;
+        }
+
+        .ph-link {
+            color: #da552f;
+        }
+
+        #settings-btn {
+            cursor: pointer;
+        }
+
+        #settings-btn svg:hover {
+            fill: #444 !important;
+        }
+    </style>
+</head>
+
+<body style="width: 400px;">
+    <div class="background-grey  padding--10">
+        <div id="settings-button" style="text-align: right; float: right; margin-top: 15px;" title="Options: Add Access Token">
+            <svg fill="#989898" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"
+                />
+            </svg>
+            <div>Add Github Token</div>
+        </div>
+        <img src="img/icon.png" style="vertical-align: middle;" width='50'/>
+        <h2 style="display: inline-block; margin-left: 10px;">Github
+            <span style="color:red;">Gloc</span>
+        </h2>
+    </div>
+
+    <h4>Works only on
+        <i>github.com/user/repo/*</i>
+    </h4>
+
+    <div class="background-grey  border--thin-grey" style=" padding: 10px 0;">
+        <span>Counts the number of lines of code of a project from:</span>
+        <ol>
+            <li>project detail page</li>
+            <li>user page</li>
+            <li>search results page</li>
+            <li>trending page</li>
+            <li>etc.</li>
+        </ol>
+    </div>
+
+    <h4>More features coming soon...Stay tuned!</h4>
+
+    <a class="github-button" href="https://github.com/artem-solovev/gloc" aria-label="Star artem-solovev/gloc on GitHub">
+        <svg version="1.1" width="14" height="14" viewBox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+    </a>
+    <script type="text/javascript" src="popup.js"></script>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>
