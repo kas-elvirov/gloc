@@ -19,7 +19,7 @@ const saveOptions = () => {
     document.getElementById( 'save-button' ).setAttribute( 'disabled', 'disabled' );
     const token = document.getElementById( 'x-gloc-github-token' ).value;
 
-    chrome.storage.sync.set( {'x-gloc-github-token': token}, function() {
+    chrome.storage.sync.set( {'x-github-token': token}, function() {
         const statusText = document.getElementById( 'status-text' );
         statusText.textContent = 'Options saved!';
         validateToken( token );
@@ -27,8 +27,8 @@ const saveOptions = () => {
 };
 
 const showOptions = () => {
-    chrome.storage.sync.get( {'x-gloc-github-token': ''}, function( storedOptions ) {
-        const token = storedOptions['x-gloc-github-token'];
+    chrome.storage.sync.get( {'x-github-token': ''}, function( storedOptions ) {
+        const token = storedOptions['x-github-token'];
         document.getElementById( 'x-gloc-github-token' ).value = token;
         validateToken( token );
     });

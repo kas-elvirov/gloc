@@ -1,7 +1,8 @@
 var githubToken;
 
-chrome.storage.sync.get( 'x-gloc-github-token', function ( result ) {
-    if ( result && result.githubToken != null ) githubToken = result.githubToken;
+
+chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
+    if ( result && result['x-github-token'] != null ) githubToken = result['x-github-token'];
 
     insertCounter();
 
@@ -17,7 +18,7 @@ function insertCounter() {
         $reposMetaContent.append(" <div class='box' style = 'font-size: 0; font-family: Verdana;'><span style = 'background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;'>lines</span><span class='github-gloc' style = 'background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;'></span></div> ");
         const $gloc = $('.github-gloc');
 
-        let repo = location.pathname;
+        var repo = location.pathname;
         
         repo = repo.endsWith( '/' ) ? repo.slice( 0, -1 ) : repo;
         
@@ -47,11 +48,13 @@ function getGloc( repo, tries ) {
         return Promise.reject( new Error( "Too many requests to API !" ) );
     }
 
-    let url = "https://api.github.com/repos" + repo + "/stats/code_frequency";
+    var url = "https://api.github.com/repos" + repo + "/stats/code_frequency";
 
     if ( githubToken != null ) {
         url += "?access_token=" + githubToken;
     }
+
+    console.log( 'MY URL ' + url );
 
     return fetch( url )
         .then( x => x.json() )
@@ -60,35 +63,35 @@ function getGloc( repo, tries ) {
 }
 
 
-
-var main = function(){
-
+/**
+ * Renders in DOM in front of the each of the acceptable file LOC
+ */
+const getLocForCurrentDir = () => {
     /**
      * File extensions which plugin counts
      *
      * https://www.file-extensions.org/filetype/extension/name/source-code-and-script-files
      */
-    var acceptableExtensions = [ "as", "asm", "asp", "aspx",
-                                "bash", "bat",
-                                "c", "cbl", "cc", "cfc", "clj", "cs", "css", "cpp",
-                                "dart", "d", "do", "dpr",
-                                "el", "ejs",
-                                "f90",
-                                "gitignore",
-                                "h", "hs", "hpp", "html", "haml",
-                                "java", "js", "json", "jsp", "jade", "jsx",
-                                "lisp", "lua", "less",
-                                "m", "md", "mk",
-                                "pas", "php", "pl", "prl", "pxd", "py", "pyx",
-                                "r", "rb",
-                                "s", "ss", "scala", "ser", "sh", "sql", "swift", "svg", "sass", "scss",
-                                "ts",
-                                "tmpl", "tpl", "tsx",
-                                "vb",
-                                "win",
-                                "xml",
-                                "yaml", "yml"
-                               ];
+    const acceptableExtensions = ['as', 'asm', 'asp', 'aspx',
+        'bash', 'bat',
+        'c', 'cbl', 'cc', 'cfc', 'clj', 'cs', 'css', 'cpp',
+        'dart', 'd', 'do', 'dpr',
+        'el', 'ejs',
+        'f90',
+        'gitignore',
+        'h', 'hs', 'hpp', 'html', 'haml',
+        'java', 'js', 'json', 'jsp', 'jade', 'jsx',
+        'lisp', 'lua', 'less',
+        'm', 'md', 'mk',
+        'pas', 'php', 'pl', 'prl', 'pxd', 'py', 'pyx',
+        'r', 'rb',
+        's', 'ss', 'scala', 'ser', 'sh', 'sql', 'swift', 'svg', 'sass', 'scss',
+        'ts',
+        'tmpl', 'tpl', 'tsx',
+        'vb',
+        'win',
+        'xml',
+        'yaml', 'yml'];
 
 
     function addOrCreate( dictIn, keyIn, valueIn ) {
@@ -137,7 +140,7 @@ var main = function(){
 
             var loc = Number( loc[0].replace( "lines", "" ) );
 
-            console.log( link.href + " " + String( loc ) );
+            //console.log( link.href + " " + String( loc ) );
 
             addOrCreate( extToCountMap, fileExt, loc );
 
@@ -206,4 +209,4 @@ var main = function(){
     }
 };
 
-main();
+getLocForCurrentDir();
