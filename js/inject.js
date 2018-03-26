@@ -10,6 +10,21 @@
  */
 
 var githubToken;
+const APP_NAME = 'GitHub Gloc';
+
+/**
+ * Logger
+ * @param {string} type - info, warn, err
+ * @param {string} str - info for output
+ */
+const log = ( type, str ) => {
+    switch ( type ) {
+    case 'i': console.info( APP_NAME + ': ' + str ); break;
+    case 'w': console.warn( APP_NAME + ': ' + str ); break;
+    case 'e': console.error( APP_NAME + ': ' + str ); break;
+    default: console.log( str );
+    }
+};
 
 chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
     if ( result && result['x-github-token'] != null ) githubToken = result['x-github-token'];
@@ -64,8 +79,6 @@ function getGloc( repo, tries ) {
         url += "?access_token=" + githubToken;
     }
 
-    console.log( 'MY URL ' + url );
-
     return fetch( url )
         .then( x => x.json() )
         .then( x => x.reduce( ( total, changes ) => total + changes[1] + changes[2], 0) )
@@ -107,115 +120,11 @@ const getLocForCurrentDir = () => {
     const nodeList = document.querySelectorAll( 'tbody .js-navigation-open' );
     const fileLinks = Array.prototype.slice.call( nodeList );
 
+    // object with LOCs for each file's extension in current dir { 'md': 000, 'txt': 001, ... }
+    var locCollection = {};
 
-    function addOrCreate( dictIn, keyIn, valueIn ) {
+    const DOM_APP_ID = 'Gloc-counter';
 
-        if ( keyIn in dictIn ) {
-            dictIn[keyIn] += valueIn;
-        } else {
-            dictIn[keyIn] = valueIn;
-        }
-    }
-
-    /**
-     * Mapping from file extension to lines of code
-     */
-    var extToCountMap = {};
-    var linkToFileMap = {};
-
-
-    function httpGetAsync( theUrl, callback ) {
-        var xmlHttp = new XMLHttpRequest();
-
-        xmlHttp.onreadystatechange = function() {
-            if ( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) {
-                callback( xmlHttp.responseText );
-            }
-        }
-
-        xmlHttp.open( "GET", theUrl, true );
-        xmlHttp.send( null );
-    }
-
-
-    /**
-     * Gets lines of code from link
-     */
-    function getLocFromLink( link, fileExt ) {
-
-        function callback( data ) {
-            var loc = data.match( /\d+ lines/g );
-
-            if ( !loc || loc.length == 0 ) {
-                console.log( "File " + link + " too big to display lines of code" );
-
-                return;
-            }
-
-            var loc = Number( loc[0].replace( "lines", "" ) );
-
-            //console.log( link.href + " " + String( loc ) );
-
-            addOrCreate( extToCountMap, fileExt, loc );
-
-            getLinesOfCodeInCurrentDir();
-
-            // idk why, but this appears to work better than just just setting link.innerHTML
-            document.getElementById( link.id ).innerHTML = link.title + " <span style='color:#888'> " + loc + " lines</span>";
-
-            linkToFileMap[link.href] = data;
-        }
-
-        httpGetAsync( link.href, callback );
-    }
-
-    function stringifyDict( dict ) {
-        var strArr = [];
-
-        var totalLoc = 0;
-
-        for ( key in dict ) {
-            strArr.push( key + " - " + String( dict[key] ) );
-            totalLoc += dict[key];
-            strArr.sort();
-        }
-
-        return totalLoc + "<br /> <span class='user-mention'>By extensions:</span><br /> &nbsp;"  + strArr.join( ",<br />&nbsp;"  );
-    }
-
-    var links = document.getElementsByClassName( "js-navigation-open" );
-
-    var domId = "Gloc-counter";
-
-
-    /**
-     * Shows info about lines of code in current directory
-     */
-    function getLinesOfCodeInCurrentDir() {
-        var commitTease = document.getElementsByClassName( "commit-tease" )[0];
-        var locDisplay = document.getElementById( domId );
-
-        if ( !locDisplay ) {
-            var locDisplay = document.createElement( "div" );
-            locDisplay.id = domId;
-            commitTease.appendChild( locDisplay );
-        }
-
-        locDisplay.innerHTML = "<hr /><span class='user-mention'>Total lines in the current directory:</span> " + stringifyDict( extToCountMap );
-    }
-
-    /**
-     * Retrieves file's extension
-     * @param {object} link - <a> tag
-     * @return {string}
-     */
-    const getExtension = ( link ) => {
-        console.log( link );
-        const title = link.title;
-        const fileExt = title.split( '.' );
-
-        return fileExt[fileExt.length - 1];
-    };
 
     /**
      * Checks link's object
@@ -231,10 +140,132 @@ const getLocForCurrentDir = () => {
         return ( hasTitle || hasProperType ) && ( isAcceptableFile );
     };
 
+
+    /**
+     * Retrieves file's extension
+     * @param {object} link - <a> tag
+     * @return {string}
+     */
+    const getExtension = ( link ) => {
+        const title = link.title;
+        const fileExt = title.split( '.' );
+
+        return fileExt[fileExt.length - 1];
+    };
+
+
+    /**
+     * Gets plain html file from the link
+     * @param {object} link - <a> tag
+     * @param {function} parsePlainHTML
+     */
+    const getHtmlFile = ( link, parsePlainHTML ) => {
+        var xmlHttp = new XMLHttpRequest();
+
+        xmlHttp.onreadystatechange = () => {
+            if ( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) {
+                parsePlainHTML( xmlHttp.responseText, link );
+            }
+        };
+
+        xmlHttp.open( 'GET', link.href, true );
+        xmlHttp.send( null );
+    };
+
+
+    /**
+     * Parses plain html file ( extracts LOC )
+     * @param {string} plainHTML
+     * @param {object} link - <a> tag
+     */
+    const parsePlainHTML = ( plainHTML, link ) => {
+        const rowLoc = plainHTML.match( /\d+ lines/g ); // console.log( rowLoc ) --> 00 lines
+
+        if ( !rowLoc || rowLoc.length == 0 ) {
+            log( 'w', 'Cannot parse file from ' + link );
+            return;
+        }
+
+        const loc = Number( rowLoc[0].replace( 'lines', '' ) ); // console.log( loc ) ==> 00
+
+        addCurrentLoc( locCollection, getExtension( link ), loc );
+
+        renderLocByExtensions();
+
+        renderLocForFile( link, loc );
+    };
+
+
+    /**
+     * Adds LOC value to collection of LOC by extensions
+     * @param {object} collection
+     * @param {string} fileExt
+     * @param {number} loc
+     */
+    const addCurrentLoc = ( collection, fileExt, loc ) => {
+        if ( fileExt in collection ) {
+            collection[fileExt] += loc;
+        } else {
+            collection[fileExt] = loc;
+        }
+    };
+
+
+    /**
+     * Renders LOC in DOM by file extensions
+     */
+    const renderLocByExtensions = () => {
+        var commitTease = document.getElementsByClassName( 'commit-tease' )[0];
+        var locDisplay = document.getElementById( DOM_APP_ID );
+
+        if ( !locDisplay ) {
+            var locDisplay = document.createElement( 'div' );
+            locDisplay.id = DOM_APP_ID;
+            commitTease.appendChild( locDisplay );
+        }
+
+        const locTitle = '<hr /><span class="user-mention">Total lines in the current directory:</span> ';
+
+        locDisplay.innerHTML = locTitle + stringifyLocCollection( locCollection );
+    };
+
+
+    /**
+     * Converts object to string
+     * @param {object} collection
+     * @return {string}
+     */
+    const stringifyLocCollection = ( collection ) => {
+        var arr = [];
+
+        var totalLoc = 0;
+
+        for ( key in collection ) {
+            arr.push( key + " - " + String( collection[key] ) );
+            totalLoc += collection[key];
+            arr.sort();
+        }
+
+        return totalLoc + "<br /> <span class='user-mention'>By extensions:</span><br /> &nbsp;"  + arr.join( ",<br />&nbsp;"  );
+    };
+
+
+    /**
+     * Renders in DOM LOC for current link
+     * @param {object} link - <a> tag
+     * @param {number} loc
+     */
+    const renderLocForFile = ( link, loc ) => {
+        // console.log( str ) --> .eslintrc.js 00 lines
+        const str = link.title + '<span style="color:#888"> ' + loc + ' lines</span>';
+        document.getElementById( link.id ).innerHTML = str;
+    };
+
+
     fileLinks.filter( ( link ) => {
         return isAcceptableFile( link );
     } ).map( ( link ) => {
-        getLocFromLink( link, getExtension( link ) );
+        getHtmlFile( link, parsePlainHTML );
     } );
 };
 
