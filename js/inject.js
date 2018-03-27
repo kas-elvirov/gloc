@@ -11,6 +11,8 @@
 
 var githubToken;
 const APP_NAME = 'GitHub Gloc';
+const APP_CLASSNAME = 'github-gloc';
+const TRIES_DEFAULT = 5;
 
 /**
  * Logger
@@ -26,70 +28,100 @@ const log = ( type, str ) => {
     }
 };
 
+
+/**
+ * PART 1.
+ * Renders in DOM in front of the each of the acceptable file LOC
+ */
 chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
     if ( result && result['x-github-token'] != null ) githubToken = result['x-github-token'];
 
-    insertCounter();
+    insertTotalLoc();
 
-    $( document ).on( 'pjax:complete', function () {
-        insertCounter();
+    $( document ).on( 'pjax:complete', () => {
+        insertTotalLoc();
     } );
 } );
 
-function insertCounter() {
+/**
+ * Inserts total LOC into DOM
+ */
+const insertTotalLoc = () => {
+    // Single repo title
     const $reposMetaContent = $( '.repository-meta-content' );
 
-    if ( $reposMetaContent.length !== 0) {
-        $reposMetaContent.append(" <div class='box' style = 'font-size: 0; font-family: Verdana;'><span style = 'background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;'>lines</span><span class='github-gloc' style = 'background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;'></span></div> ");
-        const $gloc = $('.github-gloc');
-
-        var repo = location.pathname;
-        
+    if ( $reposMetaContent.length !== 0 ) {
+        $reposMetaContent.append(' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;"></span></div> ');
+        const $gloc = $( '.' + APP_CLASSNAME );
+        let repo = location.pathname;
         repo = repo.endsWith( '/' ) ? repo.slice( 0, -1 ) : repo;
-        
-        getGloc( repo, 5 )
-            .then( lines => $gloc.text( lines ))
-            .catch( e => console.log( e ) );
+
+        getLocForRepo( repo, TRIES_DEFAULT )
+            .then( ( lines ) => $gloc.text( lines ) )
+            .catch( ( e ) => log( 'e', e ) );
     }
 
-    $( '.repo-list h3 a' ).each( appendGloc );
+    $( '.repo-list h3 a' ).each( appendLoc );
 
-    $( '#recommended-repositories-container' ).find( 'h3 a' ).each( appendGloc );
-}
-
-function appendGloc() {
-    getGloc( $( this ).attr( 'href' ), 5 )
-        .then( lines => $( this).append( "<div class='box' style = 'font-size: 0; font-family: Verdana;'><span style = 'background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;'>lines</span><span class='github-gloc' style = 'background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;'>" + lines + "</span></div>" ) )
-        .catch( e => console.log( e ) );
-}
-
-function getGloc( repo, tries ) {
-
-    if ( !repo ) {
-        return Promise.reject( new Error( "No repositories !" ) );
-    }
-
-    if ( tries === 0 ) {
-        return Promise.reject( new Error( "Too many requests to API !" ) );
-    }
-
-    var url = "https://api.github.com/repos" + repo + "/stats/code_frequency";
-
-    if ( githubToken != null ) {
-        url += "?access_token=" + githubToken;
-    }
-
-    return fetch( url )
-        .then( x => x.json() )
-        .then( x => x.reduce( ( total, changes ) => total + changes[1] + changes[2], 0) )
-        .catch( err => getGloc( repo, tries - 1 ) );
-}
+    $( '#recommended-repositories-container' ).find( 'h3 a' ).each( appendLoc );
+};
 
 
 /**
+ * Counts LOC for repo
+ * @param {string} repo - '/user/repo'
+ * @param {number} tries
+ * @return {promise}
+ */
+const getLocForRepo = ( repo, tries ) => {
+    if ( !repo ) return Promise.reject( new Error( 'No repositories !' ) );
+
+    if ( tries === 0 ) return Promise.reject( new Error( 'Too many requests to API !' ) );
+
+    const url = tokenizeUrl( setUrl( repo ) );
+
+    return fetch( url )
+        .then( ( x) => x.json() )
+        .then( ( x ) => x.reduce( ( total, changes ) => total + changes[1] + changes[2], 0) )
+        .catch( ( err ) => getLocForRepo( repo, tries - 1 ) );
+};
+
+/**
+ * Adds token to URL
+ * @param {string} url
+ * @return {string}
+ */
+const tokenizeUrl = ( url ) => {
+    if ( githubToken != null ) {
+        url += '?access_token=' + githubToken;
+    }
+    return url;
+};
+
+/**
+ * Url maker
+ * @param {*} repo - '/user/repo'
+ * @return {string}
+ */
+const setUrl = ( repo ) => {
+    return 'https://api.github.com/repos' + repo + '/stats/code_frequency';
+};
+
+/**
+ * Adds LOC into DOM
+ */
+const appendLoc = () => {
+    getLocForRepo( $( this ).attr( 'href' ), TRIES_DEFAULT )
+        .then( ( lines ) => $( this ).append( '<div class=box style = font-size: 0; font-family: Verdana;><span style = background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;>lines</span><span class="' + APP_CLASSNAME + '" style = background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;>' + lines + '</span></div>' ) )
+        .catch( ( e ) => console.log( e ) );
+};
+
+
+/**
+ * PART 2.
  * Renders in DOM in front of the each of the acceptable file LOC
  */
-const getLocForCurrentDir = () => {
+const insertLocForDir = () => {
     /**
      * File extensions which plugin counts
      *
@@ -269,4 +301,4 @@ const getLocForCurrentDir = () => {
     } );
 };
 
-getLocForCurrentDir();
+insertLocForDir();
