@@ -25,14 +25,14 @@
     ],
 
     "js": [
-      "js/jquery.min.js",
-      "js/inject.js"
+      "src/jquery.min.js",
+      "src/inject.js"
     ]
   }],
 
   "background": {
     "scripts": [
-      "js/background.js"
+      "src/background.js"
     ],
     "persistent": false
   },
