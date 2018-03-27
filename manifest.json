@@ -5,7 +5,7 @@
   "short_name": "Gloc",
   "author": "Artem Solovev",
   "description": "Extension counts the number of lines of code in GitHub pages.",
-  "version": "6.0.0",
+  "version": "7.0.0",
 
   "browser_action": {
     "default_icon": "img/icon.png",
