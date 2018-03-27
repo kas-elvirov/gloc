@@ -26,7 +26,8 @@
 
     "js": [
       "src/jquery.min.js",
-      "src/inject.js"
+      "src/inject.js",
+      "src/optipic.js"
     ]
   }],
 
