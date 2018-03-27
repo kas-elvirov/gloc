@@ -9,7 +9,7 @@
  * - LOC - lines of code
  */
 
-var githubToken;
+let githubToken;
 const APP_NAME = 'GitHub Gloc';
 const APP_CLASSNAME = 'github-gloc';
 const TRIES_DEFAULT = 5;
@@ -36,85 +36,92 @@ const log = ( type, str ) => {
 chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
     if ( result && result['x-github-token'] != null ) githubToken = result['x-github-token'];
 
-    insertTotalLoc();
+    insertLocForRepo();
 
     $( document ).on( 'pjax:complete', () => {
-        insertTotalLoc();
+        insertLocForRepo();
     } );
 } );
 
 /**
- * Inserts total LOC into DOM
+ * Renders total LOC into DOM
  */
-const insertTotalLoc = () => {
-    // Single repo title
+function insertLocForRepo() {
     const $reposMetaContent = $( '.repository-meta-content' );
 
-    if ( $reposMetaContent.length !== 0 ) {
+    // Add LOC to single repo
+    if ( $reposMetaContent.length !== 0) {
         $reposMetaContent.append(' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;"></span></div> ');
-        const $gloc = $( '.' + APP_CLASSNAME );
-        let repo = location.pathname;
-        repo = repo.endsWith( '/' ) ? repo.slice( 0, -1 ) : repo;
+        const $gloc = $('.' + APP_CLASSNAME);
 
-        getLocForRepo( repo, TRIES_DEFAULT )
-            .then( ( lines ) => $gloc.text( lines ) )
+        getGloc( getRepoName(), TRIES_DEFAULT )
+            .then( ( lines ) => $gloc.text( lines ))
             .catch( ( e ) => log( 'e', e ) );
     }
 
+    // Add LOC to organisation page
     $( '.repo-list h3 a' ).each( appendLoc );
-
     $( '#recommended-repositories-container' ).find( 'h3 a' ).each( appendLoc );
-};
+}
+
+/**
+ * Gets repo name from current location
+ * @return {string}
+ */
+function getRepoName() {
+    let repo = location.pathname;
+    return repo.endsWith( '/' ) ? repo.slice( 0, -1 ) : repo;
+}
+
+/**
+ * Appends loc for jQuery object
+ */
+function appendLoc() {
+    getGloc( $( this ).attr( 'href' ), TRIES_DEFAULT )
+        .then( ( lines ) => $( this ).append( '<div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;">' + lines + '</span></div>' ) )
+        .catch( ( e ) => log( 'e', e ) );
+}
 
 
 /**
- * Counts LOC for repo
- * @param {string} repo - '/user/repo'
+ * Counts LOC
+ * @param {string} repo - /user/repo
  * @param {number} tries
  * @return {promise}
  */
-const getLocForRepo = ( repo, tries ) => {
+function getGloc( repo, tries ) {
     if ( !repo ) return Promise.reject( new Error( 'No repositories !' ) );
-
     if ( tries === 0 ) return Promise.reject( new Error( 'Too many requests to API !' ) );
 
-    const url = tokenizeUrl( setUrl( repo ) );
+    const url = tokenizeUrl( setApiUrl( repo ) );
 
     return fetch( url )
-        .then( ( x) => x.json() )
-        .then( ( x ) => x.reduce( ( total, changes ) => total + changes[1] + changes[2], 0) )
-        .catch( ( err ) => getLocForRepo( repo, tries - 1 ) );
-};
+        .then( (x) => x.json() )
+        .then( (x) => x.reduce( ( total, changes ) => total + changes[1] + changes[2], 0) )
+        .catch( (err) => getGloc( repo, tries - 1 ) );
+}
+
+
+/**
+ * Setter for url
+ * @param {*} repo - /user/repo
+ * @return {string}
+ */
+function setApiUrl( repo ) {
+    return 'https://api.github.com/repos' + repo + '/stats/code_frequency';
+}
+
 
 /**
  * Adds token to URL
  * @param {string} url
  * @return {string}
  */
-const tokenizeUrl = ( url ) => {
-    if ( githubToken != null ) {
-        url += '?access_token=' + githubToken;
-    }
-    return url;
-};
-
-/**
- * Url maker
- * @param {*} repo - '/user/repo'
- * @return {string}
- */
-const setUrl = ( repo ) => {
-    return 'https://api.github.com/repos' + repo + '/stats/code_frequency';
-};
-
-/**
- * Adds LOC into DOM
- */
-const appendLoc = () => {
-    getLocForRepo( $( this ).attr( 'href' ), TRIES_DEFAULT )
-        .then( ( lines ) => $( this ).append( '<div class=box style = font-size: 0; font-family: Verdana;><span style = background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;>lines</span><span class="' + APP_CLASSNAME + '" style = background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;>' + lines + '</span></div>' ) )
-        .catch( ( e ) => console.log( e ) );
-};
+function tokenizeUrl( url ) {
+    let newUrl = url;
+    if ( githubToken != null ) newUrl += '?access_token=' + githubToken;
+    return newUrl;
+}
 
 
 /**
@@ -153,7 +160,7 @@ const insertLocForDir = () => {
     const fileLinks = Array.prototype.slice.call( nodeList );
 
     // object with LOCs for each file's extension in current dir { 'md': 000, 'txt': 001, ... }
-    var locCollection = {};
+    let locCollection = {};
 
     const DOM_APP_ID = 'Gloc-counter';
 
@@ -192,7 +199,7 @@ const insertLocForDir = () => {
      * @param {function} parsePlainHTML
      */
     const getHtmlFile = ( link, parsePlainHTML ) => {
-        var xmlHttp = new XMLHttpRequest();
+        let xmlHttp = new XMLHttpRequest();
 
         xmlHttp.onreadystatechange = () => {
             if ( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) {
@@ -273,12 +280,12 @@ const insertLocForDir = () => {
         var totalLoc = 0;
 
         for ( key in collection ) {
-            arr.push( key + " - " + String( collection[key] ) );
+            arr.push( key + ' - ' + String( collection[key] ) );
             totalLoc += collection[key];
             arr.sort();
         }
 
-        return totalLoc + "<br /> <span class='user-mention'>By extensions:</span><br /> &nbsp;"  + arr.join( ",<br />&nbsp;"  );
+        return totalLoc + '<br /> <span class="user-mention">By extensions:</span><br /> &nbsp;' + arr.join( ',<br />&nbsp;' );
     };
 
 
