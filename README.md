@@ -18,7 +18,7 @@ Counts lines of code in:
 **Gloc** means - 'Github lines of code counter'
 
 
-## Screens'
+## Screens
 ![Promo](img/ads_spoiler.jpg)
 ![Project page](img/single_repo.jpg)
 ![Many repos](img/many_repos.jpg)
