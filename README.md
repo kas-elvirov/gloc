@@ -34,5 +34,10 @@ Counts lines of code in:
 * **[Issues, bugs](https://github.com/artem-solovev/gloc/issues)**
 
 
+## **Credits**
+* App icon made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+* Ads icon made by [SimpleIcon](https://www.flaticon.com/authors/simpleicon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+
+
 ## **Contributors**
 * [Artem Solovev](https://github.com/artem-solovev)
