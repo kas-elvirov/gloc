@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "7.0.0",
+  "version": "7.0.2",
   "description": "Extension counts the number of lines of code in GitHub pages.",
   "main": "index.js",
   "scripts": {

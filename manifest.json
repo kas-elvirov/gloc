@@ -5,10 +5,10 @@
 	"short_name": "Gloc",
 	"author": "Artem Solovev",
 	"description": "Сounts lines of code on GitHub",
-	"version": "7.0.1",
+	"version": "7.0.2",
 
 	"browser_action": {
-		"default_icon": "img/icon.png",
+		"default_icon": "img/icon128.png",
 		"default_popup": "index.html",
 		"default_title": "Github Gloc"
 	},
@@ -35,8 +35,8 @@
 	"permissions": ["storage", "*://*.github.com/*"],
 
 	"icons": {
-		"16": "icon16.png",
-		"48": "icon48.png",
-		"128": "icon128.png"
+		"16": "img/icon16.png",
+		"48": "img/icon48.png",
+		"128": "img/icon128.png"
 	}
 }
