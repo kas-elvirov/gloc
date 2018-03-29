@@ -1,49 +1,42 @@
 {
-  "manifest_version": 2,
+	"manifest_version": 2,
 
-  "name": "Github Gloc",
-  "short_name": "Gloc",
-  "author": "Artem Solovev",
-  "description": "Сounts lines of code on GitHub",
-  "version": "7.0.1",
+	"name": "Github Gloc",
+	"short_name": "Gloc",
+	"author": "Artem Solovev",
+	"description": "Сounts lines of code on GitHub",
+	"version": "7.0.1",
 
-  "browser_action": {
-    "default_icon": "img/icon.png",
-    "default_popup": "index.html",
-    "default_title": "Github Gloc"
-   },
+	"browser_action": {
+		"default_icon": "img/icon.png",
+		"default_popup": "index.html",
+		"default_title": "Github Gloc"
+	},
 
-  "options_ui": {
-    "page": "options.html"
-  },
+	"options_ui": {
+		"page": "options.html"
+	},
 
-  "options_page": "options.html",
+	"options_page": "options.html",
 
-  "content_scripts": [{
-    "matches": [
-      "*://github.com/*"
-    ],
+	"content_scripts": [
+		{
+			"matches": ["*://github.com/*"],
 
-    "js": [
-      "src/jquery.min.js",
-      "src/inject.js",
-      "src/optipic.js"
-    ]
-  }],
+			"js": ["src/jquery.min.js", "src/inject.js", "src/optipic.js"]
+		}
+	],
 
-  "background": {
-    "scripts": [
-      "src/background.js"
-    ],
-    "persistent": false
-  },
+	"background": {
+		"scripts": ["src/background.js"],
+		"persistent": false
+	},
 
-  "permissions": [
-    "storage",
-    "*://*.github.com/*"
-  ],
+	"permissions": ["storage", "*://*.github.com/*"],
 
-  "icons": {
-    "200": "img/icon.png"
-  }
+	"icons": {
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	}
 }
