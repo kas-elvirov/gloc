@@ -4,20 +4,22 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.0.0** ( 2018, 28 march )
+## **Current version: 7.0.1** ( 2018, 28 march )
 
 
 ## Description
-Github lines of code counter (GLOC) for **public** and **private** repos. Counts the number of lines of code of a project from:
+Works for **public** and **private** repos.
+Counts lines of code in:
 - project detail page,
-- user page,
+- organization page,
 - search results page, 
-- trending page,
-- etc.
+- trending page.
+
+**Gloc** means - 'Github lines of code counter'
 
 
 ## Screens'
-![Promo](img/index.jpg)
+![Promo](img/ads_spoiler.jpg)
 ![Project page](img/single_repo.jpg)
 ![Many repos](img/many_repos.jpg)
 
