@@ -4,13 +4,14 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.1.0** ( 2018, 02 april )
+## **Current version: 7.2.0** ( 2018, 02 april )
 
 
 ## Description
 Works for **public** and **private** repos.
 Counts lines of code in:
 - project detail page,
+- user's repositories,
 - organization page,
 - search results page, 
 - trending page.
