@@ -49,24 +49,23 @@ chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
  */
 function insertLocForRepo() {
     const reposMetaContent = document.getElementsByClassName( REPO_CLASS )[0];
+    const userRepos = document.querySelectorAll( '#user-repositories-list h3 a' );
+    const organisationRepos = document.querySelectorAll( '.repo-list h3 a' );
+    const recommendedRepos = document.querySelectorAll( '#recommended-repositories-container h3 a' );
 
     // Add LOC to single repo
-    if ( reposMetaContent) {
-        reposMetaContent.innerHTML += ' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;"></span></div> ';
-        const gloc = document.getElementsByClassName( APP_CLASSNAME )[0];
+    if ( reposMetaContent ) {
+        reposMetaContent.innerHTML += getBadge();
+        const placeForLoc = document.getElementsByClassName( APP_CLASSNAME )[0];
+        appendLoc2( getRepoName(), placeForLoc );
+    } else if ( userRepos ) {
+        links = Array.prototype.slice.call(userRepos);
 
-        getGloc( getRepoName(), TRIES_DEFAULT )
-            .then( ( lines ) => gloc.appendChild( document.createTextNode( lines ) ))
-            .catch( ( e ) => log( 'e', e ) );
+        links.map( function(elem) {
+            let link = elem.getAttribute('href');
+            appendLoc2( link, elem );
+        });
     }
-
-    // Add LOC to organisation page
-    $( '.repo-list h3 a' ).each( appendLoc );
-
-    // Users repo
-    $( '#user-repositories-list' ).find( 'h3 a' ).each( appendLoc );
-
-    $( '#recommended-repositories-container' ).find( 'h3 a' ).each( appendLoc );
 }
 
 /**
@@ -85,6 +84,34 @@ function appendLoc() {
     getGloc( $( this ).attr( 'href' ), TRIES_DEFAULT )
         .then( ( lines ) => $( this ).append( '<div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;">' + lines + '</span></div>' ) )
         .catch( ( e ) => log( 'e', e ) );
+}
+
+/**
+ * Appends LOC to ELEMENT
+ * @param {*} repoName
+ * @param {*} element
+ */
+function appendLoc2( repoName, element ) {
+    getGloc( repoName, TRIES_DEFAULT )
+        .then( ( lines ) => element.innerHTML += getBadgeWithLines( lines ))
+        .catch( ( e ) => log( 'e', e ) );
+}
+
+/**
+ * Returns badge container for LOC
+ * @return {html}
+ */
+function getBadge() {
+    return ' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;"></span></div> ';
+}
+
+/**
+ * Returns badge container for LOC with LOC
+ * @param {number} lines - LOC
+ * @return {html}
+ */
+function getBadgeWithLines( lines ) {
+    return ' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;">' + lines + '</span></div> ';
 }
 
 
