@@ -23,7 +23,7 @@
 		{
 			"matches": ["*://github.com/*"],
 
-			"js": ["src/jquery.min.js", "src/inject.js", "src/optipic.js"]
+			"js": ["src/inject.js", "src/optipic.js"]
 		}
 	],
 
