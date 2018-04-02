@@ -61,6 +61,11 @@ function insertLocForRepo() {
 
     // Add LOC to organisation page
     $( '.repo-list h3 a' ).each( appendLoc );
+
+    // Users repo
+    $( '#user-repositories-list' ).find( 'h3 a' ).each( appendLoc );
+    log( 'w', 'Updated' );
+
     $( '#recommended-repositories-container' ).find( 'h3 a' ).each( appendLoc );
 }
 
@@ -90,6 +95,8 @@ function appendLoc() {
  * @return {promise}
  */
 function getGloc( repo, tries ) {
+    log( 'w', 'repo ' + repo );
+
     if ( !repo ) return Promise.reject( new Error( 'No repositories !' ) );
     if ( tries === 0 ) return Promise.reject( new Error( 'Too many requests to API !' ) );
 
