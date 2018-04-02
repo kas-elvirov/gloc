@@ -57,13 +57,25 @@ function insertLocForRepo() {
     if ( reposMetaContent ) {
         reposMetaContent.innerHTML += getBadge();
         const placeForLoc = document.getElementsByClassName( APP_CLASSNAME )[0];
-        appendLoc2( getRepoName(), placeForLoc );
-    } else if ( userRepos ) {
-        links = Array.prototype.slice.call(userRepos);
+        appendLoc( getRepoName(), placeForLoc );
+    }
+
+    let repos = '';
+
+    if ( userRepos.length ) {
+        repos = userRepos;
+    } else if ( organisationRepos.length ) {
+        repos = organisationRepos;
+    } else if ( recommendedRepos.length ) {
+        repos = recommendedRepos;
+    }
+
+    if ( repos ) {
+        links = Array.prototype.slice.call(repos);
 
         links.map( function(elem) {
             let link = elem.getAttribute('href');
-            appendLoc2( link, elem );
+            appendLoc( link, elem );
         });
     }
 }
@@ -77,21 +89,13 @@ function getRepoName() {
     return repo.endsWith( '/' ) ? repo.slice( 0, -1 ) : repo;
 }
 
-/**
- * Appends loc for jQuery object
- */
-function appendLoc() {
-    getGloc( $( this ).attr( 'href' ), TRIES_DEFAULT )
-        .then( ( lines ) => $( this ).append( '<div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;">' + lines + '</span></div>' ) )
-        .catch( ( e ) => log( 'e', e ) );
-}
 
 /**
  * Appends LOC to ELEMENT
  * @param {*} repoName
  * @param {*} element
  */
-function appendLoc2( repoName, element ) {
+function appendLoc( repoName, element ) {
     getGloc( repoName, TRIES_DEFAULT )
         .then( ( lines ) => element.innerHTML += getBadgeWithLines( lines ))
         .catch( ( e ) => log( 'e', e ) );
