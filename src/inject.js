@@ -13,6 +13,7 @@ let githubToken;
 const APP_NAME = 'GitHub Gloc';
 const APP_CLASSNAME = 'github-gloc';
 const TRIES_DEFAULT = 5;
+const REPO_CLASS = 'repository-meta-content';
 
 /**
  * Logger
@@ -47,15 +48,15 @@ chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
  * Renders total LOC into DOM
  */
 function insertLocForRepo() {
-    const $reposMetaContent = $( '.repository-meta-content' );
+    const reposMetaContent = document.getElementsByClassName( REPO_CLASS )[0];
 
     // Add LOC to single repo
-    if ( $reposMetaContent.length !== 0) {
-        $reposMetaContent.append(' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;"></span></div> ');
-        const $gloc = $('.' + APP_CLASSNAME);
+    if ( reposMetaContent) {
+        reposMetaContent.innerHTML += ' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;"></span></div> ';
+        const gloc = document.getElementsByClassName( APP_CLASSNAME )[0];
 
         getGloc( getRepoName(), TRIES_DEFAULT )
-            .then( ( lines ) => $gloc.text( lines ))
+            .then( ( lines ) => gloc.appendChild( document.createTextNode( lines ) ))
             .catch( ( e ) => log( 'e', e ) );
     }
 
@@ -64,7 +65,6 @@ function insertLocForRepo() {
 
     // Users repo
     $( '#user-repositories-list' ).find( 'h3 a' ).each( appendLoc );
-    log( 'w', 'Updated' );
 
     $( '#recommended-repositories-container' ).find( 'h3 a' ).each( appendLoc );
 }
@@ -95,8 +95,6 @@ function appendLoc() {
  * @return {promise}
  */
 function getGloc( repo, tries ) {
-    log( 'w', 'repo ' + repo );
-
     if ( !repo ) return Promise.reject( new Error( 'No repositories !' ) );
     if ( tries === 0 ) return Promise.reject( new Error( 'Too many requests to API !' ) );
 
