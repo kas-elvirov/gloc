@@ -31,14 +31,23 @@ const log = ( type, str ) => {
 
 
 /**
+ * Main
+ */
+( function() {
+    chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
+        if ( result && result['x-github-token'] != null ) githubToken = result['x-github-token'];
+
+        insertLocForRepo();
+
+        insertLocForDir();
+    } );
+} )();
+
+
+/**
  * PART 1.
  * Renders in DOM in front of the each of the acceptable file LOC
  */
-chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
-    if ( result && result['x-github-token'] != null ) githubToken = result['x-github-token'];
-
-    insertLocForRepo();
-} );
 
 /**
  * Renders total LOC into DOM
@@ -51,7 +60,7 @@ function insertLocForRepo() {
 
     // Add LOC to single repo
     if ( reposMetaContent ) {
-        appendLoc( getRepoName() );
+        appendLoc( getRepoName(), reposMetaContent );
     }
 
     let repos = '';
@@ -91,17 +100,10 @@ function getRepoName() {
  */
 function appendLoc( repoName, element = '' ) {
     getGloc( repoName, TRIES_DEFAULT )
-        .then( ( lines ) => element.innerHTML += getBadgeWithLines( lines ))
+        .then( ( lines ) => element.innerHTML += getBadgeWithLines( lines ) )
         .catch( ( e ) => log( 'e', e ) );
 }
 
-/**
- * Returns badge container for LOC
- * @return {html}
- */
-function getBadge() {
-    return ' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;"></span></div> ';
-}
 
 /**
  * Returns badge container for LOC with LOC
@@ -121,7 +123,7 @@ function getBadgeWithLines( lines ) {
  */
 function getGloc( repo, tries ) {
     if ( !repo ) return Promise.reject( new Error( 'No repositories !' ) );
-    if ( tries === 0 ) return Promise.reject( new Error( 'Too many requests to API !' ) );
+    if ( tries === 0 ) return Promise.reject( new Error( 'Repo: ' + repo + '; Too many requests to API !' ) );
 
     const url = tokenizeUrl( setApiUrl( repo ) );
 
@@ -337,5 +339,3 @@ const insertLocForDir = () => {
         getHtmlFile( link, parsePlainHTML );
     } );
 };
-
-insertLocForDir();
