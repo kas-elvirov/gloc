@@ -74,7 +74,7 @@ function insertLocForRepo() {
     }
 
     if ( repos ) {
-        links = Array.prototype.slice.call(repos);
+        let links = Array.prototype.slice.call(repos);
 
         links.map( function(elem) {
             let link = elem.getAttribute('href');

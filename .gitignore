@@ -108,4 +108,4 @@ jspm_packages
 
 # Builds
 /dist/
-./*.zip
+*.zip
