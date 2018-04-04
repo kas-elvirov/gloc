@@ -311,7 +311,7 @@ const insertLocForDir = () => {
 
         var totalLoc = 0;
 
-        for ( key in collection ) {
+        for ( var key in collection ) {
             arr.push( key + ' - ' + String( collection[key] ) );
             totalLoc += collection[key];
             arr.sort();

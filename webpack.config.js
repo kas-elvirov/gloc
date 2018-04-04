@@ -140,5 +140,5 @@ const ZipFiles = {
 module.exports = [
     JSconfig,
     HTMLconfig,
-    //ZipFiles,
+    ZipFiles,
 ];
