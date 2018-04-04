@@ -38,10 +38,6 @@ chrome.storage.sync.get( {'x-github-token': ''}, ( result ) => {
     if ( result && result['x-github-token'] != null ) githubToken = result['x-github-token'];
 
     insertLocForRepo();
-
-    $( document ).on( 'pjax:complete', () => {
-        insertLocForRepo();
-    } );
 } );
 
 /**
@@ -55,9 +51,7 @@ function insertLocForRepo() {
 
     // Add LOC to single repo
     if ( reposMetaContent ) {
-        reposMetaContent.innerHTML += getBadge();
-        const placeForLoc = document.getElementsByClassName( APP_CLASSNAME )[0];
-        appendLoc( getRepoName(), placeForLoc );
+        appendLoc( getRepoName() );
     }
 
     let repos = '';
@@ -95,7 +89,7 @@ function getRepoName() {
  * @param {*} repoName
  * @param {*} element
  */
-function appendLoc( repoName, element ) {
+function appendLoc( repoName, element = '' ) {
     getGloc( repoName, TRIES_DEFAULT )
         .then( ( lines ) => element.innerHTML += getBadgeWithLines( lines ))
         .catch( ( e ) => log( 'e', e ) );
