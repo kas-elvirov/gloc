@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require( 'path' );
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ZipFilesPlugin = require('webpack-zip-files-plugin');
 
 const JSconfig = {
     name: 'JS',
@@ -117,28 +116,7 @@ const HTMLconfig = {
     ],
 };
 
-const ZipFiles = {
-    name: 'ZIP',
-    entry: {
-        'inject': './src/inject.js',
-    },
-    output: {
-        path: __dirname + './dist',
-        filename: '[name].zip',
-    },
-    plugins: [
-        new ZipFilesPlugin({
-            entries: [
-                {src: path.join(__dirname, './dist'), dist: '/'},
-            ],
-            output: path.join(__dirname, './build'),
-            format: 'zip',
-        }),
-    ],
-};
-
 module.exports = [
     JSconfig,
     HTMLconfig,
-    //ZipFiles,
 ];
