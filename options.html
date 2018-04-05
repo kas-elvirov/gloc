@@ -71,7 +71,7 @@
 
 <body>
     <h1>Options</h1>
-    <p class="description--about-token">
+    <div class="description--about-token">
         <strong>GitHub</strong>
         <strong class="red">Gloc</strong> uses GitHub API. By default it makes unauthenticated requests to the GitHub API, set personal access
         token if you want to:
@@ -79,7 +79,11 @@
             <li>access a private repository</li>
             <li>bypass the rate limit of unauthenticated requests</li>
         </ul>
-    </p>
+    </div>
+
+    <div align="center">
+        <iframe src="https://ghbtns.com/github-btn.html?user=artem-solovev&repo=gloc&type=star&count=true" frameborder="0" scrolling="0" width="80px" height="30px" align="middle"></iframe>
+    </div>
 
     <div class="input--group">
         <input class="input-token" type="text" id="x-gloc-github-token" placeholder="Personal access token" />
