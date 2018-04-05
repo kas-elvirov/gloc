@@ -20,9 +20,9 @@ Counts lines of code in:
 
 
 ## Screens
-![Promo](img/ads_spoiler.jpg)
-![Project page](img/single_repo.jpg)
-![Many repos](img/many_repos.jpg)
+![Promo](screens/ads_spoiler.jpg)
+![Project page](screens/single_repo.jpg)
+![Many repos](screens/many_repos.jpg)
 
 
 ## Installation
