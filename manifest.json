@@ -1,10 +1,11 @@
 {
 	"manifest_version": 2,
+	"default_locale": "en",
 
-	"name": "GitHub Gloc",
-	"short_name": "Gloc",
-	"author": "Artem Solovev",
-	"description": "Сounts lines of code on GitHub",
+	"name": "__MSG_name__",
+	"short_name": "__MSG_shortName__",
+	"author": "__MSG_author__",
+	"description": "__MSG_description__",
 	"version": "7.5.2",
 
 	"browser_action": {

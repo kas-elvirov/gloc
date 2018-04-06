@@ -1,0 +1,50 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Artem Solovev"
+    },
+    "description": {
+        "message": "Сounts lines of code on GitHub"
+    },
+    "optionsTitle": {
+        "message": "Options"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "uses GitHub API. By default it makes unauthenticated requests to the GitHub API, set personal access token if you want to:"
+    },
+    "optionsAccess": {
+        "message": "access a private repository"
+    },
+    "optionsLimits": {
+        "message": "bypass the rate limit of unauthenticated requests"
+    },
+    "optionsInputToken": {
+        "message": "Personal access token"
+    },
+    "optionsSaveButton": {
+        "message": "Save"
+    },
+    "optionsCreateToken": {
+        "message": "create token"
+    },
+    "optionsTokenMustbeString": {
+        "message": "Access Token should be a String e.g."
+    },
+    "optionsTokenWrongLength": {
+        "message": "Access Token length appears wrong!"
+    },
+    "optionsTokenWalid": {
+        "message": "Token is valid."
+    },
+    "optionsSaved": {
+        "message": "Options saved!"
+    }
+}

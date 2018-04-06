@@ -1,0 +1,50 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Артем Соловьев"
+    },
+    "description": {
+        "message": "Считает строки кода на GitHub"
+    },
+    "optionsTitle": {
+        "message": "Настройки"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "использует GitHub API. По умолчанию он выполняет неаутентифицированные запросы к GitHub API. Установите токен доступа если хотите:"
+    },
+    "optionsAccess": {
+        "message": "получить доступ к приватному репозиторию"
+    },
+    "optionsLimits": {
+        "message": "избавиться от ограничений неаутентифицированных запросов"
+    },
+    "optionsInputToken": {
+        "message": "Персональный токен доступа"
+    },
+    "optionsSaveButton": {
+        "message": "Сохранить"
+    },
+    "optionsCreateToken": {
+        "message": "создать токен"
+    },
+    "optionsTokenMustbeString": {
+        "message": "Токен должен быть строкой, например"
+    },
+    "optionsTokenWrongLength": {
+        "message": "Неправильная длина токена доступа!"
+    },
+    "optionsTokenWalid": {
+        "message": "Токен действителен."
+    },
+    "optionsSaved": {
+        "message": "Настройки сохранены!"
+    }
+}

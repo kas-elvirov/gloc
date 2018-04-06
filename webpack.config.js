@@ -112,6 +112,10 @@ const HTMLconfig = {
                 from: 'manifest.json',
                 to: 'manifest.json',
             },
+            {
+                from: '_locales',
+                to: '_locales',
+            },
         ]),
     ],
 };

@@ -70,14 +70,14 @@
 </head>
 
 <body>
-    <h1>Options</h1>
+    <h1 id="optionsTitle">Options</h1>
     <div class="description--about-token">
-        <strong>GitHub</strong>
-        <strong class="red">Gloc</strong> uses GitHub API. By default it makes unauthenticated requests to the GitHub API, set personal access
-        token if you want to:
+        <strong id="github">GitHub</strong>
+        <strong id="shortName" class="red">Gloc</strong> <span id="optionsUlDescription">uses GitHub API. By default it makes unauthenticated requests to the GitHub API, set personal access
+        token if you want to:</span>
         <ul>
-            <li>access a private repository</li>
-            <li>bypass the rate limit of unauthenticated requests</li>
+            <li id="optionsAccess">access a private repository</li>
+            <li id="optionsLimits">bypass the rate limit of unauthenticated requests</li>
         </ul>
     </div>
 
@@ -91,7 +91,7 @@
         <input class="button" type="button" id="save-button" value="Save" />
     </div>
 
-    <a href="https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC" target="_blank">create token</a>
+    <a id="optionsCreateToken" href="https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC" target="_blank">create token</a>
 
     <div class="status--box">
         <span id="status-text"></span>
