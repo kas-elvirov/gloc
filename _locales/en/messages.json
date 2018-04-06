@@ -70,5 +70,20 @@
     },
     "indexEtc": {
         "message": "etc."
+    },
+    "attentionPlease": {
+        "message": "May I have your attention, please?"
+    },
+    "translateOurApp": {
+        "message": "Help us translate this app"
+    },
+    "totalDirLoc": {
+        "message": "Total lines in the current directory:"
+    },
+    "totalExtLoc": {
+        "message": "By extensions:"
+    },
+    "lines": {
+        "message": "lines"
     }
 }

@@ -16,6 +16,10 @@ Counts lines of code in:
 - search results page, 
 - trending page.
 
+## Supported languages
+- English
+- Russian
+
 **Gloc** means - 'Github lines of code counter'
 
 

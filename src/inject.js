@@ -111,7 +111,7 @@ function appendLoc( repoName, element = '' ) {
  * @return {html}
  */
 function getBadgeWithLines( lines ) {
-    return ' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">lines</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;">' + lines + '</span></div> ';
+    return ' <div class="box" style = "font-size: 0; font-family: Verdana;"><span style = "background-color: #555555; color: #fff; padding: 2px 6px; font-size: 14px;">' + chrome.i18n.getMessage( 'lines' ) + '</span><span class="' + APP_CLASSNAME + '" style = "background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;">' + lines + '</span></div> ';
 }
 
 
@@ -295,7 +295,7 @@ const insertLocForDir = () => {
             commitTease.appendChild( locDisplay );
         }
 
-        const locTitle = '<hr /><span class="user-mention">Total lines in the current directory:</span> ';
+        const locTitle = '<hr /><span class="user-mention">' + chrome.i18n.getMessage( 'totalDirLoc' ) + '</span> ';
 
         locDisplay.innerHTML = locTitle + stringifyLocCollection( locCollection );
     };
@@ -317,7 +317,7 @@ const insertLocForDir = () => {
             arr.sort();
         }
 
-        return totalLoc + '<br /> <span class="user-mention">By extensions:</span><br /> &nbsp;' + arr.join( ',<br />&nbsp;' );
+        return totalLoc + '<br /> <span class="user-mention">' + chrome.i18n.getMessage( 'totalExtLoc' ) + '</span><br /> &nbsp;' + arr.join( ',<br />&nbsp;' );
     };
 
 
@@ -328,7 +328,7 @@ const insertLocForDir = () => {
      */
     const renderLocForFile = ( link, loc ) => {
         // console.log( str ) --> .eslintrc.js 00 lines
-        const str = link.title + '<span style="color:#888"> ' + loc + ' lines</span>';
+        const str = link.title + '<span style="color:#888"> ' + loc + ' ' + chrome.i18n.getMessage( 'lines' ) + '</span>';
         document.getElementById( link.id ).innerHTML = str;
     };
 

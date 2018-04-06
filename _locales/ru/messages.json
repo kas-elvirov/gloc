@@ -70,5 +70,20 @@
     },
     "indexEtc": {
         "message": "и тд."
+    },
+    "attentionPlease": {
+        "message": "Можно чуточку вашего внимания?"
+    },
+    "translateOurApp": {
+        "message": "Помогите нам перевести это расширение"
+    },
+    "totalDirLoc": {
+        "message": "Итого строк кода в текущей директории:"
+    },
+    "totalExtLoc": {
+        "message": "По типам файлов:"
+    },
+    "lines": {
+        "message": "строк"
     }
 }

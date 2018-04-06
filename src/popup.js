@@ -32,4 +32,10 @@
 
     let indexEtc = document.getElementById( 'indexEtc' );
     indexEtc.innerHTML = chrome.i18n.getMessage( 'indexEtc' );
+
+    let attentionPlease = document.getElementById( 'attentionPlease' );
+    attentionPlease.innerHTML = chrome.i18n.getMessage( 'attentionPlease' );
+
+    let translateOurApp = document.getElementById( 'translateOurApp' );
+    translateOurApp.innerHTML = chrome.i18n.getMessage( 'translateOurApp' );
 })();
