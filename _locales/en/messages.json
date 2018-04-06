@@ -46,5 +46,29 @@
     },
     "optionsSaved": {
         "message": "Options saved!"
+    },
+    "addToken": {
+        "message": "Add Github Token"
+    },
+    "indexWorksOnly": {
+        "message": "Works only on"
+    },
+    "indexCountsFrom": {
+        "message": "Counts the number of lines of code of a project from:"
+    },
+    "indexProjectPage": {
+        "message": "project detail page"
+    },
+    "indexUserPage": {
+        "message": "user page"
+    },
+    "indexSearchPage": {
+        "message": "search results page"
+    },
+    "indexTrandingPage": {
+        "message": "trending page"
+    },
+    "indexEtc": {
+        "message": "etc."
     }
 }

@@ -46,5 +46,29 @@
     },
     "optionsSaved": {
         "message": "Настройки сохранены!"
+    },
+    "addToken": {
+        "message": "Добавить Github токен"
+    },
+    "indexWorksOnly": {
+        "message": "Работает только на"
+    },
+    "indexCountsFrom": {
+        "message": "Считает строки кода со следующих страниц:"
+    },
+    "indexProjectPage": {
+        "message": "отдельный репозиторий"
+    },
+    "indexUserPage": {
+        "message": "репозитории пользователя"
+    },
+    "indexSearchPage": {
+        "message": "результаты поиска"
+    },
+    "indexTrandingPage": {
+        "message": "трендовая страница"
+    },
+    "indexEtc": {
+        "message": "и тд."
     }
 }
