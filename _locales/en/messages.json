@@ -54,7 +54,7 @@
         "message": "Works only on"
     },
     "indexCountsFrom": {
-        "message": "Counts the number of lines of code of a project from:"
+        "message": "Counts lines of code from:"
     },
     "indexProjectPage": {
         "message": "project detail page"
