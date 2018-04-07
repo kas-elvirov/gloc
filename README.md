@@ -4,7 +4,7 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.6.6** ( 2018, 07 april )
+## **Current version: 7.6.7** ( 2018, 07 april )
 
 
 ## Description
@@ -22,6 +22,7 @@ Counts lines of code in:
 - Portuguese (Brazil)
 - Russian
 - Spanish (Latin America and Caribbean)
+- Ukrainian
 
 **Gloc** means - 'Github lines of code counter'
 
