@@ -4,7 +4,7 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.6.3** ( 2018, 07 april )
+## **Current version: 7.6.4** ( 2018, 07 april )
 
 
 ## Description

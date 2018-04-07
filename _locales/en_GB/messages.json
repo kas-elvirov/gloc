@@ -1,0 +1,89 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Artem Solovev"
+    },
+    "description": {
+        "message": "Сounts lines of code on GitHub"
+    },
+    "optionsTitle": {
+        "message": "Options"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "uses GitHub API. By default it makes unauthenticated requests to the GitHub API, set personal access token if you want to:"
+    },
+    "optionsAccess": {
+        "message": "access a private repository"
+    },
+    "optionsLimits": {
+        "message": "bypass the rate limit of unauthenticated requests"
+    },
+    "optionsInputToken": {
+        "message": "Personal access token"
+    },
+    "optionsSaveButton": {
+        "message": "Save"
+    },
+    "optionsCreateToken": {
+        "message": "create token"
+    },
+    "optionsTokenMustbeString": {
+        "message": "Access Token should be a String e.g."
+    },
+    "optionsTokenWrongLength": {
+        "message": "Access Token length appears wrong!"
+    },
+    "optionsTokenWalid": {
+        "message": "Token is valid."
+    },
+    "optionsSaved": {
+        "message": "Options saved!"
+    },
+    "addToken": {
+        "message": "Add Github Token"
+    },
+    "indexWorksOnly": {
+        "message": "Works only on"
+    },
+    "indexCountsFrom": {
+        "message": "Counts lines of code from:"
+    },
+    "indexProjectPage": {
+        "message": "project detail page"
+    },
+    "indexUserPage": {
+        "message": "user page"
+    },
+    "indexSearchPage": {
+        "message": "search results page"
+    },
+    "indexTrandingPage": {
+        "message": "trending page"
+    },
+    "indexEtc": {
+        "message": "etc."
+    },
+    "attentionPlease": {
+        "message": "May I have your attention, please?"
+    },
+    "translateOurApp": {
+        "message": "Help us translate this app"
+    },
+    "totalDirLoc": {
+        "message": "Total lines in the current directory:"
+    },
+    "totalExtLoc": {
+        "message": "By extensions:"
+    },
+    "lines": {
+        "message": "lines"
+    }
+}
