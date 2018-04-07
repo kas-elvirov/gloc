@@ -4,7 +4,7 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.6.5** ( 2018, 07 april )
+## **Current version: 7.6.6** ( 2018, 07 april )
 
 
 ## Description
@@ -17,6 +17,7 @@ Counts lines of code in:
 - trending page.
 
 ## Supported languages
+- Arabic
 - English
 - Portuguese (Brazil)
 - Russian
