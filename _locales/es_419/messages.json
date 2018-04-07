@@ -1,0 +1,89 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Artem Solovev"
+    },
+    "description": {
+        "message": "Cuenta las líneas de código en GitHub"
+    },
+    "optionsTitle": {
+        "message": "Opciones"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "utiliza la API de github. De forma predeterminada, éste realiza solicitudes no autentificadas en la API de Github, defina el token de acceso personal si usted lo desea:"
+    },
+    "optionsAccess": {
+        "message": "accesar a un depósito privado"
+    },
+    "optionsLimits": {
+        "message": "omitir el límite de rango de solicitudes no autentificadas"
+    },
+    "optionsInputToken": {
+        "message": "token personal de acceso"
+    },
+    "optionsSaveButton": {
+        "message": "Guardar"
+    },
+    "optionsCreateToken": {
+        "message": "crear token"
+    },
+    "optionsTokenMustbeString": {
+        "message": "El token de acceso debe ser una cuerda e.g"
+    },
+    "optionsTokenWrongLength": {
+        "message": "¡La longitud del token de acceso es incorrecta!"
+    },
+    "optionsTokenWalid": {
+        "message": "El token es válido."
+    },
+    "optionsSaved": {
+        "message": "Opciones guardadas!"
+    },
+    "addToken": {
+        "message": "Añadir token de Github"
+    },
+    "indexWorksOnly": {
+        "message": "Sólo funciona en"
+    },
+    "indexCountsFrom": {
+        "message": "Cuenta el número de líneas de código de un proyecto de:"
+    },
+    "indexProjectPage": {
+        "message": "página de los detalles del proyecto"
+    },
+    "indexUserPage": {
+        "message": "página del usuario"
+    },
+    "indexSearchPage": {
+        "message": "página de búsqueda de resultados"
+    },
+    "indexTrandingPage": {
+        "message": "página de tendencias"
+    },
+    "indexEtc": {
+        "message": "etcétera."
+    },
+    "attentionPlease": {
+        "message": "¿Puedo tener su atención, por favor?"
+    },
+    "translateOurApp": {
+        "message": "Ayúdanos a traducir esta página"
+    },
+    "totalDirLoc": {
+        "message": "Total de líneas en el directorio actual:"
+    },
+    "totalExtLoc": {
+        "message": "Por extensiones:"
+    },
+    "lines": {
+        "message": "líneas"
+    }
+}

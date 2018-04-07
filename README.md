@@ -4,7 +4,7 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.6.2** ( 2018, 07 april )
+## **Current version: 7.6.3** ( 2018, 07 april )
 
 
 ## Description
@@ -20,6 +20,7 @@ Counts lines of code in:
 - English
 - Portuguese (Brazil)
 - Russian
+- Spanish (Latin America and Caribbean)
 
 **Gloc** means - 'Github lines of code counter'
 
@@ -45,3 +46,4 @@ Counts lines of code in:
 * App icon made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
 * Ads icon made by [SimpleIcon](https://www.flaticon.com/authors/simpleicon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
 * [Suzana Gonçalves](https://www.facebook.com/suzana.goncalves.9041) - translation into Portuguese (Brazil)
+* [Kassandra Palma](https://www.facebook.com/kazzandra666) - translation into Spanish (Latin America and Caribbean)
