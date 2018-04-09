@@ -4,7 +4,7 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.6.7** ( 2018, 07 april )
+## **Current version: 7.6.8** ( 2018, 07 april )
 ## **Initial release 2.0.1** ( 2017, 12 february )
 
 
@@ -19,7 +19,10 @@ Counts lines of code in:
 
 ## Supported languages
 - Arabic
+- Chinese (Taiwan)
 - English
+- English (UK)
+- English (US)
 - Portuguese (Brazil)
 - Russian
 - Spanish (Latin America and Caribbean)
@@ -44,9 +47,14 @@ Counts lines of code in:
 * **[Issues, bugs](https://github.com/artem-solovev/gloc/issues)**
 * **[Privacy policy](PRIVACY.md)**
 
+___
 
-## **Credits**
+
+## ![love y'all](screens/heart.png)  **Credits** 
+### Assets
 * App icon made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
 * Ads icon made by [SimpleIcon](https://www.flaticon.com/authors/simpleicon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+### Translation
 * [Suzana Gonçalves](https://www.facebook.com/suzana.goncalves.9041) - translation into Portuguese (Brazil)
 * [Kassandra Palma](https://www.facebook.com/kazzandra666) - translation into Spanish (Latin America and Caribbean)
+* [Lawrence Chou](https://github.com/choznerol) - translation into Chinese (Taiwan)
