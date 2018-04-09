@@ -4,7 +4,7 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.6.8** ( 2018, 07 april )
+## **Current version: 7.6.9** ( 2018, 09 april )
 ## **Initial release 2.0.1** ( 2017, 12 february )
 
 
@@ -58,3 +58,4 @@ ___
 * [Suzana Gonçalves](https://www.facebook.com/suzana.goncalves.9041) - translation into Portuguese (Brazil)
 * [Kassandra Palma](https://www.facebook.com/kazzandra666) - translation into Spanish (Latin America and Caribbean)
 * [Lawrence Chou](https://github.com/choznerol) - translation into Chinese (Taiwan)
+* [Maria Markhaichuk](https://www.facebook.com/marhaychuk) - translation into Ukranian

@@ -9,19 +9,19 @@
         "message": "Artem Solovev"
     },
     "description": {
-        "message": "Складає рядки коду на GitHub"
+        "message": "Підраховує рядки коду на GitHub"
     },
     "optionsTitle": {
-        "message": "Параметри"
+        "message": "Опції"
     },
     "github": {
         "message": "GitHub"
     },
     "optionsUlDescription": {
-        "message": "використовує API GitHub. За замовчуванням він робить неавтентифіковані запити до API GitHub, встановлюйте токен особистого доступу, якщо ви хочете:"
+        "message": "використовує API GitHub. За замовчуванням він робить неавтентифіковані запити до API GitHub, встановіть токен особистого доступу, якщо хочете:"
     },
     "optionsAccess": {
-        "message": "доступ до приватного сховища"
+        "message": "отримати доступ до приватного репозиторію"
     },
     "optionsLimits": {
         "message": "обійти обмеження швидкості неавтентифікованих запитів"
@@ -39,7 +39,7 @@
         "message": "Токен доступу повинен бути рядком, наприклад"
     },
     "optionsTokenWrongLength": {
-        "message": "Довжина токена доступу виглядає неправильною!"
+        "message": "Неприпустима довжина токена доступу!"
     },
     "optionsTokenWalid": {
         "message": "Токен дійсний."
@@ -48,16 +48,16 @@
         "message": "Опції збережено!"
     },
     "addToken": {
-        "message": "Додати Github Token"
+        "message": "Додати токен Github"
     },
     "indexWorksOnly": {
-        "message": "Працює лише на"
+        "message": "Працює тільки на"
     },
     "indexCountsFrom": {
-        "message": "Складає рядки коду з:"
+        "message": "Підраховує кількість рядків коду проекту з:"
     },
     "indexProjectPage": {
-        "message": "детальна сторінка проекту"
+        "message": "сторінка з подробицями проекту"
     },
     "indexUserPage": {
         "message": "сторінка користувача"
@@ -66,16 +66,16 @@
         "message": "сторінка результатів пошуку"
     },
     "indexTrandingPage": {
-        "message": "Тенденційна сторінка"
+        "message": "трендова сторінка"
     },
     "indexEtc": {
         "message": "тощо."
     },
     "attentionPlease": {
-        "message": "Чи можу я звернути вашу увагу, будь ласка?"
+        "message": "Можете приділити хвилину уваги, будь ласка?"
     },
     "translateOurApp": {
-        "message": "Допоможіть нам перекласти цю програму"
+        "message": "Допоможіть нам перекласти цей додаток"
     },
     "totalDirLoc": {
         "message": "Загальна кількість рядків в поточному каталозі:"
