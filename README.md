@@ -4,7 +4,7 @@
 ___
 
 # Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.6.9** ( 2018, 09 april )
+## **Current version: 7.6.10** ( 2018, 11 april )
 ## **Initial release 2.0.1** ( 2017, 12 february )
 
 
@@ -23,6 +23,7 @@ Counts lines of code in:
 - English
 - English (UK)
 - English (US)
+- German
 - Portuguese (Brazil)
 - Russian
 - Spanish (Latin America and Caribbean)
@@ -59,3 +60,4 @@ ___
 * [Kassandra Palma](https://www.facebook.com/kazzandra666) - translation into Spanish (Latin America and Caribbean)
 * [Lawrence Chou](https://github.com/choznerol) - translation into Chinese (Taiwan)
 * [Maria Markhaichuk](https://www.facebook.com/marhaychuk) - translation into Ukranian
+* [Rahmi Tufanoglu](https://github.com/RahmiTufanoglu) - translation into German
