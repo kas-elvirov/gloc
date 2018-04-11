@@ -1,0 +1,89 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Artem Solovev"
+    },
+    "description": {
+        "message": "Anzahl der Codezeilen auf GitHub"
+    },
+    "optionsTitle": {
+        "message": "Optionen"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "verwendet die GitHub API. Standardmäßig macht es unauthentifizierte Anforderungen an die GitHub API , setzt persönliche Zugangs-Token wenn du:"
+    },
+    "optionsAccess": {
+        "message": "auf eine persönliche Repository zugreifen möchtest"
+    },
+    "optionsLimits": {
+        "message": "das Ratenlimit von nicht authentifizierten Anfragen umgehen möchtest"
+    },
+    "optionsInputToken": {
+        "message": "Persönliches Zugriffstoken"
+    },
+    "optionsSaveButton": {
+        "message": "Speichern"
+    },
+    "optionsCreateToken": {
+        "message": "Token erstellen"
+    },
+    "optionsTokenMustbeString": {
+        "message": "Zugriffstoken sollte ein String sein, z.B:"
+    },
+    "optionsTokenWrongLength": {
+        "message": "Access Token length appears wrong!"
+    },
+    "optionsTokenWalid": {
+        "message": "Token ist gültig."
+    },
+    "optionsSaved": {
+        "message": "Optionen gespeichert!"
+    },
+    "addToken": {
+        "message": "Github Token hinzufügen"
+    },
+    "indexWorksOnly": {
+        "message": "Funktioniert nur auf"
+    },
+    "indexCountsFrom": {
+        "message": "Zählt die Anzahl der Codezeilen eines Projektes aus:"
+    },
+    "indexProjectPage": {
+        "message": "projekdetailseite"
+    },
+    "indexUserPage": {
+        "message": "benutzerseite"
+    },
+    "indexSearchPage": {
+        "message": "suchergebnissseite"
+    },
+    "indexTrandingPage": {
+        "message": "trendseite"
+    },
+    "indexEtc": {
+        "message": "etc."
+    },
+    "attentionPlease": {
+        "message": "Dürfte ich um Ihre Aufmerksamkeit bitten?"
+    },
+    "translateOurApp": {
+        "message": "Helfen Sie uns, diese App zu übersetzen"
+    },
+    "totalDirLoc": {
+        "message": "Gesamtzahl der Zeilen im aktuellen Verzeichnis:"
+    },
+    "totalExtLoc": {
+        "message": "Durch Erweiterungen:"
+    },
+    "lines": {
+        "message": "linien"
+    }
+}
