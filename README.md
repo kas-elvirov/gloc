@@ -60,4 +60,4 @@ ___
 * [Kassandra Palma](https://www.facebook.com/kazzandra666) - translation into Spanish (Latin America and Caribbean)
 * [Lawrence Chou](https://github.com/choznerol) - translation into Chinese (Taiwan)
 * [Maria Markhaichuk](https://www.facebook.com/marhaychuk) - translation into Ukranian
-* [Rahmi Tufanoglu](https://github.com/RahmiTufanoglu) - translation into German
+* [Rahmi Tufanoglu](https://twitter.com/rahmitufanoglu) - translation into German
