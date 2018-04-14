@@ -18,7 +18,7 @@
         "message": "GitHub"
     },
     "optionsUlDescription": {
-        "message": "verwendet die GitHub API. Standardmäßig macht es unauthentifizierte Anforderungen an die GitHub API , setzt persönliche Zugangs-Token wenn du:"
+        "message": "verwendet die GitHub API. In der Regel macht es unauthentifizierte Anforderungen an die GitHub API , setzt persönliche Zugangs-Token wenn du:"
     },
     "optionsAccess": {
         "message": "auf eine persönliche Repository zugreifen möchtest"
