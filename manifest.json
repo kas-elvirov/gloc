@@ -24,7 +24,7 @@
 		{
 			"matches": ["*://github.com/*"],
 
-			"js": ["src/inject.js", "src/optipic.js"]
+			"js": ["src/inject.js"]
 		}
 	],
 
@@ -38,6 +38,7 @@
 	"icons": {
 		"16": "img/icon16.png",
 		"32": "img/icon32.png",
+		"64": "img/icon64.png",
 		"128": "img/icon128.png"
 	}
 }
