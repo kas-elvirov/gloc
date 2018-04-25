@@ -3,8 +3,10 @@
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)]()
 ___
 
-# Chrome extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
-## **Current version: 7.6.11** ( 2018, 11 april )
+# Browser extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
+![Chrome](screens/browsers/chrome.png)
+![Opera](screens/browsers/opera.png)
+## **Current version: 7.6.12** ( 2018, 25 april )
 ## **Initial release 2.0.1** ( 2017, 12 february )
 
 
@@ -53,8 +55,10 @@ ___
 
 ## ![love y'all](screens/heart.png)  **Credits** 
 ### Assets
-* App icon made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+* App [icon](https://www.flaticon.com/free-icon/github_23586#term=github&page=1&position=15) made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
 * Ads icon made by [SimpleIcon](https://www.flaticon.com/authors/simpleicon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+* Browser's [icons](https://www.flaticon.com/packs/logo-502) made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+
 ### Translation
 * [Suzana Gonçalves](https://www.facebook.com/suzana.goncalves.9041) - translation into Portuguese (Brazil)
 * [Kassandra Palma](https://www.facebook.com/kazzandra666) - translation into Spanish (Latin America and Caribbean)

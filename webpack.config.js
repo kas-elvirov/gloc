@@ -9,7 +9,6 @@ const JSconfig = {
         'background': './src/background.js',
         'inject': './src/inject.js',
         'options': './src/options.js',
-        'optipic': './src/optipic.js',
         'popup': './src/popup.js',
     },
     output: {
