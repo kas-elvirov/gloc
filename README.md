@@ -3,10 +3,10 @@
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)]()
 ___
 
-# Browser extension [GLOC](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon)
+# Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera]() )
 ![Chrome](screens/browsers/chrome.png)
 ![Opera](screens/browsers/opera.png)
-## **Current version: 7.6.12** ( 2018, 25 april )
+## **Current version: 7.6.13** ( 2018, 02 may )
 ## **Initial release 2.0.1** ( 2017, 12 february )
 
 
@@ -65,3 +65,4 @@ ___
 * [Lawrence Chou](https://github.com/choznerol) - translation into Chinese (Taiwan)
 * [Maria Markhaichuk](https://www.facebook.com/marhaychuk) - translation into Ukranian
 * [Rahmi Tufanoglu](https://twitter.com/rahmitufanoglu) - translation into German
+* [Jonny Hsy](https://github.com/jonnyhsy) - translation into Chinese (China)
