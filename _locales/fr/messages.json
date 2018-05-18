@@ -1,0 +1,89 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Artem Solovev"
+    },
+    "description": {
+        "message": "Compte les lignes de code sur GitHub"
+    },
+    "optionsTitle": {
+        "message": "Options"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "utilise l'API GitHub. Par défaut, il effectue un accès non priviliégié à l'API. En lui attribuant votre token d'accès personnel, l'outil pourra effectuer les actions suivantes :"
+    },
+    "optionsAccess": {
+        "message": "accéder aux dépôts privés"
+    },
+    "optionsLimits": {
+        "message": "ignorer la limite du nombre d'accès non privilégiés"
+    },
+    "optionsInputToken": {
+        "message": "Token d'accès personnel"
+    },
+    "optionsSaveButton": {
+        "message": "Sauvegarder"
+    },
+    "optionsCreateToken": {
+        "message": "créer un token"
+    },
+    "optionsTokenMustbeString": {
+        "message": "Le token d'accès doit être une chaîne de caractères String. Exemple : "
+    },
+    "optionsTokenWrongLength": {
+        "message": "La taille du token d'accès est incorrect !"
+    },
+    "optionsTokenWalid": {
+        "message": "Le token est valide."
+    },
+    "optionsSaved": {
+        "message": "Options sauvegardées !"
+    },
+    "addToken": {
+        "message": "Ajouter un token GitHub"
+    },
+    "indexWorksOnly": {
+        "message": "Fonctionne seulement sur"
+    },
+    "indexCountsFrom": {
+        "message": "Compte le nombre de lignes de code dans :"
+    },
+    "indexProjectPage": {
+        "message": "page de détails d'un projet"
+    },
+    "indexUserPage": {
+        "message": "page utilisateur"
+    },
+    "indexSearchPage": {
+        "message": "page de résultats de recherche"
+    },
+    "indexTrandingPage": {
+        "message": "page des dépôts populaires"
+    },
+    "indexEtc": {
+        "message": "etc."
+    },
+    "attentionPlease": {
+        "message": "Pouvez-vous nous aider, sîl vous plaît ?"
+    },
+    "translateOurApp": {
+        "message": "Contribuer à notre traduction"
+    },
+    "totalDirLoc": {
+        "message": "Total des lignes dans le répertoire actuel:"
+    },
+    "totalExtLoc": {
+        "message": "Par extensions:"
+    },
+    "lines": {
+        "message": "lignes"
+    }
+}
