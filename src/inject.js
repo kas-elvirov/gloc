@@ -29,34 +29,6 @@ const log = ( type, str ) => {
     }
 };
 
-/**
- *
- */
-function glock() {
-    return new Promise( ( resolve, reject ) => {
-        console.log('It is done.');
-        // Succeed half of the time.
-        if (Math.random() > .5) {
-            resolve('SUCCESS');
-        } else {
-            reject('FAILURE');
-        }
-    });
-}
-
-function successCallback( result ) {
-    console.log( result );
-}
-function failureCallback( result ) {
-    console.log( result );
-}
-function finish(  ) {
-    console.log( 'DOnE!' );
-}
-
-const promise = doSomething();
-promise.then( successCallback, failureCallback ).then( finish );
-
 
 /**
  * Main
