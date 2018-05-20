@@ -1,0 +1,89 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Artem Solovev"
+    },
+    "description": {
+        "message": "GitHubでコードの行数を数えてくれます。"
+    },
+    "optionsTitle": {
+        "message": "設定"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "はGitHub APIに基づいているため、全ての機能使用するにはを認証用のトークンが必要となります。貴方がそのトークンを発行することで、この拡張機能に以下の権限を与えます："
+    },
+    "optionsAccess": {
+        "message": "プライベートリポジトリへのアクセス"
+    },
+    "optionsLimits": {
+        "message": "アクセス回数の制限を解除"
+    },
+    "optionsInputToken": {
+        "message": "個人認証トークン"
+    },
+    "optionsSaveButton": {
+        "message": "保存"
+    },
+    "optionsCreateToken": {
+        "message": "トークンを発行する"
+    },
+    "optionsTokenMustbeString": {
+        "message": "認証トークンは文字列でなければありません。例："
+    },
+    "optionsTokenWrongLength": {
+        "message": "認証トークンの長さが異常です！"
+    },
+    "optionsTokenWalid": {
+        "message": "トークンは有効です。"
+    },
+    "optionsSaved": {
+        "message": "設定が保存されました！"
+    },
+    "addToken": {
+        "message": "GitHubトークンを追加する"
+    },
+    "indexWorksOnly": {
+        "message": "次のサイト専用です："
+    },
+    "indexCountsFrom": {
+        "message": "以下の項目でコードの行数を数えてくれます："
+    },
+    "indexProjectPage": {
+        "message": "プロジェクトの詳細ページ"
+    },
+    "indexUserPage": {
+        "message": "ユーザーページ"
+    },
+    "indexSearchPage": {
+        "message": "検索結果一覧"
+    },
+    "indexTrandingPage": {
+        "message": "トレンドページ"
+    },
+    "indexEtc": {
+        "message": "その他"
+    },
+    "attentionPlease": {
+        "message": "このツールに協力しませんか？"
+    },
+    "translateOurApp": {
+        "message": "翻訳に協力する"
+    },
+    "totalDirLoc": {
+        "message": "このリポジトリの合計行数 :"
+    },
+    "totalExtLoc": {
+        "message": "拡張子毎の行数："
+    },
+    "lines": {
+        "message": "行数"
+    }
+}

@@ -6,7 +6,7 @@ ___
 # Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera]() )
 ![Chrome](screens/browsers/chrome.png)
 ![Opera](screens/browsers/opera.png)
-## **Current version: 7.6.15** ( 2018, 19 may )
+## **Current version: 7.6.17** ( 2018, 20 may )
 ## **Initial release 2.0.1** ( 2017, 12 february )
 
 
@@ -66,4 +66,5 @@ ___
 * [Maria Markhaichuk](https://www.facebook.com/marhaychuk) - translation into Ukranian
 * [Rahmi Tufanoglu](https://twitter.com/rahmitufanoglu) - translation into German
 * [Jonny Hsy](https://github.com/jonnyhsy) - translation into Chinese (China)
-* [Ryo SHIINA](https://github.com/pooch-tonic) - translation into French (China)
+* [Ryo SHIINA](https://github.com/pooch-tonic) - translation into French
+* [Ryo SHIINA](https://github.com/pooch-tonic) - translation into Japanese
