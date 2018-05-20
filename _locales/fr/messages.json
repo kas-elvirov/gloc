@@ -78,7 +78,7 @@
         "message": "Contribuer à notre traduction"
     },
     "totalDirLoc": {
-        "message": "Total des lignes dans le répertoire actuel:"
+        "message": "Nombre total de lignes dans ce répertoire:"
     },
     "totalExtLoc": {
         "message": "Par extensions:"
