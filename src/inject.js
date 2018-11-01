@@ -175,6 +175,7 @@ const insertLocForDir = () => {
         'gitignore',
         'h', 'hs', 'hpp', 'html', 'haml',
         'java', 'js', 'json', 'jsp', 'jade', 'jsx',
+        'kt', 'kts',
         'lisp', 'lua', 'less',
         'm', 'md', 'mk', 'mm',
         'pas', 'php', 'pl', 'prl', 'pxd', 'py', 'pyx',
