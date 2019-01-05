@@ -182,6 +182,7 @@ const insertLocForDir = () => {
         's', 'ss', 'scala', 'ser', 'sh', 'sql', 'swift', 'svg', 'sass', 'scss',
         'ts',
         'tmpl', 'tpl', 'tsx',
+        'ui',
         'vb',
         'win',
         'xml',
