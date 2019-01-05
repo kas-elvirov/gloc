@@ -177,7 +177,7 @@ const insertLocForDir = () => {
         'java', 'js', 'json', 'jsp', 'jade', 'jsx',
         'lisp', 'lua', 'less',
         'm', 'md', 'mk', 'mm',
-        'pas', 'php', 'pl', 'prl', 'pxd', 'py', 'pyx',
+        'pas', 'php', 'pl', 'prl', 'pxd', 'py', 'pyx', 'pyw',
         'r', 'rb',
         's', 'ss', 'scala', 'ser', 'sh', 'sql', 'swift', 'svg', 'sass', 'scss',
         'ts',
