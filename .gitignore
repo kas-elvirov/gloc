@@ -109,3 +109,6 @@ jspm_packages
 # Builds
 /dist/
 *.zip
+
+# Token
+.token
