@@ -2,15 +2,18 @@ const webpack = require('webpack');
 const path = require( 'path' );
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const JSconfig = {
+    mode: 'production',
     name: 'JS',
     entry: {
         'background': './src/background.js',
-        'inject': './src/inject.js',
+        'inject': './src/inject.ts',
         'options': './src/options.js',
         'popup': './src/popup.js',
     },
+    devtool: 'inline-source-map',
     output: {
         path: path.resolve( __dirname, 'dist/src/' ),
         filename: '[name].js',
@@ -20,24 +23,39 @@ const JSconfig = {
             'node_modules',
         ],
     },
+    resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ]
+    },
     module: {
         rules: [
             {
                 use: 'babel-loader',
                 test: /\.js$/,
             },
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }
         ],
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            include: /\.js$/,
-            minimize: true,
+        new UglifyJsPlugin({
+            cache: true,
+            parallel: true,
+            uglifyOptions: {
+            compress: false,
+            ecma: 6,
+            mangle: true
+            },
+            sourceMap: true
         }),
     ],
 };
 
 const HTMLconfig = {
     name: 'HTML',
+    mode: 'production',
     entry: {
         'index': './index.html',
         'options': './options.html',

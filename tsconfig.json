@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"noImplicitAny": true,
+		"module": "ES6",
+		"baseUrl": "types",
+		"typeRoots": ["types"],
+		"allowJs": true,
+		"types": ["chrome"],
+		"lib": ["es2015.core", "dom", "es6"],
+		"sourceMap": true,
+		"plugins": [
+			{
+			  "name": "typescript-tslint-plugin",
+			  "alwaysShowRuleFailuresAsWarnings": false,
+			  "ignoreDefinitionFiles": true,
+			  "configFile": "./tslint.json",
+			  "suppressWhileTypeErrorsPresent": false,
+			  "mockTypeScriptVersion": false
+			}
+		]
+	}
+}

@@ -9,7 +9,7 @@
  * - LOC - lines of code
  */
 
-let githubToken;
+let githubToken: string = null;
 const APP_NAME = 'GitHub Gloc';
 const APP_CLASSNAME = 'github-gloc';
 const TRIES_DEFAULT = 5;
