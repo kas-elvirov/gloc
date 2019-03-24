@@ -8,10 +8,10 @@ const JSconfig = {
     mode: 'production',
     name: 'JS',
     entry: {
-        'background': './src/background.js',
+        'background': './src/background.ts',
         'inject': './src/inject.ts',
-        'options': './src/options.js',
-        'popup': './src/popup.js',
+        'options': './src/options.ts',
+        'popup': './src/popup.ts',
     },
     devtool: 'inline-source-map',
     output: {
