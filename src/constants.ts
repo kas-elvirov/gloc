@@ -1,7 +1,7 @@
 export const APP_NAME = 'GitHub Gloc';
 export const APP_CLASSNAME = 'github-gloc';
 export const TRIES_DEFAULT = 5;
-export const REPO_CLASS = 'repository-meta-content';
+export const REPO_CLASS = 'public';
 
 export const MESSAGE_IDS = {
 	POPUP: [

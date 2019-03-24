@@ -37,8 +37,8 @@ let githubToken: string = null;
 /**
  * Renders total LOC into DOM
  */
-function insertLocForRepo() {
-	const reposMetaContent = document.getElementsByClassName(REPO_CLASS)[0];
+const insertLocForRepo = () => {
+	const nodeToMount = document.getElementsByClassName(REPO_CLASS)[0];
 	const userRepos = document.querySelectorAll('#user-repositories-list h3 a');
 	const organisationRepos = document.querySelectorAll('.repo-list h3 a');
 	const recommendedRepos = document.querySelectorAll(
@@ -46,8 +46,8 @@ function insertLocForRepo() {
 	);
 
 	// Add LOC to single repo
-	if (reposMetaContent) {
-		appendLoc(getRepoName(), reposMetaContent);
+	if (nodeToMount) {
+		appendLoc(getRepoName(), nodeToMount);
 	}
 
 	let repos: NodeListOf<Element> = null;
@@ -68,7 +68,7 @@ function insertLocForRepo() {
 			appendLoc(link, elem);
 		});
 	}
-}
+};
 
 /**
  * Gets repo name from current location
@@ -90,18 +90,18 @@ const getRepoName = () => {
  * @param {string} repoName
  * @param {Element} element
  */
-function appendLoc(repoName: string, element: Element) {
+const appendLoc = (repoName: string, element: Element) => {
 	getGloc(repoName, TRIES_DEFAULT)
-		.then((lines: number) => (element.innerHTML += getBadgeWithLines(lines)))
+		.then((lines: number) => element.innerHTML += getBadgeWithLines(lines))
 		.catch((e: any) => log('e', e));
-}
+};
 
 /**
  * Returns badge container for LOC with LOC
  * @param {number} lines - LOC
  * @return {html}
  */
-function getBadgeWithLines(lines: number) {
+const getBadgeWithLines = (lines: number) => {
 	return (
 		` <div class='box' style='font-size: 0; font-family: Verdana;'>
 				<span
@@ -117,7 +117,7 @@ function getBadgeWithLines(lines: number) {
 				</span>
 			</div> `
 	);
-}
+};
 
 /**
  * Counts LOC
@@ -151,23 +151,21 @@ const getGloc = (repoName: string, tries: number): Promise<any> => {
  * @param {string} repo - /user/repo
  * @return {string}
  */
-function setApiUrl(repoName: string) {
-	return `https://api.github.com/repos${repoName}/stats/code_frequency`;
-}
+const setApiUrl = (repoName: string) =>  `https://api.github.com/repos${repoName}/stats/code_frequency`;
 
 /**
  * Adds token to URL
  * @param {string} url
  * @return {string}
  */
-function tokenizeUrl(url: string) {
+const tokenizeUrl = (url: string) => {
 	if (githubToken !== null && typeof githubToken === 'string') {
 		return `${url}?access_token=${githubToken}`;
 	}
 	log('e', 'Error by tokenizing URL');
 
 	return '';
-}
+};
 
 /**
  * PART 2.
@@ -407,7 +405,6 @@ const insertLocForDir = () => {
 	 * @param {number} loc
 	 */
 	const renderLocForFile = (link: HTMLAnchorElement, loc: number) => {
-		// console.log( str ) --> .eslintrc.js 00 lines
 		const str = `${link.title}<span style='color:#888'> ${loc} ${chrome.i18n.getMessage('lines')}</span>`;
 
 		document.getElementById(link.id).innerHTML = str;
