@@ -5,7 +5,7 @@ import { APP_NAME } from './constants';
  * @param {string} type - info, warn, err
  * @param {string} str - info for output
  */
-export const log = (type: string, str: string) => {
+export const log = (type: string, str: any) => {
 	switch (type) {
 		case 'i':
 			console.info(APP_NAME + ': ' + str);
@@ -26,4 +26,13 @@ export const translateElements = (ids: string[]) => {
 		const element = document.getElementById(id);
 		element.innerHTML = chrome.i18n.getMessage(id);
 	});
+};
+
+export const isEmpty = (obj: object) => {
+	for (const key in obj) {
+			if (obj.hasOwnProperty(key)) {
+				return false;
+			}
+	}
+	return true;
 };
