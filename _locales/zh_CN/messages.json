@@ -9,7 +9,7 @@
         "message": "Artem Solovev"
     },
     "description": {
-        "message": "统计GitHub上文件的代码行数"
+        "message": "统计 GitHub 仓库的代码总行数"
     },
     "optionsTitle": {
         "message": "选项"
@@ -18,46 +18,46 @@
         "message": "GitHub"
     },
     "optionsUlDescription": {
-        "message": "调用了GITHUB的API。它默认以未认证的方式调用GitHub的API，请设置个人访问令牌如果你想要："
+        "message": "调用了 GitHub 的 API，默认以未认证的方式发送请求，如想使用以下功能，请设置 Personal Access Token："
     },
     "optionsAccess": {
         "message": "访问私人代码仓库"
     },
     "optionsLimits": {
-        "message": "避开未认证GitHub API请求的次数限制"
+        "message": "避开未认证请求的次数限制"
     },
     "optionsInputToken": {
-        "message": "个人访问令牌"
+        "message": "Personal Access Token"
     },
     "optionsSaveButton": {
         "message": "保存"
     },
     "optionsCreateToken": {
-        "message": "创建令牌"
+        "message": "新建 Token"
     },
     "optionsTokenMustbeString": {
-        "message": "访问令牌应该是一个字符串，比如"
+        "message": "Access Token 应该是一个字符串，比如"
     },
     "optionsTokenWrongLength": {
-        "message": "令牌长度错误！"
+        "message": "Access Token 长度错误！"
     },
     "optionsTokenWalid": {
-        "message": "合法的令牌。"
+        "message": "有效 Token"
     },
     "optionsSaved": {
         "message": "成功保存选项！"
     },
     "addToken": {
-        "message": "添加GitHub令牌"
+        "message": "添加 GitHub Token"
     },
     "indexWorksOnly": {
         "message": "只适用于"
     },
     "indexCountsFrom": {
-        "message": "统计以下项目的代码行数："
+        "message": "在以下页面统计仓库的代码总行数："
     },
     "indexProjectPage": {
-        "message": "项目详细页面"
+        "message": "仓库详情页面"
     },
     "indexUserPage": {
         "message": "个人用户页面"
@@ -66,24 +66,24 @@
         "message": "搜索结果页面"
     },
     "indexTrandingPage": {
-        "message": "趋势页面"
+        "message": "Trending 页面"
     },
     "indexEtc": {
-        "message": "等等。"
+        "message": "其他……"
     },
     "attentionPlease": {
-        "message": "请留意！"
+        "message": "能抽出几分钟时间吗？"
     },
     "translateOurApp": {
-        "message": "帮助我们来翻译这个插件"
+        "message": "帮助我们翻译这个扩展"
     },
     "totalDirLoc": {
-        "message": "当前目录中的总行数："
+        "message": "当前目录中的代码总行数："
     },
     "totalExtLoc": {
         "message": "通过扩展："
     },
     "lines": {
-        "message": "线"
+        "message": "行数"
     }
 }
