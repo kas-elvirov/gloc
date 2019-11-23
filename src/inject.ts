@@ -100,7 +100,7 @@ const appendLoc = (config: InitialData) => {
 
 		if (reponame) {
 			getLoc(reponame, TRIES_DEFAULT)
-			.then(loc => setLoc(anchor, loc || 'Stat is unavailable'))
+			.then(loc => setLoc(anchor, format(loc)))
 			.catch(err => console.error(`Error by setting LOC for ${reponame}`, err));
 		}
 	});
@@ -137,7 +137,7 @@ const getLoc = (reponame: string, tries: number): Promise<number | void> => {
 		});
 };
 
-const setLoc = (anchor: HTMLAnchorElement, loc: number | string) => {
+const setLoc = (anchor: HTMLAnchorElement, loc: string) => {
 	anchor.innerHTML += getBadgeWithLines(loc);
 };
 
@@ -172,7 +172,7 @@ const calculate = (stat: CodeFrequency): number => {
  * @param {number | string} lines - LOC | Error
  * @return {html}
  */
-const getBadgeWithLines = (lines: number | string) => {
+const getBadgeWithLines = (lines: string) => {
 	return (
 		` <div class='box' style='font-size: 0; font-family: Verdana;'>
 				<span
@@ -188,4 +188,41 @@ const getBadgeWithLines = (lines: number | string) => {
 				</span>
 			</div> `
 	);
+};
+
+/**
+ * Convert number into human-readable string
+ * @param {number} num
+ * @return {string}
+ */
+const readable = (num: number): string => {
+	if (num < 1_000) {
+		return String(num);
+	} else if (num < 10_000) {
+		return String(Math.round(num / 100) / 10) + 'K';
+	} else if (num < 1_000_000) {
+		return String(Math.round(num / 1_000)) + 'K';
+	} else if (num < 10_000_000) {
+		return String(Math.round(num / 100_000) / 10) + 'M';
+	} else if (num < 1_000_000_000) {
+		return String(Math.round(num / 1_000_000)) + 'M';
+	} else if (num < 10_000_000_000) {
+		return String(Math.round(num / 100_000_000) / 10) + 'G';
+	} else {
+		return String(num);
+	}
+};
+
+/**
+ * Format rawline counts into string to show
+ * @param {number | void} rawlines - LOC | null
+ * @return {string}
+ */
+const format = (rawlines: number | void): string => {
+	if (typeof(rawlines) == 'number') {
+		return readable(rawlines);
+	}
+	if (rawlines == null) {
+		return 'Stat is unavailable';
+	}
 };
