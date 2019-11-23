@@ -28,3 +28,5 @@ export const MESSAGE_IDS = {
 		'optionsCreateToken',
 	],
 };
+
+export const DEFAULT_OUTPUT = 'Stat is unavailable';

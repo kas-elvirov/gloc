@@ -1,5 +1,5 @@
-import { translateElements } from './utils';
-import { MESSAGE_IDS } from './constants';
+import { translateElements } from './utils/translateElements';
+import { MESSAGE_IDS } from './consts/index';
 
 const validateToken = (token: string) => {
 	let invalidToken;

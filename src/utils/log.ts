@@ -1,4 +1,4 @@
-import { APP_NAME } from './constants';
+import { APP_NAME } from '../consts/index';
 
 /**
  * Logger
@@ -19,20 +19,4 @@ export const log = (type: string, str: any) => {
 		default:
 			console.info(str);
 	}
-};
-
-export const translateElements = (ids: string[]) => {
-	ids.map(id => {
-		const element = document.getElementById(id);
-		element.innerHTML = chrome.i18n.getMessage(id);
-	});
-};
-
-export const isEmpty = (obj: object) => {
-	for (const key in obj) {
-			if (obj.hasOwnProperty(key)) {
-				return false;
-			}
-	}
-	return true;
 };

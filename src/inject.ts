@@ -5,8 +5,10 @@
  */
 import * as $ from 'jquery';
 
-import { log, isEmpty } from './utils';
-import { APP_CLASSNAME, TRIES_DEFAULT } from './constants';
+import { log } from './utils/log';
+import { isEmpty } from './utils/isEmpty';
+import { formatOutput } from './utils/formatOutput';
+import { APP_CLASSNAME, TRIES_DEFAULT } from './consts/index';
 import { LOCATION, InitialData, GithubError, CodeFrequency, WeeklyAggregate } from './types';
 
 
@@ -43,9 +45,6 @@ const gloc = (): void => {
 	.catch(err => log('err', err));
 };
 
-/**
- * REFACTORED
- */
 const init = (): Promise<InitialData> => {
 	/**
 	 * Current user's location
@@ -100,7 +99,7 @@ const appendLoc = (config: InitialData) => {
 
 		if (reponame) {
 			getLoc(reponame, TRIES_DEFAULT)
-			.then(loc => setLoc(anchor, format(loc)))
+			.then(loc => setLoc(anchor, formatOutput(loc)))
 			.catch(err => console.error(`Error by setting LOC for ${reponame}`, err));
 		}
 	});
@@ -157,6 +156,7 @@ const tokenizeUrl = (url: string) => {
 	if (githubToken !== null && typeof githubToken === 'string') {
 		return `${url}?access_token=${githubToken}`;
 	}
+
 	log('e', 'Error by tokenizing URL');
 
 	return '';
@@ -188,41 +188,4 @@ const getBadgeWithLines = (lines: string) => {
 				</span>
 			</div> `
 	);
-};
-
-/**
- * Convert number into human-readable string
- * @param {number} num
- * @return {string}
- */
-const readable = (num: number): string => {
-	if (num < 1_000) {
-		return String(num);
-	} else if (num < 10_000) {
-		return String(Math.round(num / 100) / 10) + 'K';
-	} else if (num < 1_000_000) {
-		return String(Math.round(num / 1_000)) + 'K';
-	} else if (num < 10_000_000) {
-		return String(Math.round(num / 100_000) / 10) + 'M';
-	} else if (num < 1_000_000_000) {
-		return String(Math.round(num / 1_000_000)) + 'M';
-	} else if (num < 10_000_000_000) {
-		return String(Math.round(num / 100_000_000) / 10) + 'G';
-	} else {
-		return String(num);
-	}
-};
-
-/**
- * Format rawline counts into string to show
- * @param {number | void} rawlines - LOC | null
- * @return {string}
- */
-const format = (rawlines: number | void): string => {
-	if (typeof(rawlines) == 'number') {
-		return readable(rawlines);
-	}
-	if (rawlines == null) {
-		return 'Stat is unavailable';
-	}
 };
