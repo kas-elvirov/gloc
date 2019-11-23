@@ -1,3 +1,22 @@
+# Git branches and commits patterns
+
+## branch name format
+**[type]/[GITHUB-TASK]-[short-description]**<br>
+
+feature/#256-some-feature<br>
+bugfix/#0-some-issue<br>
+
+## commit message format
+**[GITHUB-TASK] [Module] - [work description]**<br>
+
+#256/Inject - added some logic<br>
+#0/Popup - changed some thing
+
+## PR title format (used in app change log)
+**[type]/[GITHUB-TASK] [app change description]**<br>
+
+#256 added some logic<br>
+#0 changed some thing
 
 # Contributing to Transcriptase
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
