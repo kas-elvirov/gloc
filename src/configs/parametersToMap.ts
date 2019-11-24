@@ -56,6 +56,13 @@ export const parametersToMap: ParameterToMap[] = [
         wrapper: (entity) => Array.prototype.slice.call(entity),
     },
     {
+        locationName: LOCATION.PINNED_REPOS,
+        selector: 'querySelectorAll',
+        pathToSelect: 'form ol li a.text-bold',
+        existenceChecker: (entity: NodeListOf<HTMLAnchorElement>) => entity && entity.length > 0,
+        wrapper: (entity) => Array.prototype.slice.call(entity),
+    },
+    {
         locationName: LOCATION.UNKNOWN,
         selector: undefined,
         pathToSelect: undefined,
