@@ -6,7 +6,7 @@ ___
 # Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera]() )
 ![Chrome](screens/browsers/chrome.png)
 ![Opera](screens/browsers/opera.png)
-## **Current version: 8.0.0** ( 2019, 30 march )
+## **Current version: 8.1.0** ( 2019, 21 november )
 ## **Initial release 2.0.1** ( 2017, 12 february )
 
 
@@ -22,11 +22,13 @@ Counts lines of code in:
 
 ## Supported languages
 - Arabic
+- Bulgarian
 - Chinese (Taiwan)
 - English
 - English (UK)
 - English (US)
 - German
+- Polish
 - Portuguese (Brazil)
 - Russian
 - Spanish (Latin America and Caribbean)
@@ -69,3 +71,5 @@ ___
 * [Jonny Hsy](https://github.com/jonnyhsy) - translation into Chinese (China)
 * [Ryo SHIINA](https://github.com/pooch-tonic) - translation into French
 * [Ryo SHIINA](https://github.com/pooch-tonic) - translation into Japanese
+* [Paweł Idzikowski](https://github.com/trolit) - translation into Polish
+* [Radoslav Mandev](radoslav.mandev99@gmail.com) - translation into Bulgarian

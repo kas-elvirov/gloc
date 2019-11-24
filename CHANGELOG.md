@@ -6,5 +6,8 @@
 - fixed loc for: search, tranding
 - feature/#52: style separating for loc messages
 - documentation update
+- added support for next languages:
+- - Bulgarian
+- - Polish
 - versions bumping for: jquery, tar, fstream, js-yaml, lodash, mixin-deep
 - refactoring
