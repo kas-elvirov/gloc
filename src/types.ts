@@ -1,6 +1,6 @@
 export interface InitialData {
 	location: LOCATION;
-	link: HTMLAnchorElement[];
+	links: HTMLAnchorElement[];
 }
 
 export enum LOCATION {
@@ -21,7 +21,11 @@ export interface GithubError {
 export type CodeFrequency = WeeklyAggregate[];
 
 export type WeeklyAggregate = [
-	number, // total
-	number, // additions
-	number, // deletions
+	Total,
+	Additions,
+	Deletions,
 ];
+
+type Total = number;
+type Additions = number;
+type Deletions = number;
