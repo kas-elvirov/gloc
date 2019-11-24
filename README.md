@@ -17,7 +17,8 @@ Counts lines of code in:
 - user's repositories,
 - organization page,
 - search results page, 
-- trending page.
+- trending page,
+- explore page
 
 ## Supported languages
 - Arabic

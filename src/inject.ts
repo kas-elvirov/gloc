@@ -55,20 +55,23 @@ const init = (): Promise<InitialData> => {
 	};
 
 	// User's repos
-	const user = document.querySelectorAll('#user-repositories-list h3 a');
+	const user: NodeListOf<Element> = document.querySelectorAll('#user-repositories-list h3 a');
 	const isUser = user.length > 0 ? LOCATION.USER : false;
 
 	// Organisation's repos
-	const organisation = document.querySelectorAll('.repo-list h3 a');
+	const organisation: NodeListOf<Element> = document.querySelectorAll('.repo-list h3 a');
 	const isOrganisation = organisation.length > 0 ? LOCATION.ORGANIZATION : false;
 
 	// Recommended repos
-	const recommended = document.querySelectorAll('#recommended-repositories-container h3 a');
+	const recommended: NodeListOf<Element> = document.querySelectorAll('#recommended-repositories-container h3 a');
 	const isRecommended = recommended.length > 0 ? LOCATION.RECOMMENDED : false;
 
 	// Single repo
 	const single: HTMLAnchorElement = document.querySelector('.repohead-details-container h1 strong a');
 	const isSingle = single ? LOCATION.SINGLE : false;
+
+	const explore: NodeListOf<Element> = document.querySelectorAll('article h1 a.text-bold');
+	const isExplore = explore ? LOCATION.EXPLORE : false;
 
 	if (isUser) {
 		current.location = LOCATION.USER;
@@ -82,6 +85,9 @@ const init = (): Promise<InitialData> => {
 	} else if (isSingle) {
 		current.location = LOCATION.SINGLE;
 		current.link = [single];
+	} else if (isExplore) {
+		current.location = LOCATION.EXPLORE;
+		current.link = Array.prototype.slice.call(explore);
 	} else {
 		current.location = LOCATION.UNKNOWN;
 	}
