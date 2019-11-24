@@ -13,12 +13,12 @@ ___
 ## Description
 Works for **public** and **private** repos.
 Counts lines of code in:
-- project detail page,
-- user's repositories,
-- organization page,
-- search results page, 
-- trending page,
-- explore page
+- project detail page ([check it out](https://github.com/torvalds/linux))
+- user's repositories ([check it out](https://github.com/torvalds?tab=repositories))
+- organization page ([check it out](https://github.com/facebook))
+- search results page ([check it out](https://github.com/search?q=react))
+- trending page ([check it out](https://github.com/trending))
+- explore page ([check it out](https://github.com/explore))
 
 ## Supported languages
 - Arabic

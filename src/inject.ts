@@ -54,6 +54,8 @@ const init = (): Promise<InitialData> => {
 		link: null,
 	};
 
+	const currentLocation = window.location.pathname.replace('/', '');
+
 	// User's repos
 	const user: NodeListOf<Element> = document.querySelectorAll('#user-repositories-list h3 a');
 	const isUser = user.length > 0 ? LOCATION.USER : false;
@@ -63,15 +65,24 @@ const init = (): Promise<InitialData> => {
 	const isOrganisation = organisation.length > 0 ? LOCATION.ORGANIZATION : false;
 
 	// Recommended repos
-	const recommended: NodeListOf<Element> = document.querySelectorAll('#recommended-repositories-container h3 a');
-	const isRecommended = recommended.length > 0 ? LOCATION.RECOMMENDED : false;
+	const search: NodeListOf<Element> = document.querySelectorAll('.codesearch-results ul li a.v-align-middle');
+	const isSearch = search.length > 0 ? LOCATION.SEARCH : false;
 
 	// Single repo
 	const single: HTMLAnchorElement = document.querySelector('.repohead-details-container h1 strong a');
 	const isSingle = single ? LOCATION.SINGLE : false;
 
+	// explore page
 	const explore: NodeListOf<Element> = document.querySelectorAll('article h1 a.text-bold');
-	const isExplore = explore ? LOCATION.EXPLORE : false;
+	const isExplore = currentLocation === LOCATION.EXPLORE.toLowerCase() && explore
+		? LOCATION.EXPLORE
+		: false;
+
+	// tranding page
+	const tranding: NodeListOf<Element> = document.querySelectorAll('article h1 a');
+	const isTranding = currentLocation === LOCATION.TRENDING.toLowerCase() && tranding
+		? LOCATION.EXPLORE
+		: false;
 
 	if (isUser) {
 		current.location = LOCATION.USER;
@@ -79,15 +90,18 @@ const init = (): Promise<InitialData> => {
 	} else if (isOrganisation) {
 		current.location = LOCATION.ORGANIZATION;
 		current.link = Array.prototype.slice.call(organisation);
-	} else if (isRecommended) {
-		current.location = LOCATION.RECOMMENDED;
-		current.link = Array.prototype.slice.call(recommended);
+	} else if (isSearch) {
+		current.location = LOCATION.SEARCH;
+		current.link = Array.prototype.slice.call(search);
 	} else if (isSingle) {
 		current.location = LOCATION.SINGLE;
 		current.link = [single];
 	} else if (isExplore) {
 		current.location = LOCATION.EXPLORE;
 		current.link = Array.prototype.slice.call(explore);
+	} else if (isTranding) {
+		current.location = LOCATION.TRENDING;
+		current.link = Array.prototype.slice.call(tranding);
 	} else {
 		current.location = LOCATION.UNKNOWN;
 	}
