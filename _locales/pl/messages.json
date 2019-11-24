@@ -1,0 +1,89 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Artem Solovev"
+    },
+    "description": {
+        "message": "Zlicza linie kodu w serwisie GitHub"
+    },
+    "optionsTitle": {
+        "message": "Ustawienia"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "korzysta z API serwisu GitHub. Aplikacja domyślnie realizuje nieuwierzytelnione żądania do API GitHub, ustaw swój osobisty token dostępu (PAT) jeżeli chcesz:"
+    },
+    "optionsAccess": {
+        "message": "zezwolić na dostęp do prywatnego repozytorium"
+    },
+    "optionsLimits": {
+        "message": "obejść limit nieuwierzytelnionych żądań"
+    },
+    "optionsInputToken": {
+        "message": "Osobisty token dostępu"
+    },
+    "optionsSaveButton": {
+        "message": "Zapisz"
+    },
+    "optionsCreateToken": {
+        "message": "utwórz nowy token"
+    },
+    "optionsTokenMustbeString": {
+        "message": "Token dostępu powinien być jako tekst np."
+    },
+    "optionsTokenWrongLength": {
+        "message": "Długość tokenu jest nieprawidłowa!"
+    },
+    "optionsTokenWalid": {
+        "message": "Token jest prawidłowy."
+    },
+    "optionsSaved": {
+        "message": "Ustawienia zostały zapisane!"
+    },
+    "addToken": {
+        "message": "Dodaj token Github"
+    },
+    "indexWorksOnly": {
+        "message": "Działa tylko na "
+    },
+    "indexCountsFrom": {
+        "message": "Zlicza liczbę linii kodu projektu z:"
+    },
+    "indexProjectPage": {
+        "message": "strony szczegółów projektu"
+    },
+    "indexUserPage": {
+        "message": "strony użytkownika"
+    },
+    "indexSearchPage": {
+        "message": "strony z wynikami wyszukiwania"
+    },
+    "indexTrandingPage": {
+        "message": "zakładki \"popularne\""
+    },
+    "indexEtc": {
+        "message": "itd."
+    },
+    "attentionPlease": {
+        "message": "May I have your attention, please?"
+    },
+    "translateOurApp": {
+        "message": "Help us translate this app"
+    },
+    "totalDirLoc": {
+        "message": "Całkowita liczba linii w obecnym katalogu:"
+    },
+    "totalExtLoc": {
+        "message": "Ze względu na rozszerzenie:"
+    },
+    "lines": {
+        "message": "linie"
+    }
+}

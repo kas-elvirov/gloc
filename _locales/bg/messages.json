@@ -1,0 +1,89 @@
+{
+    "name": {
+        "message": "GitHub Gloc"
+    },
+    "shortName": {
+        "message": "Gloc"
+    },
+    "author": {
+        "message": "Artem Solovev"
+    },
+    "description": {
+        "message": "Преброява линните код на GitHub"
+    },
+    "optionsTitle": {
+        "message": "Опции"
+    },
+    "github": {
+        "message": "GitHub"
+    },
+    "optionsUlDescription": {
+        "message": "използва GItHub API. По подразбиране той прави невалидни заявки към приложния програмен интерфейс (API) на GitHub, задава личен идентификатор за достъп, ако искате:"
+    },
+    "optionsAccess": {
+        "message": "достъпите до частна папка"
+    },
+    "optionsLimits": {
+        "message": "да пропуснете лимита за скоростта на невалидните заявки"
+    },
+    "optionsInputToken": {
+        "message": "Частен личен идентификатор за достъп"
+    },
+    "optionsSaveButton": {
+        "message": "Запази"
+    },
+    "optionsCreateToken": {
+        "message": "създай token"
+    },
+    "optionsTokenMustbeString": {
+        "message": "Личният идентификатор трябва да е символен низ"
+    },
+    "optionsTokenWrongLength": {
+        "message": "Личният идентификатор е грешен!"
+    },
+    "optionsTokenWalid": {
+        "message": "Личният идентификатор е валиден."
+    },
+    "optionsSaved": {
+        "message": "Опциите са запазени!"
+    },
+    "addToken": {
+        "message": "Добави GitHub личнен идентификатор"
+    },
+    "indexWorksOnly": {
+        "message": "Работи само на"
+    },
+    "indexCountsFrom": {
+        "message": "Показва броя на редовете код на проект от:"
+    },
+    "indexProjectPage": {
+        "message": "страницата с детайли на проекта"
+    },
+    "indexUserPage": {
+        "message": "страницата на потребителя"
+    },
+    "indexSearchPage": {
+        "message": "страницата с резултати от търсене"
+    },
+    "indexTrandingPage": {
+        "message": "страница с популярни"
+    },
+    "indexEtc": {
+        "message": "и т.н."
+    },
+    "attentionPlease": {
+        "message": "Може ли да получа вниманието Ви, моля?"
+    },
+    "translateOurApp": {
+        "message": "Помогни да преведем това приложение"
+    },
+    "totalDirLoc": {
+        "message": "Общ брой на редовете в тази папка:"
+    },
+    "totalExtLoc": {
+        "message": "Според разширения:"
+    },
+    "lines": {
+        "message": "редове"
+    }
+}
