@@ -11,16 +11,21 @@ import { getBgColorForLoc } from './getBgColorForLoc';
 export const renderBadge = (lines: string) => {
     const defaultRadiusSize = '4px';
     const paddingSize = '2px 6px';
-    const fontSize = '14px';
+    const fontSize = '12px';
+
+    const commonStyles = `
+        padding: ${paddingSize};
+        font-size: ${fontSize};
+        font-weight: 500;
+    `;
 
     return (
         ` <div class='box' style='font-size: 0; font-family: Verdana;'>
                 <span
                     style='
+                        ${commonStyles}
                         background-color: ${colors.mainGrey};
                         color: ${colors.mainWhite};
-                        padding: ${paddingSize};
-                        font-size: ${fontSize};
                         border-top-left-radius: ${defaultRadiusSize};
                         border-bottom-left-radius: ${defaultRadiusSize};
                     '
@@ -30,10 +35,9 @@ export const renderBadge = (lines: string) => {
                 <span
                     class='${APP_CLASSNAME}'
                     style='
+                        ${commonStyles}
                         background-color: ${getBgColorForLoc(lines)};
                         color: ${colors.mainWhite};
-                        padding: ${paddingSize};
-                        font-size: ${fontSize};
                         border-top-right-radius: ${defaultRadiusSize};
                         border-bottom-right-radius: ${defaultRadiusSize};
                     '
