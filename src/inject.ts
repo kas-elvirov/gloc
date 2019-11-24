@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 import { log } from './utils/log';
 import { isEmpty } from './utils/isEmpty';
 import { formatOutput } from './utils/formatOutput';
-import { APP_CLASSNAME, TRIES_DEFAULT } from './consts/index';
+import { APP_CLASSNAME, TRIES_DEFAULT, DEFAULT_OUTPUT } from './consts/index';
 import { LOCATION, InitialData, GithubError, CodeFrequency, WeeklyAggregate } from './types';
 
 
@@ -187,6 +187,14 @@ const calculate = (stat: CodeFrequency): number => {
 		total + changes[1] + changes[2], 0);
 };
 
+const getColor = (lines: string): string => {
+	if (lines === DEFAULT_OUTPUT) {
+		return '#b1006a';
+	}
+
+	return '#09af00';
+}
+
 /**
  * Returns badge container for LOC with LOC
  * @param {number | string} lines - LOC | Error
@@ -202,7 +210,7 @@ const getBadgeWithLines = (lines: string) => {
 				</span>
 				<span
 					class='${APP_CLASSNAME}'
-					style='background-color: #44CC11; color: #fff; padding: 2px 6px; font-size: 14px;'
+					style='background-color: ${getColor(lines)}; color: #fff; padding: 2px 6px; font-size: 14px;'
 				>
 					${lines}
 				</span>
