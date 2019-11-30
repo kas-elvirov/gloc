@@ -2,13 +2,16 @@
 	"compilerOptions": {
 		"outDir": "./dist/",
 		"noImplicitAny": true,
-		"module": "ES6",
+		"module": "ESNext",
+		"target": "es5",
 		"baseUrl": "types",
 		"typeRoots": ["types"],
 		"allowJs": true,
+		"strict": true, 
 		"types": ["chrome", "jquery"],
 		"lib": ["es2015.core", "dom", "es6"],
 		"sourceMap": true,
+		"jsx": "react",
 		"plugins": [
 			{
 			  "name": "typescript-tslint-plugin",
@@ -19,5 +22,8 @@
 			  "mockTypeScriptVersion": false
 			}
 		]
-	}
+	},
+	"exclude": [
+		"node_modules"
+	],
 }

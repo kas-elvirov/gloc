@@ -14,7 +14,7 @@ import { getLinksFromDom } from './utils/getLinksFromDom';
  * - LOC - lines of code
  */
 
-let githubToken: string = null;
+let githubToken: string = '';
 
 /**
  * Main

@@ -4,7 +4,7 @@ import { parametersToMap } from '../configs/parametersToMap';
 import { scrapData } from './scrapData';
 
 export const getLinksFromDom = (): Promise<HTMLAnchorElement[]> => {
-	const data: InitialData = scrapData(parametersToMap);
+	const data = scrapData(parametersToMap) as InitialData;
 
 	if (data.location !== LOCATION.UNKNOWN && data.links.length > 0) {
 		return Promise.resolve(data.links);

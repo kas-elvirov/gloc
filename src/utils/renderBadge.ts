@@ -24,7 +24,7 @@ export const renderBadge = (lines: string) => {
                 <span
                     style='
                         ${commonStyles}
-                        background-color: ${colors.mainGrey};
+                        background-color: ${colors.grey700};
                         color: ${colors.mainWhite};
                         border-top-left-radius: ${defaultRadiusSize};
                         border-bottom-left-radius: ${defaultRadiusSize};

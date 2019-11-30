@@ -4,7 +4,7 @@ import { calculateLoc } from './calculateLoc';
 import { constructUrl } from './constructUrl';
 import { isEmpty } from './isEmpty';
 
-export const requestLoc = (reponame: string, tries: number, token: string): Promise<number | void> => {
+export const requestLoc = (reponame: string, tries: number, token: string): Promise<number | void | null> => {
 	if (tries === 0) {
 		return Promise.reject('Repo: ' + reponame + '; Too many requests to API !');
 	}

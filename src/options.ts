@@ -14,17 +14,28 @@ const validateToken = (token: string) => {
 
 	if (invalidToken) {
 		const validationBlock = document.getElementById('validation-block');
-		validationBlock.textContent = invalidToken;
+
+		if (validationBlock) {
+			validationBlock.textContent = invalidToken;
+		}
 	}
 };
 
 const saveOptions = () => {
-	document.getElementById('save-button').setAttribute('disabled', 'disabled');
+	const saveBtn = document.getElementById('save-button');
+
+	if (saveBtn) {
+		saveBtn.setAttribute('disabled', 'disabled');
+	}
+
 	const token = (document.getElementById('x-gloc-github-token') as HTMLInputElement).value;
 
 	chrome.storage.sync.set({ 'x-github-token': token }, () => {
 		const statusText = document.getElementById('status-text');
-		statusText.textContent = chrome.i18n.getMessage('optionsSaved');
+
+		if (statusText) {
+			statusText.textContent = chrome.i18n.getMessage('optionsSaved');
+		}
 
 		validateToken(token);
 	});
@@ -49,4 +60,9 @@ const optionsSaveButton = document.getElementById('save-button') as HTMLInputEle
 optionsSaveButton.value = chrome.i18n.getMessage('optionsSaveButton');
 
 document.addEventListener('DOMContentLoaded', showOptions);
-document.getElementById('save-button').addEventListener('click', saveOptions);
+
+const saveBtn = document.getElementById('save-button');
+
+if (saveBtn) {
+	saveBtn.addEventListener('click', saveOptions);
+}
