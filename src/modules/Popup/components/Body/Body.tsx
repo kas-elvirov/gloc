@@ -26,7 +26,7 @@ export default class Body extends React.PureComponent {
         ];
 
 		return (
-            <Container color={colors.grey400}>
+            <Container color={colors.grey200}>
                 <Column>
                     <Row>
                         <Text>{headerMsg}</Text>
