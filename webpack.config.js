@@ -11,7 +11,7 @@ const JSconfig = {
         'background': './src/background.ts',
         'inject': './src/inject.ts',
         'options': './src/options.ts',
-        'popup': './src/popup.ts',
+        'popup': './src/popup.tsx',
     },
     devtool: 'inline-source-map',
     output: {
@@ -33,10 +33,10 @@ const JSconfig = {
                 test: /\.js$/,
             },
             {
-                test: /\.ts$/,
+                test: /\.(ts|tsx)$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
-            }
+            },
         ],
     },
     plugins: [
@@ -53,8 +53,8 @@ const JSconfig = {
     ],
 };
 
-const HTMLconfig = {
-    name: 'HTML',
+const OtherFilesConfig = {
+    name: 'OtherFilesConfig',
     mode: 'production',
     entry: {
         'index': './index.html',
@@ -139,5 +139,5 @@ const HTMLconfig = {
 
 module.exports = [
     JSconfig,
-    HTMLconfig,
+    OtherFilesConfig,
 ];
