@@ -53,8 +53,8 @@ const JSconfig = {
     ],
 };
 
-const HTMLconfig = {
-    name: 'HTML',
+const OtherFilesConfig = {
+    name: 'OtherFilesConfig',
     mode: 'production',
     entry: {
         'index': './index.html',
@@ -139,5 +139,5 @@ const HTMLconfig = {
 
 module.exports = [
     JSconfig,
-    HTMLconfig,
+    OtherFilesConfig,
 ];

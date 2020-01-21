@@ -6,7 +6,7 @@ ___
 # Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera]() )
 ![Chrome](screens/browsers/chrome.png)
 ![Opera](screens/browsers/opera.png)
-## **Current version: 8.1.0** ( 2019, 21 november )
+## **Current version: 8.2.0** ( 2020, 22 january )
 ## **Initial release 2.0.1** ( 2017, 12 february )
 
 
