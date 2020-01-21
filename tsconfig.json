@@ -8,7 +8,7 @@
 		"typeRoots": ["types"],
 		"allowJs": true,
 		"strict": true, 
-		"types": ["chrome", "jquery"],
+		"types": ["chrome", "jquery", "node"],
 		"lib": ["es2015.core", "dom", "es6"],
 		"sourceMap": true,
 		"jsx": "react",

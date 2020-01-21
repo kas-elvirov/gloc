@@ -13,18 +13,18 @@ import { decorationProps } from './index';
 export default class Footer extends React.PureComponent {
 	render() {
         const linkMsg = chrome.i18n.getMessage('translateOurApp');
-        const titleMsg = chrome.i18n.getMessage('attentionPlease');
+        // const titleMsg = chrome.i18n.getMessage('attentionPlease');
 
 		return (
 			<Container>
                 <Column>
-                    <Row>
+                    {/* <Row>
                         <Center>
                             <h3>
                                 {titleMsg}
                             </h3>
                         </Center>
-                    </Row>
+                    </Row> */}
 
                     <Row>
                         <Center>

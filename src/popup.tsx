@@ -11,14 +11,6 @@ class PopupPage extends React.PureComponent {
 	}
 }
 
-/* (() => {
-	document.getElementById('settings-button').addEventListener('click', () => {
-		chrome.tabs.create({url: 'chrome://extensions/?options=' + chrome.runtime.id});
-	});
-
-	translateElements(MESSAGE_IDS.POPUP);
-})(); */
-
 const placeToMount = document.getElementById('root')/*  || document.createElement('div') */;
 
 ReactDOM.render(<PopupPage />, placeToMount);
