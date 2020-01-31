@@ -3,6 +3,7 @@ const path = require( 'path' );
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const JSONMinifyPlugin = require('node-json-minify');
 
 const JSconfig = {
     mode: 'production',
@@ -131,6 +132,9 @@ const OtherFilesConfig = {
             },
             {
                 from: '_locales',
+                transform: function(content) {
+                    return JSONMinifyPlugin(content.toString());
+                },
                 to: '_locales',
             },
         ]),
