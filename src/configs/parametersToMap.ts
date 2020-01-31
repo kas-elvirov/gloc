@@ -17,7 +17,7 @@ export const parametersToMap: ParameterToMap[] = [
     {
         locationName: LOCATION.USER,
         selector: 'querySelectorAll',
-        pathToSelect: '#user-repositories-list h3 a',
+        pathToSelect: '.js-pinned-items-reorder-container ol li a.text-bold.flex-auto.min-width-0',
         existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
         wrapper: (entity) => Array.prototype.slice.call(entity),
     },
