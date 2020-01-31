@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const JSONMinifyPlugin = require('node-json-minify');
 
 const JSconfig = {
-    mode: 'production',
+    mode: 'development',
     name: 'JS',
     entry: {
         'background': './src/background.ts',
@@ -45,18 +45,18 @@ const JSconfig = {
             cache: true,
             parallel: true,
             uglifyOptions: {
-            compress: false,
-            ecma: 6,
-            mangle: true
+                compress: false,
+                ecma: 6,
+                mangle: true
             },
-            sourceMap: true
+            sourceMap: true,
         }),
     ],
 };
 
 const OtherFilesConfig = {
     name: 'OtherFilesConfig',
-    mode: 'production',
+    mode: 'development',
     entry: {
         'index': './index.html',
         'options': './options.html',

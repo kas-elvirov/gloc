@@ -4,9 +4,11 @@
   "description": "Extension counts the number of lines of code in GitHub pages.",
   "main": "index.js",
   "scripts": {
-    "pack": "webpack",
+    "pack:dev": "webpack --config webpack.config.prod",
+    "pack:prod": "webpack --config webpack.config.dev",
     "zip": "grunt",
-    "build": "webpack && grunt"
+    "build:prod": "webpack --config webpack.config.prod  && grunt",
+    "build:dev": "webpack --config webpack.config.dev  && grunt"
   },
   "repository": {
     "type": "git",
