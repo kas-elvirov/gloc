@@ -66,6 +66,13 @@ export const parametersToMap: ParameterToMap[] = [
         wrapper: (entity) => Array.prototype.slice.call(entity),
     },
     {
+        locationName: LOCATION.LIKED_REPOS,
+        selector: 'querySelectorAll',
+        pathToSelect: 'h3 a',
+        existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+        wrapper: (entity) => Array.prototype.slice.call(entity),
+    },
+    {
         locationName: LOCATION.UNKNOWN,
         selector: undefined,
         pathToSelect: undefined,
