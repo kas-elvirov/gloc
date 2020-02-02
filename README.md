@@ -6,9 +6,13 @@ ___
 # Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera]() )
 ![Chrome](screens/browsers/chrome.png)
 ![Opera](screens/browsers/opera.png)
-## **Current version: 8.2.0** ( 2020, 22 january )
-## **Initial release 2.0.1** ( 2017, 12 february )
 
+## History
+### Version:
+- current: 8.2.0 ( 2020, 22 january )
+- initial: 2.0.1 ( 2017, 12 february )
+
+I made this program in the Russian Army while I was on duty. I was coding as fast as i could )))
 
 ## Description
 Works for **public** and **private** repos.
