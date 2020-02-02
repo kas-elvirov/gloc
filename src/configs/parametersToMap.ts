@@ -38,7 +38,7 @@ export const parametersToMap: ParameterToMap[] = [
     {
         locationName: LOCATION.SINGLE,
         selector: 'querySelector',
-        pathToSelect: '.experiment-repo-nav h1 strong a',
+        pathToSelect: '.application-main h1 strong a',
         existenceChecker: (entity: HTMLAnchorElement[]) => Boolean(entity),
         wrapper: (entity: HTMLAnchorElement) => [entity],
     },
