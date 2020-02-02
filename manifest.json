@@ -6,7 +6,7 @@
 	"short_name": "__MSG_shortName__",
 	"author": "__MSG_author__",
 	"description": "__MSG_description__",
-	"version": "8.2.0",
+	"version": "8.2.1",
 
 	"browser_action": {
 		"default_icon": "img/icon128.png",

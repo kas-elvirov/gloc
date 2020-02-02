@@ -9,7 +9,7 @@ ___
 
 ## History
 ### Version:
-- current: 8.2.0 ( 2020, 22 january )
+- current: 8.2.1 ( 2020, 02 february )
 - initial: 2.0.1 ( 2017, 12 february )
 
 I made this program in the Russian Army while I was on duty. I was coding as fast as i could )))

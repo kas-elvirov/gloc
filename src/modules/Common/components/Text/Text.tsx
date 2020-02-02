@@ -10,10 +10,6 @@ const _Text = styled.span`
 export default class Text extends React.PureComponent<Props> {
 	render() {
 		const { children, color } = this.props;
-		
-		if (typeof children !== 'string') {
-			return null;
-		}
 
 		return (
 			<_Text color={color}>
