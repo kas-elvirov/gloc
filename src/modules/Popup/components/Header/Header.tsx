@@ -30,6 +30,7 @@ export default class Footer extends React.PureComponent {
                             width='50'
                             style={{
                                 verticalAlign: 'middle',
+                                marginRight: '2px',
                             }}
                         />
 
@@ -40,7 +41,9 @@ export default class Footer extends React.PureComponent {
                         <Text color={colors.pink400}>
                             {gloc}
                         </Text>
+
                     </Header>
+                    <Text>Version: 8.2.1</Text>
                 </Column>
 
                 <Column>

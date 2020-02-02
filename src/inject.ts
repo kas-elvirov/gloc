@@ -3,7 +3,7 @@
  *
  * Licensed GPL-2.0 © Artem Solovev
  */
-import * as $ from 'jquery';
+import 'pjax';
 
 import { log } from './utils/log';
 import { renderLocs } from './utils/renderLocs';
@@ -27,9 +27,9 @@ let githubToken: string = '';
 
 		gloc();
 
-		$(document).on('pjax:complete', () => {
+		document.addEventListener('pjax:complete', () => {
 			gloc();
-		});
+		})
 	});
 })();
 

@@ -17,7 +17,7 @@ export const parametersToMap: ParameterToMap[] = [
     {
         locationName: LOCATION.USER,
         selector: 'querySelectorAll',
-        pathToSelect: '#user-repositories-list h3 a',
+        pathToSelect: '.js-pinned-items-reorder-container ol li a.text-bold.flex-auto.min-width-0',
         existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
         wrapper: (entity) => Array.prototype.slice.call(entity),
     },
@@ -38,7 +38,7 @@ export const parametersToMap: ParameterToMap[] = [
     {
         locationName: LOCATION.SINGLE,
         selector: 'querySelector',
-        pathToSelect: '.experiment-repo-nav h1 strong a',
+        pathToSelect: '.application-main h1 strong a',
         existenceChecker: (entity: HTMLAnchorElement[]) => Boolean(entity),
         wrapper: (entity: HTMLAnchorElement) => [entity],
     },
@@ -61,7 +61,14 @@ export const parametersToMap: ParameterToMap[] = [
     {
         locationName: LOCATION.PINNED_REPOS,
         selector: 'querySelectorAll',
-        pathToSelect: 'form ol li a.text-bold',
+        pathToSelect: '#user-repositories-list ul li h3 a',
+        existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+        wrapper: (entity) => Array.prototype.slice.call(entity),
+    },
+    {
+        locationName: LOCATION.LIKED_REPOS,
+        selector: 'querySelectorAll',
+        pathToSelect: '.page-profile h3 a',
         existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
         wrapper: (entity) => Array.prototype.slice.call(entity),
     },

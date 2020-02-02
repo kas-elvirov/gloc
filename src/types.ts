@@ -6,6 +6,7 @@ export interface InitialData {
 export enum LOCATION {
 	USER = 'USER',
 	PINNED_REPOS = 'PINNED_REPOS',
+	LIKED_REPOS = 'LIKED_REPOS',
 	ORGANIZATION = 'ORGANIZATION',
 	SEARCH = 'SEARCH',
 	SINGLE = 'SINGLE',

@@ -9,7 +9,7 @@ ___
 
 ## History
 ### Version:
-- current: 8.2.0 ( 2020, 22 january )
+- current: 8.2.1 ( 2020, 02 february )
 - initial: 2.0.1 ( 2017, 12 february )
 
 I made this program in the Russian Army while I was on duty. I was coding as fast as i could )))
@@ -17,8 +17,10 @@ I made this program in the Russian Army while I was on duty. I was coding as fas
 ## Description
 Works for **public** and **private** repos.
 Counts lines of code in:
-- project detail page ([check it out](https://github.com/torvalds/linux))
+- user's pinned repos ([check it out](https://github.com/torvalds))
 - user's repositories ([check it out](https://github.com/torvalds?tab=repositories))
+- user's liked repositories ([check it out](https://github.com/torvalds?tab=stars))
+- project detail page ([check it out](https://github.com/torvalds/linux))
 - organization page ([check it out](https://github.com/facebook))
 - search results page ([check it out](https://github.com/search?q=react))
 - trending page ([check it out](https://github.com/trending))

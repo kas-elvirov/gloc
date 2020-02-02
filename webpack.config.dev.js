@@ -3,9 +3,10 @@ const path = require( 'path' );
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const JSONMinifyPlugin = require('node-json-minify');
 
 const JSconfig = {
-    mode: 'production',
+    mode: 'development',
     name: 'JS',
     entry: {
         'background': './src/background.ts',
@@ -44,18 +45,18 @@ const JSconfig = {
             cache: true,
             parallel: true,
             uglifyOptions: {
-            compress: false,
-            ecma: 6,
-            mangle: true
+                compress: false,
+                ecma: 6,
+                mangle: true
             },
-            sourceMap: true
+            sourceMap: true,
         }),
     ],
 };
 
 const OtherFilesConfig = {
     name: 'OtherFilesConfig',
-    mode: 'production',
+    mode: 'development',
     entry: {
         'index': './index.html',
         'options': './options.html',
@@ -131,6 +132,9 @@ const OtherFilesConfig = {
             },
             {
                 from: '_locales',
+                transform: function(content) {
+                    return JSONMinifyPlugin(content.toString());
+                },
                 to: '_locales',
             },
         ]),
