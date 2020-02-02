@@ -21,11 +21,6 @@ export default class Anchor extends React.PureComponent<Props> {
             target,
         };
 
-        console.group('Anchor.render');
-        console.log(this);
-        console.log(this.props);
-        console.groupEnd();
-
         return (
             <_Anchor {...anchorProps} color={color}>
                 {children}

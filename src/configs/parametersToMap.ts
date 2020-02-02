@@ -68,7 +68,7 @@ export const parametersToMap: ParameterToMap[] = [
     {
         locationName: LOCATION.LIKED_REPOS,
         selector: 'querySelectorAll',
-        pathToSelect: 'h3 a',
+        pathToSelect: '.page-profile h3 a',
         existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
         wrapper: (entity) => Array.prototype.slice.call(entity),
     },
