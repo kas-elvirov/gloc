@@ -1,13 +1,13 @@
 import { log } from './log';
 
-export const constructUrl = (repoName: string, token: string) =>
+export const constructTokenizedUrl = (repoName: string, token: string) =>
     tokenizeUrl(getApiUrl(repoName), token);
 
 /**
  * @param {string} repo - /user/repo
  * @return {string}
  */
-const getApiUrl = (repoName: string) =>
+export const getApiUrl = (repoName: string) =>
 	`https://api.github.com/repos${repoName}/stats/code_frequency`;
 
 

@@ -1,17 +1,28 @@
 import { CodeFrequency, GithubError } from '../types';
 
 import { calculateLoc } from './calculateLoc';
-import { constructUrl } from './constructUrl';
+import { getApiUrl } from './constructUrl';
 import { isEmpty } from './isEmpty';
 
+/*
+	Read more:
+	- https://developer.github.com/v3/auth/#via-oauth-and-personal-access-tokens
+	- https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/#authenticating-using-query-parameters
+*/
 export const requestLoc = (reponame: string, tries: number, token: string): Promise<number | void | null> => {
 	if (tries === 0) {
 		return Promise.reject('Repo: ' + reponame + '; Too many requests to API !');
 	}
 
-	const url = constructUrl(reponame, token);
+	const url = getApiUrl(reponame);
+	const options = {
+		method: 'GET',
+		headers: {
+			'Authorization': `token ${token}`
+		},
+	};
 
-	return fetch(url)
+	return fetch(url, options)
 		.then(response => response.json())
 		.then((stat: CodeFrequency) => {
 			if (!isEmpty(stat)) {
