@@ -1,3 +1,6 @@
+### 8.2.2 @ 2020-02-05 00:00
+- moving to new authorization format
+
 ### 8.2.1 @ 2020-02-02 00:00
 - optimizations
     - bundle size. From 627KB to 132KB

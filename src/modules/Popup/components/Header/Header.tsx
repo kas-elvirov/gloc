@@ -43,7 +43,7 @@ export default class Footer extends React.PureComponent {
                         </Text>
 
                     </Header>
-                    <Text>Version: 8.2.1</Text>
+                    <Text>Version: 8.2.2</Text>
                 </Column>
 
                 <Column>
