@@ -1,3 +1,5 @@
+import './analytics';
+
 chrome.runtime.onInstalled.addListener((details) => {
 	if (details.reason === 'install') {
 		chrome.runtime.openOptionsPage();
@@ -9,4 +11,5 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 		console.info(statusMsg);
 	}
+
 });
