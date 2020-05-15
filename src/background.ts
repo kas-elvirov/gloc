@@ -1,6 +1,4 @@
-import './analytics';
-
-/* chrome.runtime.onInstalled.addListener((details) => {
+chrome.runtime.onInstalled.addListener((details) => {
 	if (details.reason === 'install') {
 		chrome.runtime.openOptionsPage();
 	} else if (details.reason === 'update') {
@@ -12,4 +10,4 @@ import './analytics';
 		console.info(statusMsg);
 	}
 
-}); */
+});
