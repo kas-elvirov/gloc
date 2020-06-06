@@ -7,7 +7,8 @@ import { isEmpty } from './isEmpty';
 /*
 	Read more:
 	- https://developer.github.com/v3/auth/#via-oauth-and-personal-access-tokens
-	- https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/#authenticating-using-query-parameters
+	- https://developer.github.com
+		/changes/2019-11-05-deprecated-passwords-and-authorizations-api/#authenticating-using-query-parameters
 */
 export const requestLoc = (reponame: string, tries: number, token: string): Promise<number | void | null> => {
 	if (tries === 0) {
@@ -15,12 +16,15 @@ export const requestLoc = (reponame: string, tries: number, token: string): Prom
 	}
 
 	const url = getApiUrl(reponame);
-	const options = {
+	const options: RequestInit | undefined = {
 		method: 'GET',
-		headers: {
-			'Authorization': `token ${token}`
-		},
 	};
+
+	if (token) {
+		options.headers = {
+			Authorization: `token ${token}`,
+		};
+	}
 
 	return fetch(url, options)
 		.then(response => response.json())
@@ -31,7 +35,7 @@ export const requestLoc = (reponame: string, tries: number, token: string): Prom
 
 			console.error(`Error by calculating LOC for ${reponame}. Incoming stat -->`, stat);
 
-			return null;;
+			return null;
 		})
 		.catch((err: GithubError) => {
 			if (err.message) {

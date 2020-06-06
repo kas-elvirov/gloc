@@ -14,7 +14,7 @@ import { getLinksFromDom } from './utils/getLinksFromDom';
  * - LOC - lines of code
  */
 
-let githubToken: string = '';
+let githubToken = '';
 
 /**
  * Main
@@ -29,16 +29,16 @@ let githubToken: string = '';
 
 		document.addEventListener('pjax:complete', () => {
 			gloc();
-		})
+		});
 	});
 })();
 
 const gloc = (): void => {
 	getLinksFromDom()
-		.then(links => {
-			renderLocs(links, githubToken);
+		.then(linksData => {
+			renderLocs(linksData, githubToken);
 
-			log('info', links);
+			log('info', linksData);
 		})
 		.catch(err => log('err', err));
 };
