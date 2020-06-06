@@ -1,6 +1,6 @@
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)]()
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)]()
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)]()
+![Chrome Web Store](https://img.shields.io/chrome-web-store/d/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)
 ___
 
 # Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera](), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/gloc/) )
@@ -10,7 +10,7 @@ ___
 
 ## History
 ### Version:
-- current: 8.2.5 ( 2020, 15 may )
+- current: 8.2.8 ( 2020, 6 june )
 - initial: 2.0.1 ( 2017, 12 february )
 
 I made this program in the Russian Army while I was on duty. I was coding as fast as i could )))
