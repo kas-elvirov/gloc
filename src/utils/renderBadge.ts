@@ -9,18 +9,18 @@ import { getBgColorForLoc } from './getBgColorForLoc';
 * @return {html}
 */
 export const renderBadge = (lines: string) => {
-    const defaultRadiusSize = '4px';
-    const paddingSize = '2px 6px';
-    const fontSize = '12px';
+	const defaultRadiusSize = '4px';
+	const paddingSize = '2px 6px';
+	const fontSize = '12px';
 
-    const commonStyles = `
+	const commonStyles = `
         padding: ${paddingSize};
         font-size: ${fontSize};
         font-weight: 500;
     `;
 
-    return (
-        ` <div class='box' style='font-size: 0; font-family: Verdana;'>
+	return (
+		` <div class='box' style='font-size: 0; font-family: Verdana; display: inline-flex'>
                 <span
                     style='
                         ${commonStyles}
@@ -45,5 +45,5 @@ export const renderBadge = (lines: string) => {
                     ${lines}
                 </span>
             </div> `
-    );
+	);
 };

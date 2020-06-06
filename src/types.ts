@@ -1,6 +1,7 @@
 export interface InitialData {
 	location: LOCATION;
 	links: HTMLAnchorElement[];
+	linksToInsert: HTMLAnchorElement[];
 }
 
 export enum LOCATION {

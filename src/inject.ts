@@ -35,10 +35,10 @@ let githubToken = '';
 
 const gloc = (): void => {
 	getLinksFromDom()
-		.then(links => {
-			renderLocs(links, githubToken);
+		.then(linksData => {
+			renderLocs(linksData, githubToken);
 
-			log('info', links);
+			log('info', linksData);
 		})
 		.catch(err => log('err', err));
 };
