@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "8.2.10",
+  "version": "8.2.12",
   "description": "Extension counts the number of lines of code in GitHub pages.",
   "author": "Artem Solovev",
   "license": "GPL-2.0",
@@ -25,7 +25,7 @@
     "zip": "grunt",
     "build:prod": "webpack --config webpack.config.prod  && grunt",
     "build:dev": "webpack --config webpack.config.dev  && grunt",
-    "version:up": "npm version patch --no-git-tag-version --force && git add package.json package-lock.json && node ./scripts/upAppVersion.js"
+    "version:up": "npm version patch --no-git-tag-version --force && node ./scripts/upAppVersion.js && git add package.json package-lock.json .env manifest.json"
   },
   "husky": {
     "hooks": {
