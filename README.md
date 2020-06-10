@@ -13,7 +13,7 @@ ___
 
 ## History
 ### Version:
-- current: 8.2.15 ( 2020, 11 june )
+- current: 8.2.16 ( 2020, 11 june )
 - initial: 2.0.1 ( 2017, 12 february )
 
 I made this program in the Russian Army while I was on duty. I was coding as fast as i could )))
@@ -66,11 +66,16 @@ Counts lines of code in:
 ___
 
 
-## ![love y'all](screens/heart.png)  **Credits** 
+## ![love y'all](screens/heart.png)  **Credits**
 ### Assets
 * App [icon](https://www.flaticon.com/free-icon/github_23586#term=github&page=1&position=15) made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
 * Ads icon made by [SimpleIcon](https://www.flaticon.com/authors/simpleicon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
 * Browser's [icons](https://www.flaticon.com/packs/logo-502) made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+
+### Sponsors
+- [Curtis Conard](https://github.com/cconard96)
+- [Anastasia Anisichkina](https://github.com/anastasia-anisichkina)
+- [Ann Void](https://github.com/ann-void)
 
 ### Translation
 * [Suzana Gonçalves](https://www.facebook.com/suzana.goncalves.9041) - translation into Portuguese (Brazil)
