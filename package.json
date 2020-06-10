@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "8.2.12",
+  "version": "8.2.13",
   "description": "Extension counts the number of lines of code in GitHub pages.",
   "author": "Artem Solovev",
   "license": "GPL-2.0",
