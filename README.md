@@ -3,7 +3,7 @@
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)
 ___
 
-# Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera](), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/gloc/) )
+# Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera](https://addons.opera.com/en/extensions/details/github-gloc/), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/gloc/) )
 ![Chrome](screens/browsers/chrome.png)
 ![Opera](screens/browsers/opera.png)
 ![Firefox](screens/browsers/firefox.png)
