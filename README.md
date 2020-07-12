@@ -42,6 +42,7 @@ Counts lines of code in:
 - Portuguese (Brazil)
 - Russian
 - Spanish (Latin America and Caribbean)
+- Vietnamese
 - Ukrainian
 
 **Gloc** means - 'Github lines of code counter'
@@ -88,3 +89,4 @@ ___
 * [Ryo SHIINA](https://github.com/pooch-tonic) - translation into Japanese
 * [Paweł Idzikowski](https://github.com/trolit) - translation into Polish
 * [Radoslav Mandev](radoslav.mandev99@gmail.com) - translation into Bulgarian
+* [Thai Nguyen](https://github.com/ntthaibk) - translation into Vietnamese
