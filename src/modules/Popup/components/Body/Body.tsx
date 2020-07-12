@@ -6,33 +6,28 @@ import {
 	Column,
 } from '../../../Common/components/Layout/index';
 import { Text } from '../../../Common/components/Text/index';
-import { TextList, Type } from '../../../Common/components/TextList/index';
+import { Header } from '../../../Common/components/Header/index';
 import { colors } from '../../../../theme/colors';
 
 export default class Body extends React.PureComponent {
 	render() {
-		const headerMsg = chrome.i18n.getMessage('indexCountsFrom');
-		const list = [
-			chrome.i18n.getMessage('indexProjectPage'),
-			chrome.i18n.getMessage('indexUserPage'),
-			chrome.i18n.getMessage('indexSearchPage'),
-			chrome.i18n.getMessage('indexTrandingPage'),
-			chrome.i18n.getMessage('indexEtc'),
-		];
+		const disclaimer = 'Github does not have a function to view the total number of '
+			+ 'lines of code in the project but we can to compute an approximation '
+			+ 'of that data (LOC: Lines of Code) through the GitHub Statistics API. '
+			+ 'Some glitches may occur, such as negative loc or "unavailable data" for many reasons';
 
 		return (
 			<Container color={colors.grey200}>
 				<Column>
 					<Row>
-						<Text>{headerMsg}</Text>
+						<Header>Disclaimer</Header>
+					</Row>
+					<Row>
+						<Text>
+							{disclaimer}
+						</Text>
 					</Row>
 
-					<Row>
-						<TextList
-							type={Type.Ol}
-							list={list}
-						/>
-					</Row>
 				</Column>
 			</Container>
 		);
