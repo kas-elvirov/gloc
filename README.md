@@ -3,10 +3,11 @@
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/kaodcnpebhdbpaeeemkiobcokcnegdki.svg?style=flat-square)
 ___
 
-# Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera](https://addons.opera.com/en/extensions/details/github-gloc/), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/gloc/) )
+# Browser extension GLOC ( [Chrome](https://chrome.google.com/webstore/detail/gloc-github-counter-lines/kaodcnpebhdbpaeeemkiobcokcnegdki?utm_source=chrome-ntp-icon), [Opera](https://addons.opera.com/en/extensions/details/github-gloc/), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/gloc/), [Edge](https://microsoftedge.microsoft.com/addons/detail/github-gloc/kajgeahhljoinicmpkogimkcpecnnihh?hl=en-GB) )
 ![Chrome](screens/browsers/chrome.png)
 ![Opera](screens/browsers/opera.png)
 ![Firefox](screens/browsers/firefox.png)
+![EDGE](screens/browsers/edge.png)
 
 ## DISCLAIMER
 ### Github does not have a function to view the total number of lines of code in the project but we can to compute an approximation of that data (LOC: Lines of Code) through the GitHub Statistics API. Some glitches may occur, such as negative loc or <unavailable data> for many reasons
