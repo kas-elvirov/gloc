@@ -30,3 +30,4 @@ export const MESSAGE_IDS = {
 };
 
 export const DEFAULT_OUTPUT = 'Stat is unavailable';
+export const LOADING_OUTPUT = 'Loading...';
