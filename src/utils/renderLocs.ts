@@ -13,12 +13,12 @@ export const renderLocs = (linksData: InitialData, token: string) => {
 
 		if (reponame) {
 			requestLoc(reponame, TRIES_DEFAULT, token)
-				.then(loc => renderLoc(placeToInsert, formatOutput(loc)))
+				.then(loc => renderLoc(placeToInsert, reponame, formatOutput(loc)))
 				.catch(err => console.error(`Error by setting LOC for ${reponame}`, err));
 		}
 	});
 };
 
-const renderLoc = (anchor: HTMLAnchorElement, loc: string) => {
-	anchor.innerHTML += renderBadge(loc);
+const renderLoc = (anchor: HTMLAnchorElement, reponame: string, loc: string) => {
+	anchor.innerHTML = reponame.split('/').slice(-1)[0] + renderBadge(loc);
 };
