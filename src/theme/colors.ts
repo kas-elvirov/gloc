@@ -2,6 +2,7 @@ export const colors = {
     mainGreen: '#09af00',
     mainPink: '#b1006a',
     mainWhite: '#fff',
+    mainPurple: '#9f00b1',
 
     // https://material.io/design/color/the-color-system.html#tools-for-picking-colors
     /* GREY */
