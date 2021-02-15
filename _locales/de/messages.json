@@ -33,16 +33,16 @@
         "message": "Speichern"
     },
     "optionsCreateToken": {
-        "message": "Token erstellen"
+        "message": "Zugriffstoken erstellen"
     },
     "optionsTokenMustbeString": {
         "message": "Zugriffstoken sollte ein String sein, z.B:"
     },
     "optionsTokenWrongLength": {
-        "message": "Access Token length appears wrong!"
+        "message": "Die Länge des Zugriffstokens scheint falsch zu sein!"
     },
     "optionsTokenWalid": {
-        "message": "Token ist gültig."
+        "message": "Zugriffstoken ist gültig."
     },
     "optionsSaved": {
         "message": "Optionen gespeichert!"
@@ -57,16 +57,16 @@
         "message": "Zählt die Anzahl der Codezeilen eines Projektes aus:"
     },
     "indexProjectPage": {
-        "message": "projekdetailseite"
+        "message": "Projekdetailseite"
     },
     "indexUserPage": {
-        "message": "benutzerseite"
+        "message": "Benutzerseite"
     },
     "indexSearchPage": {
-        "message": "suchergebnissseite"
+        "message": "Suchergebnissseite"
     },
     "indexTrandingPage": {
-        "message": "trendseite"
+        "message": "Trendseite"
     },
     "indexEtc": {
         "message": "etc."
@@ -84,6 +84,6 @@
         "message": "Durch Erweiterungen:"
     },
     "lines": {
-        "message": "linien"
+        "message": "Zeilen"
     }
 }

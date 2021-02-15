@@ -13,7 +13,10 @@ export const renderLocs = (linksData: InitialData, token: string) => {
 
 		if (repoName) {
 			const renderLoc = makeRenderFunc(placeToInsert);
+
 			renderLoc(LOADING_OUTPUT);
+      
+
 			requestLoc(repoName, TRIES_DEFAULT, token)
 				.then(loc => renderLoc(formatOutput(loc)))
 				.catch(err => console.error(`Error by setting LOC for ${repoName}`, err));
