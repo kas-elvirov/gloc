@@ -12,13 +12,12 @@ export const renderLocs = (linksData: InitialData, token: string) => {
 		const placeToInsert = linksData.linksToInsert[index] || anchor;
 
 		if (repoName) {
-			const renderLoc = makeRenderFunc(placeToInsert);
+			const renderLoaderFunc = makeRenderLoaderFunc(placeToInsert);
 
-			renderLoc(LOADING_OUTPUT);
-      
+			renderLoaderFunc(LOADING_OUTPUT);
 
 			requestLoc(repoName, TRIES_DEFAULT, token)
-				.then(loc => renderLoc(formatOutput(loc)))
+				.then(loc => renderLoc(placeToInsert, repoName, formatOutput(loc)))
 				.catch(err => console.error(`Error by setting LOC for ${repoName}`, err));
 		}
 	});
@@ -29,9 +28,14 @@ export const renderLocs = (linksData: InitialData, token: string) => {
  * The initial inner HTML of the anchor element is saved and reset upon updating the badge.
  * @param anchor HTML Element to add LOC badges to
  */
-const makeRenderFunc = (anchor: HTMLAnchorElement) => {
+const makeRenderLoaderFunc = (anchor: HTMLAnchorElement) => {
 	const startInnerHTML = anchor.innerHTML;
+
 	return (loc: string) => {
 		anchor.innerHTML = startInnerHTML + renderBadge(loc);
 	};
+};
+
+const renderLoc = (anchor: HTMLAnchorElement, reponame: string, loc: string) => {
+	anchor.innerHTML = reponame.split('/').slice(-1)[0] + renderBadge(loc);
 };

@@ -14,7 +14,7 @@ ___
 
 ## History
 ### Version:
-- current: 8.2.46 ( 2021, 15 february )
+- current: 8.2.47 ( 2021, 16 february )
 - initial: 2.0.1 ( 2017, 12 february )
 
 I made this program in the Russian Army while I was on duty. I was coding as fast as i could )))
