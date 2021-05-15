@@ -1,8 +1,10 @@
 {
   "name": "gloc",
-  "version": "8.2.47",
-  "description": "Extension counts the number of lines of code in GitHub pages.",
-  "author": "Artem Solovev",
+  "version": "8.2.48",
+  "description": "Browser extension - counts locs on GitHub pages",
+  "authors": [
+    "Artem Vadimovich Solovev <artem.solovev.lse@gmail.com> (https://github.com/artem-solovev)"
+  ],
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/artem-solovev/gloc/issues"

@@ -28,6 +28,8 @@ export const scrapData = (parameters: ParameterToMap[]): InitialData | void => {
 		const entityToInsert = document[selector](pathToInsert);
 
 		if ((existenceChecker as ExistenceChecker)(entity)) {
+			console.log('scrapData.locationName', locationName);
+			console.log('scrapData.links', (wrapper as Wrapper)(entity));
 			return {
 				location: locationName,
 				links: (wrapper as Wrapper)(entity) as HTMLAnchorElement[],

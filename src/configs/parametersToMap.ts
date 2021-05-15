@@ -21,7 +21,7 @@ export const parametersToMap: ParameterToMap[] = [
 		*/
 		locationName: LOCATION.USER,
 		selector: 'querySelectorAll',
-		pathToSelect: '.js-pinned-items-reorder-container ol li a.text-bold.flex-auto.min-width-0',
+		pathToSelect: 'ol li div div div a',
 		pathToInsert: '.wb-break-all',
 		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
 		wrapper: (entity) => Array.prototype.slice.call(entity),
@@ -29,7 +29,7 @@ export const parametersToMap: ParameterToMap[] = [
 	{
 		locationName: LOCATION.ORGANIZATION,
 		selector: 'querySelectorAll',
-		pathToSelect: '.repo-list h3 a',
+		pathToSelect: '#org-repositories div ul div.flex-auto > h3 > a',
 		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
