@@ -27,6 +27,17 @@ export const parametersToMap: ParameterToMap[] = [
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{
+		/*
+			https://github.com/torvalds
+		*/
+		locationName: LOCATION.POPULAR_REPOS,
+		selector: 'querySelectorAll',
+		pathToSelect: '.js-pinned-items-reorder-container ol li div div div a',
+		pathToInsert: '.wb-break-all',
+		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+		wrapper: (entity) => Array.prototype.slice.call(entity),
+	},
+	{
 		locationName: LOCATION.ORGANIZATION,
 		selector: 'querySelectorAll',
 		pathToSelect: '#org-repositories div ul div.flex-auto > h3 > a',
