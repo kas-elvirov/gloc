@@ -17,11 +17,22 @@ const currentUserLocation = window.location.pathname.replace('/', '');
 export const parametersToMap: ParameterToMap[] = [
 	{
 		/*
-			for example: https://github.com/artem-solovev?tab=repositories
+			https://github.com/artem-solovev
 		*/
-		locationName: LOCATION.USER,
+		locationName: LOCATION.PINNED_REPOS,
 		selector: 'querySelectorAll',
-		pathToSelect: 'ol li div div div a',
+		pathToSelect: '.js-pinned-items-reorder-list .pinned-item-list-item-content div a',
+		pathToInsert: '.wb-break-all',
+		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+		wrapper: (entity) => Array.prototype.slice.call(entity),
+	},
+	{
+		/*
+			https://github.com/torvalds
+		*/
+		locationName: LOCATION.POPULAR_REPOS,
+		selector: 'querySelectorAll',
+		pathToSelect: '.js-pinned-items-reorder-container ol li div div div a',
 		pathToInsert: '.wb-break-all',
 		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
 		wrapper: (entity) => Array.prototype.slice.call(entity),
@@ -69,9 +80,9 @@ export const parametersToMap: ParameterToMap[] = [
 	},
 	{
 		/*
-			for example: https://github.com/artem-solovev
+			https://github.com/artem-solovev?tab=repositories
 		*/
-		locationName: LOCATION.PINNED_REPOS,
+		locationName: LOCATION.USER_REPOSITORIES,
 		selector: 'querySelectorAll',
 		pathToSelect: '#user-repositories-list ul li h3 a',
 		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,

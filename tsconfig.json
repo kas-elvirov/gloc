@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"outDir": "./dist/",
 		"noImplicitAny": true,
-		"module": "ESNext",
+		"module": "ES6",
 		"target": "es5",
 		"baseUrl": "types",
 		"typeRoots": ["types"],
@@ -12,6 +12,8 @@
 		"lib": ["es2015.core", "dom", "es6"],
 		"sourceMap": true,
 		"jsx": "react",
+		"moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
 		"plugins": [
 			{
 			  "name": "typescript-tslint-plugin",

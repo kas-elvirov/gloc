@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { Header } from './components/Header/index';
-import { Footer } from './components/Footer/index';
-import { Body } from './components/Body/index';
+import { Header } from './components/_Header/index';
+import { Footer } from './components/_Footer/index';
+import { Body } from './components/_Body/index';
 
 export default class PopupPage extends React.PureComponent {
 	render() {

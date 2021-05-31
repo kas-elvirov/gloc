@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "8.2.48",
+  "version": "8.2.58",
   "description": "Browser extension - counts locs on GitHub pages",
   "authors": [
     "Artem Vadimovich Solovev <artem.solovev.lse@gmail.com> (https://github.com/artem-solovev)"
@@ -27,7 +27,7 @@
     "zip": "grunt",
     "build:prod": "webpack --config webpack.config.prod  && grunt",
     "build:dev": "webpack --config webpack.config.dev  && grunt",
-    "version:up": "npm version patch --no-git-tag-version --force && node ./scripts/upAppVersion.js && git add package.json package-lock.json .env manifest.json"
+    "version:up": "npm version patch --no-git-tag-version --force && node ./scripts/upAppVersion.js && git add package.json .env manifest.json"
   },
   "husky": {
     "hooks": {
@@ -35,6 +35,8 @@
     }
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/styles": "^4.11.4",
     "@types/node": "^12.12.14",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",

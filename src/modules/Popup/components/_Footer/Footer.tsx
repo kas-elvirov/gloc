@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import * as React from 'react';
 import Iframe from 'react-iframe';
 
