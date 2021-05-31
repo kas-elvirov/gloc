@@ -21,7 +21,7 @@ export const parametersToMap: ParameterToMap[] = [
 		*/
 		locationName: LOCATION.PINNED_REPOS,
 		selector: 'querySelectorAll',
-		pathToSelect: 'js-pinned-items-reorder-list li div div div a',
+		pathToSelect: '.pinned-item-list-item-content a',
 		pathToInsert: '.wb-break-all',
 		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
 		wrapper: (entity) => Array.prototype.slice.call(entity),
