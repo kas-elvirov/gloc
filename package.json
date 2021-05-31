@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "8.2.50",
+  "version": "8.2.51",
   "description": "Browser extension - counts locs on GitHub pages",
   "authors": [
     "Artem Vadimovich Solovev <artem.solovev.lse@gmail.com> (https://github.com/artem-solovev)"
@@ -35,6 +35,8 @@
     }
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/styles": "^4.11.4",
     "@types/node": "^12.12.14",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
