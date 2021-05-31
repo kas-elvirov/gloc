@@ -1,26 +1,17 @@
 import * as React from 'react';
 
-import Grid from '@material-ui/core/Grid';
+import { Header } from './components/_Header/index';
+import { Footer } from './components/_Footer/index';
+import { Body } from './components/_Body/index';
 
 export default class PopupPage extends React.PureComponent {
 	render() {
 		return (
-			<Grid
-				container
-				direction="column"
-			>
-				<Grid item>
-					header
-				</Grid>
-
-				<Grid item>
-					header
-				</Grid>
-
-				<Grid item>
-					header
-				</Grid>
-			</Grid>
+			<React.Fragment>
+				<Header />
+				<Body />
+				<Footer />
+			</React.Fragment>
 		);
 	}
 }

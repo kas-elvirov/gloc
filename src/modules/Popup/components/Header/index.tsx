@@ -32,11 +32,7 @@ export default class PopupPage extends React.PureComponent {
                         variant={'h5'}
                     >
                         {github}
-                    </Typography>
-
-                    <Typography
-                        variant={'h5'}
-                    >
+                        &nbsp;
                         {gloc}
                     </Typography>
 

@@ -1,5 +1,7 @@
+/* eslint-disable */
+
 import * as React from 'react';
-// import Iframe from 'react-iframe';
+import Iframe from 'react-iframe';
 
 import { colors } from '../../../../theme/colors';
 import {
@@ -27,11 +29,10 @@ export default class Footer extends React.PureComponent {
 						<Column>
 							<Row>
 								<Center>
-									{/* <Iframe
+									<Iframe
 										src='https://ghbtns.com/github-btn.html?user=artem-solovev&repo=gloc&type=star&count=true'
-										url=''
 										{...decorationProps.githubFrame}
-									/> */}
+									/>
 								</Center>
 							</Row>
 
