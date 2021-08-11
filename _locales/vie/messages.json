@@ -9,7 +9,7 @@
         "message": "Artem Solovev"
     },
     "description": {
-        "message": "Đếm số dòng code trên Github"
+        "message": "Gives you approximate count of lines of code on GitHub"
     },
     "optionsTitle": {
         "message": "Tuỳ chỉnh"
@@ -54,7 +54,7 @@
         "message": "Chỉ chạy trên:"
     },
     "indexCountsFrom": {
-        "message": "Đếm số dòng code từ:"
+        "message": "Gives you approximate count of lines of code from:"
     },
     "indexProjectPage": {
         "message": "Trang thông tin chi tiết Dự Án"

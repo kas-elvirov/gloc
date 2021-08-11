@@ -9,7 +9,7 @@
         "message": "Artem Solovev"
     },
     "description": {
-        "message": "GitHubでコードの行数を数えてくれます。"
+        "message": "Gives you approximate count of lines of code on GitHub"
     },
     "optionsTitle": {
         "message": "設定"
@@ -54,7 +54,7 @@
         "message": "次のサイト専用です："
     },
     "indexCountsFrom": {
-        "message": "以下の項目でコードの行数を数えてくれます："
+        "message": "Gives you approximate count of lines of code from:"
     },
     "indexProjectPage": {
         "message": "プロジェクトの詳細ページ"
