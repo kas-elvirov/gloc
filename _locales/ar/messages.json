@@ -9,7 +9,7 @@
         "message": "أرتيم سولوفيف"
     },
     "description": {
-        "message": "يحسب خطوط التعليمات البرمجية على جيثب"
+        "message": "Gives you approximate count of lines of code on GitHub"
     },
     "optionsTitle": {
         "message": "خيارات"
@@ -54,7 +54,7 @@
         "message": "يعمل فقط على"
     },
     "indexCountsFrom": {
-        "message": "لحساب خطوط الشفرة من:"
+        "message": "Gives you approximate count of lines of code from:"
     },
     "indexProjectPage": {
         "message": "صفحة تفاصيل المشروع"

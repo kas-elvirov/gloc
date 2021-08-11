@@ -9,7 +9,7 @@
         "message": "Artem Solovev"
     },
     "description": {
-        "message": "统计 GitHub 仓库的代码总行数"
+        "message": "Gives you approximate count of lines of code on GitHub"
     },
     "optionsTitle": {
         "message": "选项"
@@ -54,7 +54,7 @@
         "message": "只适用于"
     },
     "indexCountsFrom": {
-        "message": "在以下页面统计仓库的代码总行数："
+        "message": "Gives you approximate count of lines of code from:"
     },
     "indexProjectPage": {
         "message": "仓库详情页面"

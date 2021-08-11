@@ -9,7 +9,7 @@
         "message": "Artem Solovev"
     },
     "description": {
-        "message": "Zlicza linie kodu w serwisie GitHub"
+        "message": "Gives you approximate count of lines of code on GitHub"
     },
     "optionsTitle": {
         "message": "Ustawienia"
@@ -54,7 +54,7 @@
         "message": "Działa tylko na "
     },
     "indexCountsFrom": {
-        "message": "Zlicza liczbę linii kodu projektu z:"
+        "message": "Gives you approximate count of lines of code from:"
     },
     "indexProjectPage": {
         "message": "strony szczegółów projektu"

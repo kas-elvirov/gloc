@@ -9,7 +9,7 @@
         "message": "Артем Соловьев"
     },
     "description": {
-        "message": "Считает строки кода на GitHub"
+        "message": "Gives you approximate count of lines of code on GitHub"
     },
     "optionsTitle": {
         "message": "Настройки"
@@ -54,7 +54,7 @@
         "message": "Работает только на"
     },
     "indexCountsFrom": {
-        "message": "Считает строки кода со следующих страниц:"
+        "message": "Gives you approximate count of lines of code from:"
     },
     "indexProjectPage": {
         "message": "отдельный репозиторий"

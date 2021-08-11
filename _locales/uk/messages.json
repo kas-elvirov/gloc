@@ -9,7 +9,7 @@
         "message": "Artem Solovev"
     },
     "description": {
-        "message": "Підраховує рядки коду на GitHub"
+        "message": "Gives you approximate count of lines of code on GitHub"
     },
     "optionsTitle": {
         "message": "Опції"
@@ -54,7 +54,7 @@
         "message": "Працює тільки на"
     },
     "indexCountsFrom": {
-        "message": "Підраховує кількість рядків коду проекту з:"
+        "message": "Gives you approximate count of lines of code from:"
     },
     "indexProjectPage": {
         "message": "сторінка з подробицями проекту"

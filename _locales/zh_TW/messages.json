@@ -9,7 +9,7 @@
         "message": "Artem Solovev"
     },
     "description": {
-        "message": "計算 GitHub 專案的總程式碼行數"
+        "message": "Gives you approximate count of lines of code on GitHub"
     },
     "optionsTitle": {
         "message": "選項"
@@ -54,7 +54,7 @@
         "message": "僅運作於"
     },
     "indexCountsFrom": {
-        "message": "在以下頁面顯示專案的程式碼總行數"
+        "message": "Gives you approximate count of lines of code from:"
     },
     "indexProjectPage": {
         "message": "專案頁面"
