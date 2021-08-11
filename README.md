@@ -13,9 +13,7 @@ ___
 ### Github does not have a function to view the total number of lines of code in the project but we can to compute an approximation of that data (LOC: Lines of Code) through the GitHub Statistics API. Some glitches may occur, such as negative loc or <unavailable data> for many reasons
 
 ## History
-### Version:
-- current: 8.2.48 ( 2021, 15 april )
-- initial: 2.0.1 ( 2017, 12 february )
+Initial version: 2.0.1 ( 2017, 12 february )
 
 I made this program in the Russian Army while I was on duty. I was coding as fast as i could )))
 
