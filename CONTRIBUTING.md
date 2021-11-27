@@ -37,9 +37,9 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 2. If you've changed APIs, update the documentation.
 3. Issue that pull request!
 
-## Report bugs using Github's [issues](https://github.com/artem-solovev/gloc/blob/master/ISSUE_TEMPLATE.md)
+## Report bugs using Github's [issues](https://github.com/kas-elvirov/gloc/blob/master/ISSUE_TEMPLATE.md)
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](); it's that easy!
 
 ## License
-By contributing, you agree that your contributions will be licensed under its [GPL-2.0 License](https://github.com/artem-solovev/gloc/blob/master/LICENSE)
+By contributing, you agree that your contributions will be licensed under its [GPL-2.0 License](https://github.com/kas-elvirov/gloc/blob/master/LICENSE)
 

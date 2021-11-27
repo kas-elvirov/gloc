@@ -60,7 +60,7 @@ Counts lines of code in:
 
 
 ## **Quick links**
-* **[Issues, bugs](https://github.com/artem-solovev/gloc/issues)**
+* **[Issues, bugs](https://github.com/kas-elvirov/gloc/issues)**
 * **[Privacy policy](PRIVACY.md)**
 
 ___
