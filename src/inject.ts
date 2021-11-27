@@ -1,7 +1,7 @@
 /**
- * https://github.com/artem-solovev/gloc
+ * https://github.com/kas-elvirov/gloc
  *
- * Licensed GPL-2.0 © Artem Solovev
+ * Licensed GPL-2.0 © Kas Elvirov
  */
 import 'pjax';
 

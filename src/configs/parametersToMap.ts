@@ -17,7 +17,7 @@ const currentUserLocation = window.location.pathname.replace('/', '');
 export const parametersToMap: ParameterToMap[] = [
 	{
 		/*
-			https://github.com/artem-solovev
+			https://github.com/kas-elvirov
 		*/
 		locationName: LOCATION.PINNED_REPOS,
 		selector: 'querySelectorAll',
@@ -56,7 +56,7 @@ export const parametersToMap: ParameterToMap[] = [
 		selector: 'querySelector',
 		pathToSelect: '.application-main h1 strong a',
 		/*
-			for example: https://github.com/artem-solovev/gloc
+			for example: https://github.com/kas-elvirov/gloc
 		*/
 		pathToInsert: '.public',
 		existenceChecker: (entity: HTMLAnchorElement[]) => Boolean(entity),
@@ -80,7 +80,7 @@ export const parametersToMap: ParameterToMap[] = [
 	},
 	{
 		/*
-			https://github.com/artem-solovev?tab=repositories
+			https://github.com/kas-elvirov?tab=repositories
 		*/
 		locationName: LOCATION.USER_REPOSITORIES,
 		selector: 'querySelectorAll',

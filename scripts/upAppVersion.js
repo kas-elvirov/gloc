@@ -8,8 +8,8 @@ const manifest = require('../manifest.json');
 const sourcePath = '.env'
 let parsedFile = envfile.parse(sourcePath);
 parsedFile.APP_VERSION = package.version;
-parsedFile.PAYPAL_URL = 'https://www.paypal.me/ArtemSolovev'; // TEMP
-parsedFile.OPENCOLLECTIVE_URL = 'https://opencollective.com/artem-solovev'; // TEMP
+parsedFile.PAYPAL_URL = 'https://www.paypal.me/KasElvirov'; // TEMP
+parsedFile.OPENCOLLECTIVE_URL = 'https://opencollective.com/kas-elvirov'; // TEMP
 
 fs.writeFileSync('./.env', envfile.stringify(parsedFile));
 

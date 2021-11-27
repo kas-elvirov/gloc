@@ -30,7 +30,7 @@ export default class Footer extends React.PureComponent {
 							<Row>
 								<Center>
 									<Iframe
-										src='https://ghbtns.com/github-btn.html?user=artem-solovev&repo=gloc&type=star&count=true'
+										src='https://ghbtns.com/github-btn.html?user=kas-elvirov&repo=gloc&type=star&count=true'
 										{...decorationProps.githubFrame}
 									/>
 								</Center>
@@ -80,7 +80,7 @@ export default class Footer extends React.PureComponent {
 					<Row>
 						<Center>
 							<Text>
-								Made by <Anchor href='http://artemsolovev.com/' target='_blank' color={colors.pink400}>Artem Solovev</Anchor>
+								Made by <Anchor href='http://kas-elvirov.com/' target='_blank' color={colors.pink400}>Kas Elvirov</Anchor>
 							</Text>
 						</Center>
 					</Row>
