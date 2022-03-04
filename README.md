@@ -32,7 +32,8 @@ Counts lines of code in:
 ## Supported languages
 - Arabic
 - Bulgarian
-- Chinese (Taiwan)
+- Chinese (Simplified)
+- Chinese (Traditional)
 - English
 - English (UK)
 - English (US)
