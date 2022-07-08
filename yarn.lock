@@ -5186,11 +5186,6 @@ pify@^4.0.1:
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
-pjax@^0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/pjax/-/pjax-0.2.8.tgz#ce789a6a95ec4f555fa04a350ad1fc3dac0d1b6f"
-  integrity sha512-IeVXXIZJzxVDYzV2Td5MZkWJcny8JRCz2dQ1xxhIUbIFgP+08ymV7WXVtbF8NlUd2MZKH1cNvhuTOd2QAOGcOg==
-
 pkg-dir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
