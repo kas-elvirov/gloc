@@ -54,7 +54,7 @@ export const parametersToMap: ParameterToMap[] = [
 	{
 		locationName: LOCATION.SINGLE,
 		selector: 'querySelector',
-		pathToSelect: '.application-main h1 strong a',
+		pathToSelect: '#repository-container-header > div.d-flex.mb-3.px-3.px-md-4.px-lg-5 > div > div > strong a',
 		/*
 			for example: https://github.com/kas-elvirov/gloc
 		*/
