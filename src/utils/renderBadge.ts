@@ -20,7 +20,12 @@ export const renderBadge = (lines: string) => {
     `;
 
 	return (
-		` <div class='box' style='font-size: 0; font-family: Verdana; display: inline-flex'>
+		` <div
+            class='box'
+            style='font-size: 0;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+            display: inline-flex';
+        >
                 <span
                     style='
                         ${commonStyles}

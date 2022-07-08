@@ -15,7 +15,7 @@ ___
 ## History
 Initial version: 2.0.1 ( 2017, 12 february )
 
-I made this program in the Russian Army while I was on duty. I was coding as fast as i could )))
+I made this extension in the Russian Army while I was on duty. I was coding as fast as i could )))
 
 ## Description
 Works for **public** and **private** repos.
