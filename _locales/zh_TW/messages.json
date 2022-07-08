@@ -9,7 +9,7 @@
         "message": "Kas Elvirov"
     },
     "description": {
-        "message": "Gives you approximate count of lines of code on GitHub"
+        "message": "提供 GitHub 專案程式碼約略的行數"
     },
     "optionsTitle": {
         "message": "選項"
@@ -54,7 +54,7 @@
         "message": "僅運作於"
     },
     "indexCountsFrom": {
-        "message": "Gives you approximate count of lines of code from:"
+        "message": "從以下頁面提供 GitHub 專案程式碼約略的行數："
     },
     "indexProjectPage": {
         "message": "專案頁面"
@@ -78,12 +78,12 @@
         "message": "幫助我們翻譯這個小工具"
     },
     "totalDirLoc": {
-        "message": "Total lines in the current directory:"
+        "message": "目前目錄下的總行數："
     },
     "totalExtLoc": {
         "message": "By extensions:"
     },
     "lines": {
-        "message": "lines"
+        "message": "行數"
     }
 }
