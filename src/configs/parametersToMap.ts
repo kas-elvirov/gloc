@@ -1,3 +1,5 @@
+import isPositiveArray from 'is-positive-array';
+
 import { LOCATION } from '../types';
 
 export type ExistenceChecker = (entity: HTMLAnchorElement[]) => boolean;
@@ -23,7 +25,7 @@ export const parametersToMap: ParameterToMap[] = [
 		selector: 'querySelectorAll',
 		pathToSelect: '.js-pinned-items-reorder-list .pinned-item-list-item-content div a',
 		pathToInsert: '.wb-break-all',
-		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+		existenceChecker: (entity: HTMLAnchorElement[]) => isPositiveArray(entity),
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{
@@ -34,21 +36,21 @@ export const parametersToMap: ParameterToMap[] = [
 		selector: 'querySelectorAll',
 		pathToSelect: '.js-pinned-items-reorder-container ol li div div div a',
 		pathToInsert: '.wb-break-all',
-		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+		existenceChecker: (entity: HTMLAnchorElement[]) => isPositiveArray(entity),
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{
 		locationName: LOCATION.ORGANIZATION,
 		selector: 'querySelectorAll',
 		pathToSelect: '#org-repositories div ul div.flex-auto > h3 > a',
-		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+		existenceChecker: (entity: HTMLAnchorElement[]) => isPositiveArray(entity),
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{
 		locationName: LOCATION.SEARCH,
 		selector: 'querySelectorAll',
 		pathToSelect: '.codesearch-results ul li a.v-align-middle',
-		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+		existenceChecker: (entity: HTMLAnchorElement[]) => isPositiveArray(entity),
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{
@@ -67,7 +69,7 @@ export const parametersToMap: ParameterToMap[] = [
 		selector: 'querySelectorAll',
 		pathToSelect: 'article h1 a.text-bold',
 		existenceChecker: (entity: HTMLAnchorElement[]) =>
-			currentUserLocation === LOCATION.EXPLORE.toLowerCase() && entity && entity.length > 0,
+			currentUserLocation === LOCATION.EXPLORE.toLowerCase() && isPositiveArray(entity),
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{
@@ -75,7 +77,7 @@ export const parametersToMap: ParameterToMap[] = [
 		selector: 'querySelectorAll',
 		pathToSelect: 'article h1 a',
 		existenceChecker: (entity: HTMLAnchorElement[]) =>
-			currentUserLocation === LOCATION.TRENDING.toLowerCase() && entity && entity.length > 0,
+			currentUserLocation === LOCATION.TRENDING.toLowerCase() && isPositiveArray(entity),
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{
@@ -85,14 +87,14 @@ export const parametersToMap: ParameterToMap[] = [
 		locationName: LOCATION.USER_REPOSITORIES,
 		selector: 'querySelectorAll',
 		pathToSelect: '#user-repositories-list ul li h3 a',
-		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+		existenceChecker: (entity: HTMLAnchorElement[]) => isPositiveArray(entity),
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{
 		locationName: LOCATION.LIKED_REPOS,
 		selector: 'querySelectorAll',
 		pathToSelect: '.page-profile h3 a',
-		existenceChecker: (entity: HTMLAnchorElement[]) => entity && entity.length > 0,
+		existenceChecker: (entity: HTMLAnchorElement[]) => isPositiveArray(entity),
 		wrapper: (entity) => Array.prototype.slice.call(entity),
 	},
 	{

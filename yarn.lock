@@ -4035,6 +4035,11 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   dependencies:
     isobject "^3.0.1"
 
+is-positive-array@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-positive-array/-/is-positive-array-1.0.0.tgz#3b1bee2eb51f2e62f80372b439014027268119f5"
+  integrity sha512-UK7xjqFsPuK5UQjwI4l/Db+yD1sBL0zSfIzfMWtqxAlYuX1stV66kz9A9eLGSCQvGMN2dGJkgp1BoRkIaJW0Dg==
+
 is-regex@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/is-regex/-/is-regex-1.1.3.tgz#d029f9aff6448b93ebbe3f33dac71511fdcbef9f"
