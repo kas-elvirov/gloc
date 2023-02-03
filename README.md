@@ -34,6 +34,7 @@ Counts lines of code in:
 - Bulgarian
 - Chinese (Simplified)
 - Chinese (Traditional)
+- Dutch
 - English
 - English (UK)
 - English (US)
@@ -90,3 +91,4 @@ ___
 * [Paweł Idzikowski](https://github.com/trolit) - translation into Polish
 * [Radoslav Mandev](radoslav.mandev99@gmail.com) - translation into Bulgarian
 * [Thai Nguyen](https://github.com/ntthaibk) - translation into Vietnamese
+* [Tom V.](https://github.com/TomVer99) - translation into Dutch
