@@ -1,6 +1,10 @@
 {
   "name": "gloc",
   "version": "8.2.66",
+  "engines": {
+    "node": "16.19.0",
+    "npm": "0.39.3"
+  },
   "description": "Browser extension - counts locs on GitHub pages",
   "authors": [
     "Kas Elvirov <kas.elvirov@gmail.com> (https://github.com/kas-elvirov)"
