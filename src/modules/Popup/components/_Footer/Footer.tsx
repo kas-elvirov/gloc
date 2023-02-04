@@ -49,33 +49,7 @@ export default class Footer extends React.PureComponent {
 
 							</Row>
 						</Column>
-						<Column>
-							<Row>
-								<Center>
-									<Anchor
-										href={appConfig.paypalUrl}
-										target='_blank'
-										color={colors.grey900}
-									>
-										Paypal
-									</Anchor>
-								</Center>
-							</Row>
-							<Row>
-								<Center>
-									<Anchor
-										href={appConfig.opencollectiveUrl}
-										target='_blank'
-										color={colors.grey900}
-									>
-										Open collective
-									</Anchor>
-								</Center>
-							</Row>
-						</Column>
 					</Row>
-
-
 
 					<Row>
 						<Center>
