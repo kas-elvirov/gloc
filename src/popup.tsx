@@ -6,11 +6,12 @@ import * as ReactDOM from 'react-dom';
 import Popup from './modules/Popup/index';
 
 class PopupPage extends React.PureComponent {
-	render() {
-		return <Popup />;
-	}
+  render() {
+    return <Popup />;
+  }
 }
 
-const placeToMount = document.getElementById('root')/*  || document.createElement('div') */;
+const placeToMount =
+  document.getElementById('root'); /*  || document.createElement('div') */
 
 ReactDOM.render(<PopupPage />, placeToMount);

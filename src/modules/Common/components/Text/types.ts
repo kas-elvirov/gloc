@@ -1,3 +1,3 @@
 export interface Props {
-    color?: string,
-};
+  color?: string;
+}

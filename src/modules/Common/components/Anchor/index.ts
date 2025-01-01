@@ -1,2 +1,2 @@
 export { default as Anchor } from './Anchor';
-export { Props } from './types';
+export type { Props } from './types';

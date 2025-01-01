@@ -5,13 +5,13 @@ import { Footer } from './components/_Footer/index';
 import { Body } from './components/_Body/index';
 
 export default class PopupPage extends React.PureComponent {
-	render() {
-		return (
-			<React.Fragment>
-				<Header />
-				<Body />
-				<Footer />
-			</React.Fragment>
-		);
-	}
+  render() {
+    return (
+      <React.Fragment>
+        <Header />
+        <Body />
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }

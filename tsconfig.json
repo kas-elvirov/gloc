@@ -1,31 +1,32 @@
 {
 	"compilerOptions": {
+		"target": "ESNext",
+		"lib": ["es2015.core", "dom", "es6", "ESNext"],
+		"module": "ESNext",
 		"outDir": "./dist/",
 		"noImplicitAny": true,
-		"module": "ES6",
-		"target": "es5",
-		"baseUrl": "types",
-		"typeRoots": ["types"],
+		"baseUrl": "./",
+		"types": ["chrome", "jquery", "node", "vite/client"],
+		"typeRoots": ["./types", "./node_modules/@types"],
 		"allowJs": true,
 		"strict": true,
-		"types": ["chrome", "jquery", "node"],
-		"lib": ["es2015.core", "dom", "es6"],
 		"sourceMap": true,
 		"jsx": "react",
+		"skipLibCheck": true,
 		"moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-		"plugins": [
-			{
-			  "name": "typescript-tslint-plugin",
-			  "alwaysShowRuleFailuresAsWarnings": false,
-			  "ignoreDefinitionFiles": true,
-			  "configFile": "./tslint.json",
-			  "suppressWhileTypeErrorsPresent": false,
-			  "mockTypeScriptVersion": false
-			}
-		]
+    "allowSyntheticDefaultImports": true,
 	},
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"./scripts/**/*",
+		"./.eslintrc.js",
+		"./vite.config.js",
+		"./tsconfig.json",
+		"./webpack.config.dev.js",
+		"./webpack.config.prod.js"
 	],
+	"include": [
+		"./src/**/*",
+		"src/**/*"
+	]
 }

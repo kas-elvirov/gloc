@@ -1,24 +1,20 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { Props } from './index';
+import type { Props } from './index';
 
-const _Container = styled.div`
-    display: flex;
-    width: 100%;
-    background-color: ${props => props.color || ''};
-    box-sizing: border-box;
-    padding: 8px;
+const ContainerStyled = styled.div`
+  display: flex;
+  width: 100%;
+  background-color: ${(props) => props.color || ''};
+  box-sizing: border-box;
+  padding: 8px;
 `;
 
 export default class Container extends React.PureComponent<Props> {
-    render() {
-        const { children, color } = this.props;
+  render() {
+    const { children, color } = this.props;
 
-        return (
-            <_Container color={color}>
-                {children}
-            </_Container>
-        );
-    }
+    return <ContainerStyled color={color}>{children}</ContainerStyled>;
+  }
 }

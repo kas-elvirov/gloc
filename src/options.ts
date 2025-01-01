@@ -2,61 +2,69 @@ import { translateElements } from './utils/translateElements';
 import { MESSAGE_IDS } from './consts/index';
 
 const validateToken = (token: string) => {
-	let invalidToken;
+  let invalidToken;
 
-	if (typeof token !== 'string') {
-		invalidToken = chrome.i18n.getMessage('optionsTokenMustbeString') + ': be62d2235c80b8056h103e8ae03398db9d37d1a0';
-	} else if (token.length < 30) {
-		invalidToken = chrome.i18n.getMessage('optionsTokenWrongLength');
-	} else {
-		invalidToken = chrome.i18n.getMessage('optionsTokenWalid');
-	}
+  if (typeof token !== 'string') {
+    invalidToken =
+      chrome.i18n.getMessage('optionsTokenMustbeString') +
+      ': be62d2235c80b8056h103e8ae03398db9d37d1a0';
+  } else if (token.length < 30) {
+    invalidToken = chrome.i18n.getMessage('optionsTokenWrongLength');
+  } else {
+    invalidToken = chrome.i18n.getMessage('optionsTokenWalid');
+  }
 
-	if (invalidToken) {
-		const validationBlock = document.getElementById('validation-block');
+  if (invalidToken) {
+    const validationBlock = document.getElementById('validation-block');
 
-		if (validationBlock) {
-			validationBlock.textContent = invalidToken;
-		}
-	}
+    if (validationBlock) {
+      validationBlock.textContent = invalidToken;
+    }
+  }
 };
 
 const saveOptions = () => {
-	const saveBtn = document.getElementById('save-button');
+  const saveBtn = document.getElementById('save-button');
 
-	if (saveBtn) {
-		saveBtn.setAttribute('disabled', 'disabled');
-	}
+  if (saveBtn) {
+    saveBtn.setAttribute('disabled', 'disabled');
+  }
 
-	const token = (document.getElementById('x-gloc-github-token') as HTMLInputElement).value;
+  const token = (
+    document.getElementById('x-gloc-github-token') as HTMLInputElement
+  ).value;
 
-	chrome.storage.sync.set({ 'x-github-token': token }, () => {
-		const statusText = document.getElementById('status-text');
+  chrome.storage.sync.set({ 'x-github-token': token }, () => {
+    const statusText = document.getElementById('status-text');
 
-		if (statusText) {
-			statusText.textContent = chrome.i18n.getMessage('optionsSaved');
-		}
+    if (statusText) {
+      statusText.textContent = chrome.i18n.getMessage('optionsSaved');
+    }
 
-		validateToken(token);
-	});
+    validateToken(token);
+  });
 };
 
 const showOptions = () => {
-	chrome.storage.sync.get({ 'x-github-token': '' }, (storedOptions) => {
-		const token = storedOptions['x-github-token'];
-		(document.getElementById('x-gloc-github-token') as HTMLInputElement).value = token;
+  chrome.storage.sync.get({ 'x-github-token': '' }, (storedOptions) => {
+    const token = storedOptions['x-github-token'];
+    (document.getElementById('x-gloc-github-token') as HTMLInputElement).value =
+      token;
 
-		validateToken(token);
-	});
+    validateToken(token);
+  });
 };
 
 translateElements(MESSAGE_IDS.OPTIONS);
 
-
-const optionsInputToken = document.getElementById('x-gloc-github-token') as HTMLInputElement;
+const optionsInputToken = document.getElementById(
+  'x-gloc-github-token'
+) as HTMLInputElement;
 optionsInputToken.placeholder = chrome.i18n.getMessage('optionsInputToken');
 
-const optionsSaveButton = document.getElementById('save-button') as HTMLInputElement;
+const optionsSaveButton = document.getElementById(
+  'save-button'
+) as HTMLInputElement;
 optionsSaveButton.value = chrome.i18n.getMessage('optionsSaveButton');
 
 document.addEventListener('DOMContentLoaded', showOptions);
@@ -64,5 +72,5 @@ document.addEventListener('DOMContentLoaded', showOptions);
 const saveBtn = document.getElementById('save-button');
 
 if (saveBtn) {
-	saveBtn.addEventListener('click', saveOptions);
+  saveBtn.addEventListener('click', saveOptions);
 }

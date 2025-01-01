@@ -1,9 +1,9 @@
 export enum Type {
-    Ul = 'ul',
-    Ol = 'ol',
+  Ul = 'ul',
+  Ol = 'ol',
 }
 
 export interface Props {
-    type: Type;
-    list: string[];
-};
+  type: Type;
+  list: string[];
+}

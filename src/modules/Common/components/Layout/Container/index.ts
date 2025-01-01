@@ -1,3 +1,3 @@
 export { default as Container } from './Container';
 
-export { Props } from './types';
+export type { Props } from './types';

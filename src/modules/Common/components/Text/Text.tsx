@@ -1,20 +1,16 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { Props } from './index';
+import type { Props } from './index';
 
-const _Text = styled.span`
-	color: ${props => props.color || ''};
+const TextStyled = styled.span`
+  color: ${(props) => props.color || ''};
 `;
 
 export default class Text extends React.PureComponent<Props> {
-	render() {
-		const { children, color } = this.props;
+  render() {
+    const { children, color } = this.props;
 
-		return (
-			<_Text color={color}>
-				{children}
-			</_Text>
-		);
-	}
+    return <TextStyled color={color}>{children}</TextStyled>;
+  }
 }
