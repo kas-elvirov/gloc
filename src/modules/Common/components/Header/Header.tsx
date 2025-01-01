@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Type, Props } from './types';
 
-export default class Header extends React.PureComponent<Props> {
+export default class Header extends React.PureComponent<React.PropsWithChildren<Props>> {
   detectComponentType(): Type {
     const { type } = this.props;
 

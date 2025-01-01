@@ -11,7 +11,7 @@ const ContainerStyled = styled.div`
   padding: 8px;
 `;
 
-export default class Container extends React.PureComponent<Props> {
+export default class Container extends React.PureComponent<React.PropsWithChildren<Props>> {
   render() {
     const { children, color } = this.props;
 

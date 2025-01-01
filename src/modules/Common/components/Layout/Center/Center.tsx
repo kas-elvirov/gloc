@@ -8,7 +8,7 @@ const CenterStyled = styled.div`
   width: 100%;
 `;
 
-export default class Center extends React.PureComponent {
+export default class Center extends React.PureComponent<React.PropsWithChildren> {
   render() {
     const { children } = this.props;
 

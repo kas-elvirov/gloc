@@ -7,7 +7,7 @@ const RowStyled = styled.div`
   width: 100%;
 `;
 
-export default class Row extends React.PureComponent {
+export default class Row extends React.PureComponent<React.PropsWithChildren> {
   render() {
     const { children } = this.props;
 

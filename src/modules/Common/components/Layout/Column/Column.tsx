@@ -7,7 +7,7 @@ const ColumnStyled = styled.div`
   width: 100%;
 `;
 
-export default class Column extends React.PureComponent {
+export default class Column extends React.PureComponent<React.PropsWithChildren> {
   render() {
     const { children } = this.props;
 

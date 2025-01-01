@@ -1,20 +1,28 @@
 import React, { FC } from 'react';
-import { render } from 'react-dom';
-import { Grid } from '@material-ui/core';
+import { createRoot } from 'react-dom/client';
 import PopupPage from './modules/Popup';
+import { Stack } from '@mui/material';
 
 const App: FC = () => {
   return (
-    <Grid container>
-      <Grid item></Grid>
-
-      <Grid item>
-        <PopupPage />
-      </Grid>
-    </Grid>
+    <Stack spacing={2}>
+      <PopupPage />
+    </Stack>
   );
 };
 
-const domNode = document.getElementById('root');
+const container = document.getElementById('root');
 
-render(<App />, domNode);
+if (container) {
+  const root = createRoot(container);
+
+  root.render(<App />);
+} else {
+  const newContainer = document.createElement('div');
+  newContainer.id = 'root';
+  document.body.appendChild(newContainer);
+
+  const root = createRoot(newContainer);
+
+  root.render(<App />);
+}

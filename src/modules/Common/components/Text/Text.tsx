@@ -7,7 +7,7 @@ const TextStyled = styled.span`
   color: ${(props) => props.color || ''};
 `;
 
-export default class Text extends React.PureComponent<Props> {
+export default class Text extends React.PureComponent<React.PropsWithChildren<Props>> {
   render() {
     const { children, color } = this.props;
 
