@@ -1,6 +1,6 @@
 {
-  "name": "gloc",
-  "version": "8.3.4",
+  "name": "Gloc",
+  "version": "9.0.4",
   "engines": {
     "node": "16.19.0",
     "npm": "0.39.3"
@@ -31,7 +31,7 @@
     "zip": "grunt",
     "build:prod": "webpack --config webpack.config.prod  && grunt",
     "build:dev": "webpack --config webpack.config.dev  && grunt",
-    "version:up": "npm version patch --no-git-tag-version --force && node ./scripts/upAppVersion.js && git add package.json .env manifest.json"
+    "version:up": "npm version patch --no-git-tag-version --force && node ./scripts/upAppVersion.js && git add package.json package-lock.json .env manifest.json"
   },
   "husky": {
     "hooks": {

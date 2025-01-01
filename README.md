@@ -18,12 +18,15 @@ Initial version: 2.0.1 ( 2017, 12 february )
 I made this extension in the Russian Army while I was on duty. I was coding as fast as i could )))
 
 ## Description
-Works for **public** and **private** repos.
+Works for **public** and **private** repos
+
 Counts lines of code in:
 - user's pinned repos ([check it out](https://github.com/torvalds))
+- project detail page ([check it out](https://github.com/torvalds/linux))
+
+Previosly was counting there but i decided to stop it because it's huge load on the services of GutHub (ethics etc.)
 - user's repositories ([check it out](https://github.com/torvalds?tab=repositories))
 - user's liked repositories ([check it out](https://github.com/torvalds?tab=stars))
-- project detail page ([check it out](https://github.com/torvalds/linux))
 - organization page ([check it out](https://github.com/facebook))
 - search results page ([check it out](https://github.com/search?q=react))
 - trending page ([check it out](https://github.com/trending))

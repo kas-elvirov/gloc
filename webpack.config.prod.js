@@ -10,7 +10,6 @@ const JSconfig = {
   mode: 'production',
   name: 'JS',
   entry: {
-    'background': './src/background.ts',
     'inject': './src/inject.ts',
     'options': './src/options.ts',
     'popup': './src/popup.tsx',
