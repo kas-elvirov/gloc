@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "default_locale": "en",
+  "name": "Gloc",
+  "short_name": "Gloc",
+  "author": "Kas Elvirov",
+  "description": "Github Gloc - counts locs on GitHub pages",
+  "version": "9.0.7",
+  "action": {
+    "default_icon": {
+      "16": "img/icon16.png",
+      "32": "img/icon32.png",
+      "64": "img/icon64.png",
+      "128": "img/icon128.png"
+    },
+    "default_title": "Github Gloc - counts locs on GitHub pages",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*"],
+      "js": ["src/inject.ts"]
+    }
+  ],
+  "permissions": ["storage"],
+  "host_permissions": ["*://*.github.com/*"],
+  "icons": {
+    "16": "img/icon16.png",
+    "32": "img/icon32.png",
+    "64": "img/icon64.png",
+    "128": "img/icon128.png"
+  }
+}

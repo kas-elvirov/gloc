@@ -1,5 +1,5 @@
-import { renderLocs } from './utils/renderLocs';
-import { getLinksFromDom } from './utils/getLinksFromDom';
+import { renderLocs } from './_legacy/utils/renderLocs';
+import { getLinksFromDom } from './_legacy/utils/getLinksFromDom';
 
 let githubToken = '';
 
@@ -8,9 +8,9 @@ const gloc = (): void => {
     .then((linksData) => {
       renderLocs(linksData, githubToken);
 
-      console.info(linksData);
+      console.info('inject.gloc.getLinksFromDom.then', linksData);
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error('inject.gloc.getLinksFromDom.catch', err));
 };
 
 chrome.storage.sync.get({ 'x-github-token': '' }, (result) => {

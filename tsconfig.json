@@ -11,7 +11,7 @@
 		"allowJs": true,
 		"strict": true,
 		"sourceMap": true,
-		"jsx": "react",
+		"jsx": "react-jsx",
 		"skipLibCheck": true,
 		"moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -20,7 +20,7 @@
 		"node_modules",
 		"./scripts/**/*",
 		"./.eslintrc.js",
-		"./vite.config.js",
+		"vite.config.mjs",
 		"./tsconfig.json",
 		"./webpack.config.dev.js",
 		"./webpack.config.prod.js"

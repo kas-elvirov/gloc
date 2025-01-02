@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { Provider } from 'react-redux';
-import { PopupPage } from './_modules/Popup/components/PopupPage/PopupPage';
+import { OptionsPage } from './_modules/Options/components/OptionsPage/OptionsPage';
 import { store } from './store';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -19,7 +19,7 @@ const App: FC = () => {
       <CssBaseline />
 
       <Provider store={store}>
-        <PopupPage />
+        <OptionsPage />
       </Provider>
     </ThemeProvider>
   );
