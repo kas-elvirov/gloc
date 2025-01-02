@@ -15,7 +15,7 @@ import { useDebouncedTokenSave } from './OptionsPage.hooks';
  */
 export const OptionsPage: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [token, setToken] = useState('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');
+  const [token, setToken] = useState('');
 
   useEffect(() => {
     chrome?.storage?.sync?.get({ 'x-github-token': '' }, (result) => {
