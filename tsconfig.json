@@ -15,6 +15,9 @@
 		"skipLibCheck": true,
 		"moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+		"paths": {
+			"src/*": ["src/*"]
+		}
 	},
 	"exclude": [
 		"node_modules",

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 import manifest from './manifest.json';
 import { crx } from '@crxjs/vite-plugin';
+import viteTsConfigPaths from 'vite-tsconfig-paths';
 
 import checker from 'vite-plugin-checker';
 
@@ -22,6 +23,8 @@ export default defineConfig(() => {
     },
     plugins: [
       react(),
+
+      viteTsConfigPaths(),
 
       crx({ manifest }),
 

@@ -23,8 +23,8 @@ export const githubApi = createApi({
         method: 'GET',
         keepUnusedDataFor: 0,
         headers: {
-          'Authorization': `token ${queryArg.token}`,
-          'Accept': 'application/vnd.github.v3+json',
+          Authorization: `token ${queryArg.token}`,
+          Accept: 'application/vnd.github.v3+json',
         },
       }),
     }),
@@ -42,8 +42,8 @@ export const githubApi = createApi({
         method: 'GET',
         keepUnusedDataFor: 0,
         headers: {
-          'Authorization': `token ${queryArg.token}`,
-          'Accept': 'application/vnd.github.v3+json',
+          Authorization: `token ${queryArg.token}`,
+          Accept: 'application/vnd.github.v3+json',
         },
       }),
     }),

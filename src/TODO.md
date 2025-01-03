@@ -28,7 +28,7 @@
   - [x] update README
   - [x] proper precommit
   - [x] prettier - sort imports
-  - [ ] fix problem with aliases
+  - [x] fix problem with aliases
   - [ ] remove excessive scripts ???
   - [ ] test
   - [ ] biome

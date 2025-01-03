@@ -1,10 +1,10 @@
+import { useGetRepoCodeFrequencyQuery } from 'src/_shared/api/github/endpoints';
+
 import { FC } from 'react';
 
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 import ErrorIcon from '@mui/icons-material/Error';
 import { Chip, Tooltip } from '@mui/material';
-
-import { useGetRepoCodeFrequencyQuery } from '../../../../_shared/api/github/endpoints';
 
 import { LocIndicatorProps } from '../LocIndicator/LocIndicator.types';
 
