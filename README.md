@@ -10,47 +10,27 @@ ___
 ![EDGE](screens/browsers/edge.png)
 
 ## DISCLAIMER
-### Github does not have a function to view the total number of lines of code in the project but we can to compute an approximation of that data (LOC: Lines of Code) through the GitHub Statistics API. Some glitches may occur, such as negative loc or <unavailable data> for many reasons
+Github does not have a function to view the total number of lines of code in the project but we can to compute an approximation of that data (LOC: Lines of Code) through the GitHub Statistics API. Some glitches may occur, such as negative loc or unavailable data for many reasons
 
-## History
-Initial version: 2.0.1 ( 2017, 12 february )
-
-I made this extension in the Russian Army while I was on duty. I was coding as fast as i could )))
+## History and origins
+- **Gloc** means - 'Github lines of code counter'
+- Initial version: 2.0.1 ( 2017, 12 february )
+- I made this extension in the **Russian Army** while was on duty. My fastest open-source ever )
 
 ## Description
 Works for **public** and **private** repos
 
 Counts lines of code in:
-- user's pinned repos ([check it out](https://github.com/torvalds))
 - project detail page ([check it out](https://github.com/torvalds/linux))
 
 Previosly was counting there but i decided to stop it because it's huge load on the services of GutHub (ethics etc.)
+- user's pinned repos ([check it out](https://github.com/torvalds))
 - user's repositories ([check it out](https://github.com/torvalds?tab=repositories))
 - user's liked repositories ([check it out](https://github.com/torvalds?tab=stars))
 - organization page ([check it out](https://github.com/facebook))
 - search results page ([check it out](https://github.com/search?q=react))
 - trending page ([check it out](https://github.com/trending))
 - explore page ([check it out](https://github.com/explore))
-
-## Supported languages
-- Arabic
-- Bulgarian
-- Chinese (Simplified)
-- Chinese (Traditional)
-- Dutch
-- English
-- English (UK)
-- English (US)
-- German
-- Polish
-- Portuguese (Brazil)
-- Russian
-- Spanish (Latin America and Caribbean)
-- Vietnamese
-- Ukrainian
-
-**Gloc** means - 'Github lines of code counter'
-
 
 ## Screens
 ![Promo](screens/ads_spoiler.jpg)
@@ -70,8 +50,7 @@ Previosly was counting there but i decided to stop it because it's huge load on 
 
 ___
 
-
-## ![love y'all](screens/heart.png)  **Credits**
+## ![credits](screens/heart.png)  **Credits**
 ### Assets
 * App [icon](https://www.flaticon.com/free-icon/github_23586#term=github&page=1&position=15) made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
 * Ads icon made by [SimpleIcon](https://www.flaticon.com/authors/simpleicon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
@@ -79,19 +58,3 @@ ___
 
 ### Sponsors
 - [Curtis Conard](https://github.com/cconard96)
-- [Anastasia Anisichkina](https://github.com/anastasia-anisichkina)
-- [Ann Void](https://github.com/ann-void)
-
-### Translation
-* [Suzana Gonçalves](https://www.facebook.com/suzana.goncalves.9041) - translation into Portuguese (Brazil)
-* [Kassandra Palma](https://www.facebook.com/kazzandra666) - translation into Spanish (Latin America and Caribbean)
-* [Lawrence Chou](https://github.com/choznerol) - translation into Chinese (Taiwan)
-* [Maria Markhaichuk](https://www.facebook.com/marhaychuk) - translation into Ukranian
-* [Rahmi Tufanoglu](https://twitter.com/rahmitufanoglu) - translation into German
-* [Jonny Hsy](https://github.com/jonnyhsy) - translation into Chinese (China)
-* [Ryo SHIINA](https://github.com/pooch-tonic) - translation into French
-* [Ryo SHIINA](https://github.com/pooch-tonic) - translation into Japanese
-* [Paweł Idzikowski](https://github.com/trolit) - translation into Polish
-* [Radoslav Mandev](radoslav.mandev99@gmail.com) - translation into Bulgarian
-* [Thai Nguyen](https://github.com/ntthaibk) - translation into Vietnamese
-* [Tom V.](https://github.com/TomVer99) - translation into Dutch

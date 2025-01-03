@@ -21,8 +21,8 @@
   - [x] rework old logic
 
 - [ ] before publishing
+  - [x] update README
   - [ ] proper precommit
-  - [ ] update README
   - [ ] prettier - sort imports
   - [ ] biome
 
