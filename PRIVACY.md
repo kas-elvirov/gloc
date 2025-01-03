@@ -13,4 +13,4 @@ The entered token is stored in your browser storage only.
 
 ## 3. Contacting us
 
-If you have questions about this policy, you can contact us at [kas.elvirov@gmail.com](mailto:kas.elvirov@gmail.com).
+If you have questions about this policy, you can contact us at [i@kas-elvirov.ru](mailto:i@kas-elvirov.ru).

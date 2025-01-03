@@ -1,25 +1,25 @@
-module.exports = function( grunt ) {
-    grunt.initConfig( {
-        pkg: grunt.file.readJSON( 'package.json' ),
+module.exports = function (grunt) {
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
-        compress: {
-            main: {
-                options: {
-                    archive: './gloc_archive.zip',
-                    mode: 'zip',
-                },
-                files: [
-                    {
-                        expand: true,
-                        cwd: './dist',
-                        src: '**',
-                    },
-                ],
-            },
+    compress: {
+      main: {
+        options: {
+          archive: './gloc_release.zip',
+          mode: 'zip',
         },
-    });
+        files: [
+          {
+            expand: true,
+            cwd: './dist',
+            src: '**',
+          },
+        ],
+      },
+    },
+  });
 
-    grunt.loadNpmTasks( 'grunt-contrib-compress' );
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
-    grunt.registerTask( 'default', ['compress']);
+  grunt.registerTask('default', ['compress']);
 };

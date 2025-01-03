@@ -6,7 +6,7 @@
 		"outDir": "./dist/",
 		"noImplicitAny": true,
 		"baseUrl": "./",
-		"types": ["chrome", "jquery", "node", "vite/client"],
+		"types": ["chrome", "node", "vite/client"],
 		"typeRoots": ["./types", "./node_modules/@types"],
 		"allowJs": true,
 		"strict": true,
@@ -24,9 +24,7 @@
 		"./scripts/**/*",
 		"./.eslintrc.js",
 		"vite.config.mjs",
-		"./tsconfig.json",
-		"./webpack.config.dev.js",
-		"./webpack.config.prod.js"
+		"./tsconfig.json"
 	],
 	"include": [
 		"./src/**/*",

@@ -112,3 +112,6 @@ jspm_packages
 
 # Token
 .token
+
+# Release
+.gloc_release
