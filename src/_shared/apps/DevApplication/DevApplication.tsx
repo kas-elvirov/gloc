@@ -23,10 +23,11 @@ export const DevApplication: FC = () => {
 
       <div className={classes.pageWrapper}>
         <LocIndicator
-          // mine - works
-
-          // author='kas-elvirov'
-          // repository='gloc'
+          /**
+           * Mine app
+          */
+          author='kas-elvirov'
+          repository='gloc'
 
           /**
            * problems - more than 10k commits
@@ -84,8 +85,8 @@ export const DevApplication: FC = () => {
            * Issue
            * - https://github.com/kas-elvirov/gloc/issues/9
           */
-          author='AngularClass'
-          repository='angular2-webpack-starter'
+          // author='AngularClass'
+          // repository='angular2-webpack-starter'
         />
       </div>
     </Stack>

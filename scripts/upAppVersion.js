@@ -13,6 +13,7 @@ parsedEnv.VITE_APP_APP_VERSION = package.version;
 parsedEnv.VITE_APP_TOKEN_CREATION_LINK = 'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
 parsedEnv.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
 parsedEnv.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
+parsedEnv.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://extensions/?options=';
 fs.writeFileSync('./.env', envfile.stringify(parsedEnv));
 
 /**
@@ -25,6 +26,7 @@ parsedEnvDevelopment.VITE_APP_TOKEN_CREATION_LINK =
   'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
 parsedEnvDevelopment.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
 parsedEnvDevelopment.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
+parsedEnvDevelopment.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://extensions/?options=';
 fs.writeFileSync('./.env.development', envfile.stringify(parsedEnvDevelopment));
 
 /**
@@ -37,6 +39,7 @@ parsedEnvProduction.VITE_APP_TOKEN_CREATION_LINK =
   'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
 parsedEnvProduction.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
 parsedEnvProduction.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
+parsedEnvProduction.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://extensions/?options=';
 fs.writeFileSync('./.env.production', envfile.stringify(parsedEnvProduction));
 
 /**

@@ -7,6 +7,11 @@ declare global {
     VITE_APP_APP_VERSION: string;
 
     /**
+     * # Base of chrome extension settings link
+    */
+    VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE: string;
+
+    /**
      * # Link for token creation with name and some choices autocomplete
     */
     VITE_APP_TOKEN_CREATION_LINK: string;

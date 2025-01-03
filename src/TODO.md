@@ -12,16 +12,17 @@
   - [x] later
     - [x] handle reinitialization
 
-- [ ] cleaning
-  - [ ] refactor
+- [x] cleaning
+  - [x] refactor
     - [x] remove background script?
-    - [ ] src\_modules\Popup\components\PopupPage\PopupPage.tsx
+    - [x] src\_modules\Popup\components\PopupPage\PopupPage.tsx
   - [x] remove locales
   - [x] remove legacy
   - [x] rework old logic
 
-- [ ] extra
+- [ ] before publishing
   - [ ] proper precommit
+  - [ ] update README
   - [ ] prettier - sort imports
   - [ ] biome
 
