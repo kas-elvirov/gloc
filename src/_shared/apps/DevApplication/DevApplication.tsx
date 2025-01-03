@@ -1,13 +1,16 @@
-import { Stack } from '@mui/material';
 import { FC } from 'react';
+
+import { Stack } from '@mui/material';
+
+import { LocIndicator } from '../../../_modules/Content/containers/LocIndicator/LocIndicator';
 import { OptionsPage } from '../../../_modules/Options/components/OptionsPage/OptionsPage';
 import { PopupPage } from '../../../_modules/Popup/components/PopupPage/PopupPage';
+
 import { useStyles } from './DevApplication.styles';
-import { LocIndicator } from '../../../_modules/Content/containers/LocIndicator/LocIndicator';
 
 /**
  * # Application for development purposes only
-*/
+ */
 export const DevApplication: FC = () => {
   const classes = useStyles();
 
@@ -25,13 +28,13 @@ export const DevApplication: FC = () => {
         <LocIndicator
           /**
            * Mine app
-          */
+           */
           author='kas-elvirov'
           repository='gloc'
 
           /**
            * problems - more than 10k commits
-          */
+           */
           // author='torvalds'
           // repository='linux'
 
@@ -39,7 +42,7 @@ export const DevApplication: FC = () => {
            * working
            *
            * Issue - https://github.com/kas-elvirov/gloc/issues/119
-          */
+           */
           // author='Ollie-Hooper'
           // repository='StockifySentiment'
 
@@ -48,7 +51,7 @@ export const DevApplication: FC = () => {
            *
            * Issue
            * - https://github.com/kas-elvirov/gloc/issues/136 (now it's has more than 10k commits)
-          */
+           */
           // author='scipy'
           // repository='scipy'
 
@@ -57,7 +60,7 @@ export const DevApplication: FC = () => {
            *
            * Issue
            * - https://github.com/kas-elvirov/gloc/issues/156
-          */
+           */
           // author='Be1zebub'
           // repository='IGS'
 
@@ -66,7 +69,7 @@ export const DevApplication: FC = () => {
            *
            * Issue
            * - https://github.com/kas-elvirov/gloc/issues/12
-          */
+           */
           // author='FezVrasta'
           // repository='bootstrap-material-design'
 
@@ -75,7 +78,7 @@ export const DevApplication: FC = () => {
            *
            * Issue
            * - https://github.com/kas-elvirov/gloc/issues/12
-          */
+           */
           // author='reactos'
           // repository='reactos'
 
@@ -84,7 +87,7 @@ export const DevApplication: FC = () => {
            *
            * Issue
            * - https://github.com/kas-elvirov/gloc/issues/9
-          */
+           */
           // author='AngularClass'
           // repository='angular2-webpack-starter'
         />

@@ -7,5 +7,5 @@ export const SYSTEM_DEFAULTS = {
   },
   DEBOUNCE: {
     300: 300,
-  }
+  },
 };

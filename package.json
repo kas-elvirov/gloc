@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "10.0.2",
+  "version": "10.0.3",
   "engines": {
     "node": "16.19.0",
     "npm": "0.39.3"
@@ -38,13 +38,13 @@
     "zip": "grunt",
     "build:prod": "webpack --config webpack.config.prod  && grunt",
     "build:dev": "webpack --config webpack.config.dev  && grunt",
-    "version:up": "npm version patch --no-git-tag-version --force && node ./scripts/upAppVersion.js && git add package.json package-lock.json .env manifest.json",
-    "=== QUALITY ===": "",
+    "=== PRECOMMIT ===": "",
+    "version:up": "npm version patch --no-git-tag-version --force && node ./scripts/upAppVersion.js",
     "prettier:fix": "prettier --ignore-path ./.prettierignore --write src"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run version:up"
+      "pre-commit": "npm run version:up && npm run prettier:fix && git add ."
     }
   },
   "dependencies": {
@@ -56,6 +56,7 @@
     "@mui/styled-engine": "^5.15.2",
     "@mui/styles": "^5.15.1",
     "@reduxjs/toolkit": "^2.5.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "@types/node": "^22.10.3",
     "@types/react": "npm:types-react@^19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@^19.0.0-rc.1",
@@ -68,7 +69,6 @@
     "i": "^0.3.7",
     "is-positive-array": "^1.0.0",
     "lodash.debounce": "^4.0.8",
-    "prettier": "^2.8.8",
     "prettier-eslint": "^16.1.1",
     "prettier-eslint-cli": "^8.0.1",
     "react": "^19.0.0-rc.1",
@@ -102,6 +102,7 @@
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.2.5",
     "node-json-minify": "^1.0.0",
+    "prettier": "^3.4.2",
     "ts-loader": "^5.3.3",
     "tslint": "^5.14.0",
     "typescript": "^5.6.3",

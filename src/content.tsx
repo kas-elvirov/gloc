@@ -1,10 +1,12 @@
 import { debounce } from 'lodash';
-import { getInjectionPoints } from './_modules/Content/utils/getInjectionPoints';
-import { POSSIBLE_REPO_LOCATIONS } from './_modules/Content/consts/locations';
-import { renderApp } from './_shared/utils/renderApp';
+
 import { Provider } from 'react-redux';
-import { store } from './_shared/containers/AppWrapper/AppWrapper.store';
+
+import { POSSIBLE_REPO_LOCATIONS } from './_modules/Content/consts/locations';
 import { LocIndicator } from './_modules/Content/containers/LocIndicator/LocIndicator';
+import { getInjectionPoints } from './_modules/Content/utils/getInjectionPoints';
+import { store } from './_shared/containers/AppWrapper/AppWrapper.store';
+import { renderApp } from './_shared/utils/renderApp';
 
 const initApp = debounce(() => {
   const injectionPoints = getInjectionPoints(POSSIBLE_REPO_LOCATIONS);
@@ -18,7 +20,7 @@ const initApp = debounce(() => {
 
     list.appendChild(newItem.cloneNode(true));
 
-    chrome.storage.sync.get({ 'x-github-token': '' }, (result) => {
+    chrome.storage.sync.get({ 'x-github-token': '' }, result => {
       if (result && result['x-github-token'] !== null) {
         renderApp({
           appId: appConfig.appId,

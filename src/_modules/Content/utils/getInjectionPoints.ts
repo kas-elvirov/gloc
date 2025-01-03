@@ -1,4 +1,4 @@
-import { RepoLocationConfig, CurrentUserLocation } from '../consts/locations';
+import { CurrentUserLocation, RepoLocationConfig } from '../consts/locations';
 
 export interface InjectionPointConfig {
   userLocation: CurrentUserLocation;
@@ -7,27 +7,27 @@ export interface InjectionPointConfig {
     /**
      * Application id in format
      * author--repositoryname
-    */
-    appId: string,
+     */
+    appId: string;
 
     /**
      * Original location config for this app
-    */
+     */
     originalConfig: RepoLocationConfig;
 
     /**
      * Repo author (GitHub login)
-    */
+     */
     author: string;
 
     /**
      * Repo name
-    */
+     */
     repository: string;
 
     /**
      * DOM element to add our react app by link
-    */
+     */
     placeToInsertAnApp: HTMLUListElement;
   }>;
 }
@@ -37,8 +37,10 @@ export interface InjectionPointConfig {
  *
  * Function gets location configs and gives out working configs for current location
  * These congigs will be used for LocIndicator injection
-*/
-export const getInjectionPoints = (initialConfigs: RepoLocationConfig[]): InjectionPointConfig => {
+ */
+export const getInjectionPoints = (
+  initialConfigs: RepoLocationConfig[],
+): InjectionPointConfig => {
   const result: InjectionPointConfig = {
     userLocation: CurrentUserLocation.Unknown,
     applicationConfigs: [],
@@ -47,24 +49,24 @@ export const getInjectionPoints = (initialConfigs: RepoLocationConfig[]): Inject
   for (let i = 0; i < initialConfigs.length; i++) {
     const config = initialConfigs[i];
 
-    const {
-      userLocation,
-      selector,
-      pathToSelectRepoName,
-      placeToInsert,
-    } = config;
+    const { userLocation, selector, pathToSelectRepoName, placeToInsert } =
+      config;
 
     /**
      * If location is unknown, stop script exection
-    */
+     */
     if (userLocation === CurrentUserLocation.Unknown) {
       break;
     }
 
     // @ts-ignore
-    const anchorWithRepoName = document[selector](pathToSelectRepoName) as HTMLAnchorElement;
+    const anchorWithRepoName = document[selector](
+      pathToSelectRepoName,
+    ) as HTMLAnchorElement;
     // @ts-ignore
-    const placeToInsertAnApp = document[selector](placeToInsert) as HTMLUListElement;
+    const placeToInsertAnApp = document[selector](
+      placeToInsert,
+    ) as HTMLUListElement;
 
     if (Boolean(anchorWithRepoName)) {
       const repoName = anchorWithRepoName.getAttribute('href') as string;
@@ -82,7 +84,6 @@ export const getInjectionPoints = (initialConfigs: RepoLocationConfig[]): Inject
 
       break;
     }
-
   }
 
   return result;

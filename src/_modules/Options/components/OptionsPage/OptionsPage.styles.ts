@@ -10,5 +10,5 @@ export const useStyles = makeStyles(
     }),
   {
     classNamePrefix: 'OptionsPage',
-  }
+  },
 );

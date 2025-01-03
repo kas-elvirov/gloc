@@ -5,8 +5,14 @@ import { createRoot } from 'react-dom/client';
  * # Render app function
  *
  * Renders app into DOM
-*/
-export const renderApp = ({ appId, Application }: { appId: string, Application: FC }) => {
+ */
+export const renderApp = ({
+  appId,
+  Application,
+}: {
+  appId: string;
+  Application: FC;
+}) => {
   const container = document.getElementById(appId);
 
   if (container) {

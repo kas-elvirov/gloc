@@ -1,4 +1,5 @@
 - [x] separate
+
   - [x] App component
   - [x] App wrapper for different pages
   - [x] test
@@ -6,6 +7,7 @@
     - [x] start
 
 - [x] renderLocs has to be mini apps in loop
+
   - [x] nodes find
   - [x] apps injection with parameters
   - [x] trigger locs counting
@@ -13,17 +15,22 @@
     - [x] handle reinitialization
 
 - [x] cleaning
+
   - [x] refactor
     - [x] remove background script?
-    - [x] src\_modules\Popup\components\PopupPage\PopupPage.tsx
+    - [x] src_modules\Popup\components\PopupPage\PopupPage.tsx
   - [x] remove locales
   - [x] remove legacy
   - [x] rework old logic
 
 - [ ] before publishing
+
   - [x] update README
-  - [ ] proper precommit
-  - [ ] prettier - sort imports
+  - [x] proper precommit
+  - [x] prettier - sort imports
+  - [ ] fix problem with aliases
+  - [ ] remove excessive scripts ???
+  - [ ] test
   - [ ] biome
 
 - [x] questions

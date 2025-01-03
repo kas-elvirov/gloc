@@ -3,40 +3,48 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const githubApi = createApi({
   reducerPath: 'githubApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.github.com' }),
-  endpoints: (builder) => ({
-    getRepoStat: builder.query<RepoStat, { author: string, repoName: string }>({
-      query: (queryArg) => ({
+  endpoints: builder => ({
+    getRepoStat: builder.query<RepoStat, { author: string; repoName: string }>({
+      query: queryArg => ({
         url: `repos/${queryArg.author}/${queryArg.repoName}`,
         method: 'GET',
         keepUnusedDataFor: 0,
       }),
     }),
-    getRepoCodeFrequency: builder.query<CodeFrequency, { author: string, repoName: string, token?: string }>({
-      query: (queryArg) => ({
-        url: typeof queryArg.token === 'string' && queryArg.token.length > 0
-          ? `repos/${queryArg.author}/${queryArg.repoName}/stats/code_frequency?access_token=${queryArg.token}`
-          : `repos/${queryArg.author}/${queryArg.repoName}/stats/code_frequency`,
+    getRepoCodeFrequency: builder.query<
+      CodeFrequency,
+      { author: string; repoName: string; token?: string }
+    >({
+      query: queryArg => ({
+        url:
+          typeof queryArg.token === 'string' && queryArg.token.length > 0
+            ? `repos/${queryArg.author}/${queryArg.repoName}/stats/code_frequency?access_token=${queryArg.token}`
+            : `repos/${queryArg.author}/${queryArg.repoName}/stats/code_frequency`,
         method: 'GET',
         keepUnusedDataFor: 0,
         headers: {
           'Authorization': `token ${queryArg.token}`,
-          'Accept': 'application/vnd.github.v3+json'
-        }
+          'Accept': 'application/vnd.github.v3+json',
+        },
       }),
     }),
-    getAllUserRepos: builder.query<RepoStat[] | {
-      message: string;
-      documentation_url: string;
-      status: string;
-    }, { token: string }>({
-      query: (queryArg) => ({
+    getAllUserRepos: builder.query<
+      | RepoStat[]
+      | {
+          message: string;
+          documentation_url: string;
+          status: string;
+        },
+      { token: string }
+    >({
+      query: queryArg => ({
         url: 'user/repos',
         method: 'GET',
         keepUnusedDataFor: 0,
         headers: {
           'Authorization': `token ${queryArg.token}`,
-          'Accept': 'application/vnd.github.v3+json'
-        }
+          'Accept': 'application/vnd.github.v3+json',
+        },
       }),
     }),
   }),
@@ -165,4 +173,8 @@ export interface Owner {
   site_admin: boolean;
 }
 
-export const { useGetRepoStatQuery, useGetRepoCodeFrequencyQuery, useGetAllUserReposQuery } = githubApi;
+export const {
+  useGetRepoStatQuery,
+  useGetRepoCodeFrequencyQuery,
+  useGetAllUserReposQuery,
+} = githubApi;

@@ -1,9 +1,19 @@
-import { Avatar, Chip, IconButton, Paper, Stack, Typography } from '@mui/material';
-import { pink } from '@mui/material/colors';
-import SettingsIcon from '@mui/icons-material/Settings';
 import { FC } from 'react';
+
 import GitHubIcon from '@mui/icons-material/GitHub';
+import SettingsIcon from '@mui/icons-material/Settings';
+import {
+  Avatar,
+  Chip,
+  IconButton,
+  Paper,
+  Stack,
+  Typography,
+} from '@mui/material';
+import { pink } from '@mui/material/colors';
+
 import { useGetRepoStatQuery } from '../../../../_shared/api/github/endpoints';
+
 import { useStyles } from './PopupPage.styles';
 
 /**
@@ -16,19 +26,21 @@ export const PopupPage: FC = () => {
 
   const onSettingsClick = () => {
     chrome.tabs.create({
-      url: import.meta.env.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE + chrome.runtime.id,
+      url:
+        import.meta.env.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE +
+        chrome.runtime.id,
     });
   };
 
   const goToRepo = () => {
-    window.open(import.meta.env.VITE_APP_APPLICATION_REPO, '_blank', 'noopener,noreferrer');
+    window.open(
+      import.meta.env.VITE_APP_APPLICATION_REPO,
+      '_blank',
+      'noopener,noreferrer',
+    );
   };
 
-  const {
-    data,
-    isFetching,
-
-  } = useGetRepoStatQuery({
+  const { data, isFetching } = useGetRepoStatQuery({
     repoName: 'gloc',
     author: 'kas-elvirov',
   });
@@ -39,15 +51,13 @@ export const PopupPage: FC = () => {
 
   return (
     <Paper variant='outlined'>
-      <Stack
-        className={classes.root}
-        direction='column'
-        spacing={2}
-      >
+      <Stack className={classes.root} direction='column' spacing={2}>
         <Stack className={classes.pageHeader} direction='row' spacing={2}>
           <Stack direction='row' spacing={2}>
             <Typography variant='h4'>GitHub</Typography>
-            <Typography variant='h4' color={pink[500]}>Gloc</Typography>
+            <Typography variant='h4' color={pink[500]}>
+              Gloc
+            </Typography>
           </Stack>
 
           <IconButton onClick={onSettingsClick} title='Go to settings page'>
@@ -56,7 +66,11 @@ export const PopupPage: FC = () => {
         </Stack>
 
         <Chip
-          avatar={<Avatar><GitHubIcon /></Avatar>}
+          avatar={
+            <Avatar>
+              <GitHubIcon />
+            </Avatar>
+          }
           color={isFetching ? 'default' : 'primary'}
           label={statText}
           onClick={goToRepo}

@@ -13,5 +13,5 @@ export const useStyles = makeStyles(
     }),
   {
     classNamePrefix: 'DevApplication',
-  }
+  },
 );

@@ -1,13 +1,19 @@
-import { useState, useEffect } from 'react';
+import debounce from 'lodash.debounce';
+
+import { useEffect, useState } from 'react';
 
 import { useGetAllUserReposQuery } from '../../../../_shared/api/github/endpoints';
 
-import debounce from 'lodash.debounce';
-
-export const useDebouncedTokenSave = ({ token, delay }: { token: string, delay: number }) => {
+export const useDebouncedTokenSave = ({
+  token,
+  delay,
+}: {
+  token: string;
+  delay: number;
+}) => {
   const [debouncedToken, setDebouncedToken] = useState(token);
 
-  const debouncedSetToken = debounce((term) => {
+  const debouncedSetToken = debounce(term => {
     setDebouncedToken(term);
   }, delay);
 
@@ -19,7 +25,10 @@ export const useDebouncedTokenSave = ({ token, delay }: { token: string, delay: 
     };
   }, [token, debouncedSetToken]);
 
-  return useGetAllUserReposQuery({ token: debouncedToken }, {
-    skip: !debouncedToken,
-  });
+  return useGetAllUserReposQuery(
+    { token: debouncedToken },
+    {
+      skip: !debouncedToken,
+    },
+  );
 };
