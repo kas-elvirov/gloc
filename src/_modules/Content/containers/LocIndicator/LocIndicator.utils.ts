@@ -89,10 +89,10 @@ export const tryCalculateLocAndGiveProperMessageForError = ({
       error: {
         isError: true,
         errorMessage:
-          "GitHub doesn't have public api for LOC counting. " +
-          "So i'm using code_frequency api. " +
+          'GitHub doesnt have public api for LOC counting. ' +
+          'So im using code_frequency api. ' +
           'Sometimes it works, sometimes not. ' +
-          "Some repos shows negative LOC. Why is that happening i don't know. " +
+          'Some repos shows negative LOC. Why is that happening i dont know. ' +
           'Let me know if you have some information about this',
       },
     };
