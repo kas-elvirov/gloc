@@ -7,16 +7,7 @@ import { store } from './_shared/containers/AppWrapper/AppWrapper.store';
 import { LocIndicator } from './_modules/Content/containers/LocIndicator/LocIndicator';
 
 const initApp = debounce(() => {
-  /**
-      * - parse page
-      * - mount mini apps with buttons
-      * - manual request
-      */
   const injectionPoints = getInjectionPoints(POSSIBLE_REPO_LOCATIONS);
-
-  console.group('initApp');
-  console.log('injectionPoints', injectionPoints);
-  console.groupEnd();
 
   injectionPoints.applicationConfigs.forEach(appConfig => {
     const list = appConfig.placeToInsertAnApp;

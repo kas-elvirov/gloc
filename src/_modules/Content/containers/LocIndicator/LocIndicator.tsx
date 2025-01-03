@@ -9,6 +9,11 @@ import { LocIndicatorProps } from '../LocIndicator/LocIndicator.types';
 
 import { tryCalculateLocAndGiveProperMessageForError } from './LocIndicator.utils';
 
+/**
+ * # LOC indicator
+ *
+ * Small component with LOC, actions and information mechanism
+*/
 export const LocIndicator: FC<LocIndicatorProps> = ({
   author,
   repository,
@@ -33,11 +38,6 @@ export const LocIndicator: FC<LocIndicatorProps> = ({
       errorMessage
     }
   } = tryCalculateLocAndGiveProperMessageForError({ data, error });
-
-  console.group('LocIndicator');
-  console.log('data', data);
-  console.log('error', error);
-  console.groupEnd();
 
   return (
     <Chip

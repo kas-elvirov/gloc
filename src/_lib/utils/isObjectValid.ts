@@ -1,4 +1,4 @@
-export const isObjectEmpty = (obj: any) => {
+export const isObjectValid = (obj: any) => {
   if (!obj) {
     return true;
   }

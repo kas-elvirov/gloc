@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "9.0.12",
+  "version": "9.0.13",
   "engines": {
     "node": "16.19.0",
     "npm": "0.39.3"

@@ -1,11 +1,10 @@
 {
     "manifest_version": 3,
-    "default_locale": "en",
     "name": "Gloc",
     "short_name": "Gloc",
     "author": "Kas Elvirov",
     "description": "Github Gloc - counts locs on GitHub pages",
-    "version": "9.0.12",
+    "version": "9.0.13",
     "action": {
         "default_icon": {
             "16": "img/icon16.png",
@@ -31,12 +30,8 @@
             "run_at": "document_idle"
         }
     ],
-    "background": {
-        "service_worker": "src/background.ts"
-    },
     "permissions": [
-        "storage",
-        "scripting"
+        "storage"
     ],
     "host_permissions": [
         "*://*.github.com/*"

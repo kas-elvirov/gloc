@@ -1,12 +1,14 @@
 /* eslint-disable max-len */
 
-import { Button, IconButton, Link, Paper, Stack, TextField, Typography } from '@mui/material';
+import { IconButton, Link, Paper, Stack, TextField, Typography } from '@mui/material';
 
 import { FC, useEffect, useState } from 'react';
 
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useDebouncedTokenSave } from './OptionsPage.hooks';
+import { SYSTEM_DEFAULTS } from '../../../../_shared/consts/defaults';
+import { useStyles } from './OptionsPage.styles';
 
 /**
  * # Options page
@@ -14,52 +16,43 @@ import { useDebouncedTokenSave } from './OptionsPage.hooks';
  * Page which opens on settings icon click
  */
 export const OptionsPage: FC = () => {
+  const classes = useStyles();
+
   const [showPassword, setShowPassword] = useState(false);
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState(SYSTEM_DEFAULTS.STORAGE.GITHUB_TOKEN.DEFAULT_VALUE);
 
   useEffect(() => {
-    chrome?.storage?.sync?.get({ 'x-github-token': '' }, (result) => {
-      if (typeof result?.['x-github-token'] === 'string') {
-        setToken(result['x-github-token']);
+    chrome?.storage?.sync?.get({
+      [SYSTEM_DEFAULTS.STORAGE.GITHUB_TOKEN.KEY]: SYSTEM_DEFAULTS.STORAGE.GITHUB_TOKEN.DEFAULT_VALUE
+    }, (result) => {
+      if (typeof result?.[SYSTEM_DEFAULTS.STORAGE.GITHUB_TOKEN.KEY] === 'string') {
+        setToken(result[SYSTEM_DEFAULTS.STORAGE.GITHUB_TOKEN.KEY]);
       }
     });
   }, []);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-  };
-
-  const handleMouseUpPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-  };
-
   const {
     isFetching: isTokenFetching,
     error: tokenError,
-    refetch,
   } = useDebouncedTokenSave({
     token,
-    delay: 300,
+    delay: SYSTEM_DEFAULTS.DEBOUNCE[300],
   });
 
   const onTokenChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setToken(event.target.value);
 
-    console.log('chrome', chrome);
-
-    chrome.storage?.sync?.set?.({ 'x-github-token': event.target.value }, () => { });
+    chrome.storage?.sync?.set?.({ [SYSTEM_DEFAULTS.STORAGE.GITHUB_TOKEN.KEY]: event.target.value }, () => { });
   };
 
   return (
     <Paper variant='outlined'>
       <Stack
+        className={classes.root}
         direction='column'
         spacing={2}
-        style={{
-          padding: '16px',
-        }}
       >
         <Typography variant='body2'>
           GitHub Gloc uses GitHub API. By default it makes unauthenticated requests to the GitHub API, set personal access
@@ -78,6 +71,9 @@ export const OptionsPage: FC = () => {
           label='Personal access token'
           variant='outlined'
           error={Boolean(tokenError)}
+          /**
+           * It's a hack in order to skip proper types declaration. I'm lazy, yes
+          */
           // @ts-expect-error
           helperText={tokenError?.data?.message}
           type={showPassword ? 'text' : 'password'}
@@ -87,12 +83,7 @@ export const OptionsPage: FC = () => {
           InputProps={{
             endAdornment: (
               <IconButton
-                aria-label={
-                  showPassword ? 'hide the password' : 'display the password'
-                }
                 onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                onMouseUp={handleMouseUpPassword}
                 edge="end"
                 disabled={isTokenFetching}
               >
@@ -102,16 +93,8 @@ export const OptionsPage: FC = () => {
           }}
         />
 
-        <Button
-          variant='contained'
-          onClick={refetch}
-          disabled={isTokenFetching}
-        >
-          Save
-        </Button>
-
         <Link
-          href="https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC"
+          href={import.meta.env.VITE_APP_TOKEN_CREATION_LINK}
           target="_blank"
           variant='caption'
         >

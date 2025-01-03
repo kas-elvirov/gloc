@@ -13,7 +13,7 @@ export const githubApi = createApi({
     }),
     getRepoCodeFrequency: builder.query<CodeFrequency, { author: string, repoName: string, token?: string }>({
       query: (queryArg) => ({
-        url: typeof queryArg.token === 'string'
+        url: typeof queryArg.token === 'string' && queryArg.token.length > 0
           ? `repos/${queryArg.author}/${queryArg.repoName}/stats/code_frequency?access_token=${queryArg.token}`
           : `repos/${queryArg.author}/${queryArg.repoName}/stats/code_frequency`,
         method: 'GET',

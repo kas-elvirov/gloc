@@ -5,22 +5,25 @@
     - [x] build
     - [x] start
 
-- [ ] renderLocs has to be mini apps in loop
-  - [ ] nodes find
-  - [ ] apps injection with parameters
-  - [ ] trigger locs counting
-  - [ ] later
-    - [ ] handle reinitialization
+- [x] renderLocs has to be mini apps in loop
+  - [x] nodes find
+  - [x] apps injection with parameters
+  - [x] trigger locs counting
+  - [x] later
+    - [x] handle reinitialization
 
 - [ ] cleaning
-  - [ ] refactor src\_modules\Popup\components\PopupPage\PopupPage.tsx
-  - [ ] remove locales
-  - [ ] remove legacy
-  - [ ] rework old logic
+  - [ ] refactor
+    - [x] remove background script?
+    - [ ] src\_modules\Popup\components\PopupPage\PopupPage.tsx
+  - [x] remove locales
+  - [x] remove legacy
+  - [x] rework old logic
 
 - [ ] extra
+  - [ ] proper precommit
   - [ ] prettier - sort imports
   - [ ] biome
 
-- [ ] questions
-  - [ ] disable cache
+- [x] questions
+  - [x] disable cache

@@ -1,5 +1,5 @@
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
-import { isObjectEmpty } from '../../../../_lib/utils/isObjectEmpty';
+import { isObjectValid } from '../../../../_lib/utils/isObjectValid';
 import { CodeFrequency } from '../../../../_shared/api/github/endpoints';
 import { calculateLoc } from '../../utils/calculateLoc';
 import { SerializedError } from '@reduxjs/toolkit';
@@ -43,7 +43,7 @@ const getErrorMessage = ({ data, error }: { data?: CodeFrequency, error?: FetchB
     isError = true;
   }
 
-  if (isObjectEmpty(data)) {
+  if (isObjectValid(data)) {
     errorMessage = 'Response is empty for some reason.'
       + '\n1. Check your access token in settings page'
       + '\n2. Or try to load locs one more time'
@@ -51,7 +51,7 @@ const getErrorMessage = ({ data, error }: { data?: CodeFrequency, error?: FetchB
     isError = true;
   }
 
-  if (data && !isObjectEmpty(data)) {
+  if (data && !isObjectValid(data)) {
     isError = false;
     errorMessage = '';
   }
@@ -65,7 +65,7 @@ const getErrorMessage = ({ data, error }: { data?: CodeFrequency, error?: FetchB
 export const tryCalculateLocAndGiveProperMessageForError = ({
   data, error
 }: { data?: CodeFrequency, error?: FetchBaseQueryError | SerializedError }) => {
-  const dataToProcess: CodeFrequency = !data || isObjectEmpty(data)
+  const dataToProcess: CodeFrequency = !data || isObjectValid(data)
     ? [[0, 0, 0]]
     : data;
 
