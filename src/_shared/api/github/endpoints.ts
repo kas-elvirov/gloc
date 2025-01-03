@@ -8,6 +8,20 @@ export const githubApi = createApi({
       query: (queryArg) => ({
         url: `repos/${queryArg.author}/${queryArg.repoName}`,
         method: 'GET',
+        keepUnusedDataFor: 0,
+      }),
+    }),
+    getRepoCodeFrequency: builder.query<CodeFrequency, { author: string, repoName: string, token?: string }>({
+      query: (queryArg) => ({
+        url: typeof queryArg.token === 'string'
+          ? `repos/${queryArg.author}/${queryArg.repoName}/stats/code_frequency?access_token=${queryArg.token}`
+          : `repos/${queryArg.author}/${queryArg.repoName}/stats/code_frequency`,
+        method: 'GET',
+        keepUnusedDataFor: 0,
+        headers: {
+          'Authorization': `token ${queryArg.token}`,
+          'Accept': 'application/vnd.github.v3+json'
+        }
       }),
     }),
     getAllUserRepos: builder.query<RepoStat[] | {
@@ -18,6 +32,7 @@ export const githubApi = createApi({
       query: (queryArg) => ({
         url: 'user/repos',
         method: 'GET',
+        keepUnusedDataFor: 0,
         headers: {
           'Authorization': `token ${queryArg.token}`,
           'Accept': 'application/vnd.github.v3+json'
@@ -26,6 +41,14 @@ export const githubApi = createApi({
     }),
   }),
 });
+
+type Total = number;
+type Additions = number;
+type Deletions = number;
+
+export type CodeFrequency = WeeklyAggregate[];
+
+export type WeeklyAggregate = [Total, Additions, Deletions];
 
 export interface RepoStat {
   id: number;
@@ -142,4 +165,4 @@ export interface Owner {
   site_admin: boolean;
 }
 
-export const { useGetRepoStatQuery, useGetAllUserReposQuery } = githubApi;
+export const { useGetRepoStatQuery, useGetRepoCodeFrequencyQuery, useGetAllUserReposQuery } = githubApi;

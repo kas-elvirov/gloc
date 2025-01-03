@@ -6,7 +6,7 @@ import { GITHUB_LOCATION_CONFIGS } from '../configs/parametersToMap';
 import { scrapData } from './scrapData';
 
 export const getLinksFromDom = (): Promise<InitialData> => {
-  const data = scrapData(GITHUB_LOCATION_CONFIGS) as InitialData;
+  const data = scrapData(GITHUB_LOCATION_CONFIGS);
 
   if (data.location !== LOCATION.UNKNOWN && isPositiveArray(data.links)) {
     return Promise.resolve(data);
