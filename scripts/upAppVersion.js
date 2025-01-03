@@ -5,19 +5,14 @@ const package = require('../package.json');
 const manifest = require('../manifest.json');
 
 /**
- * Saved version of env file
- * VITE_APP_APP_VERSION=9.0.7
- * VITE_APP_TOKEN_CREATION_LINK=https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC
- * VITE_APP_APPLICATION_REPO=https://github.com/kas-elvirov/gloc
- * VITE_APP_DEVELOPER_WEBSITE=https://kas-elvirov.com
-*/
-
-/**
  * Update .env
 */
 const env = '.env';
 let parsedEnv = envfile.parse(env);
 parsedEnv.VITE_APP_APP_VERSION = package.version;
+parsedEnv.VITE_APP_TOKEN_CREATION_LINK = 'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
+parsedEnv.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
+parsedEnv.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
 fs.writeFileSync('./.env', envfile.stringify(parsedEnv));
 
 /**
@@ -26,6 +21,10 @@ fs.writeFileSync('./.env', envfile.stringify(parsedEnv));
 const envDevelopment = '.env.development';
 let parsedEnvDevelopment = envfile.parse(envDevelopment);
 parsedEnvDevelopment.VITE_APP_APP_VERSION = package.version;
+parsedEnvDevelopment.VITE_APP_TOKEN_CREATION_LINK =
+  'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
+parsedEnvDevelopment.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
+parsedEnvDevelopment.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
 fs.writeFileSync('./.env.development', envfile.stringify(parsedEnvDevelopment));
 
 /**
@@ -34,6 +33,10 @@ fs.writeFileSync('./.env.development', envfile.stringify(parsedEnvDevelopment));
 const envProduction = '.env.production';
 let parsedEnvProduction = envfile.parse(envProduction);
 parsedEnvProduction.VITE_APP_APP_VERSION = package.version;
+parsedEnvProduction.VITE_APP_TOKEN_CREATION_LINK =
+  'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
+parsedEnvProduction.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
+parsedEnvProduction.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
 fs.writeFileSync('./.env.production', envfile.stringify(parsedEnvProduction));
 
 /**
