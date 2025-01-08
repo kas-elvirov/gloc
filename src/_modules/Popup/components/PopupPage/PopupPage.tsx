@@ -1,4 +1,6 @@
-import { FC } from 'react';
+import { SYSTEM_DEFAULTS } from 'src/_shared/consts/defaults';
+
+import React, { FC, useEffect } from 'react';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -8,6 +10,7 @@ import {
   IconButton,
   Paper,
   Stack,
+  Switch,
   Typography,
 } from '@mui/material';
 import { pink } from '@mui/material/colors';
@@ -23,6 +26,31 @@ import { useStyles } from './PopupPage.styles';
  */
 export const PopupPage: FC = () => {
   const classes = useStyles();
+
+  const [isAppEnabled, setAppStatus] = React.useState(
+    SYSTEM_DEFAULTS.STORAGE.APP_MODE.DEFAULT_VALUE,
+  );
+
+  useEffect(() => {
+    chrome?.storage?.sync?.get(
+      {
+        [SYSTEM_DEFAULTS.STORAGE.APP_MODE.KEY]:
+          SYSTEM_DEFAULTS.STORAGE.APP_MODE.DEFAULT_VALUE,
+      },
+      result => {
+        setAppStatus(result[SYSTEM_DEFAULTS.STORAGE.APP_MODE.KEY]);
+      },
+    );
+  }, []);
+
+  const handleChangeAppMode = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAppStatus(event.target.checked);
+
+    chrome.storage?.sync?.set?.(
+      { [SYSTEM_DEFAULTS.STORAGE.APP_MODE.KEY]: event.target.checked },
+      () => {},
+    );
+  };
 
   const onSettingsClick = () => {
     chrome.tabs.create({
@@ -64,6 +92,15 @@ export const PopupPage: FC = () => {
             <SettingsIcon />
           </IconButton>
         </Stack>
+
+        <Switch
+          checked={isAppEnabled}
+          inputProps={{ 'aria-label': 'App mode' }}
+          defaultChecked
+          color='secondary'
+          onChange={handleChangeAppMode}
+          title={`App is ${isAppEnabled ? 'enabled' : 'disabled'}`}
+        />
 
         <Chip
           avatar={

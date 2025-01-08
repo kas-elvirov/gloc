@@ -1,6 +1,7 @@
 import { useGetRepoCodeFrequencyQuery } from 'src/_shared/api/github/endpoints';
+import { SYSTEM_DEFAULTS } from 'src/_shared/consts/defaults';
 
-import { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 
@@ -22,11 +23,32 @@ export const LocIndicator: FC<LocIndicatorProps> = ({
   repository,
   token,
 }) => {
-  const response = useGetRepoCodeFrequencyQuery({
-    repoName: repository,
-    author: author,
-    token,
-  });
+  const [isAppEnabled, setAppStatus] = React.useState(
+    SYSTEM_DEFAULTS.STORAGE.APP_MODE.DEFAULT_VALUE,
+  );
+
+  useEffect(() => {
+    chrome?.storage?.sync?.get(
+      {
+        [SYSTEM_DEFAULTS.STORAGE.APP_MODE.KEY]:
+          SYSTEM_DEFAULTS.STORAGE.APP_MODE.DEFAULT_VALUE,
+      },
+      result => {
+        setAppStatus(result[SYSTEM_DEFAULTS.STORAGE.APP_MODE.KEY]);
+      },
+    );
+  }, []);
+
+  const response = useGetRepoCodeFrequencyQuery(
+    {
+      repoName: repository,
+      author: author,
+      token,
+    },
+    {
+      skip: isAppEnabled === false,
+    },
+  );
 
   const { data, error, isFetching, refetch } = response;
 
@@ -42,7 +64,7 @@ export const LocIndicator: FC<LocIndicatorProps> = ({
    * In order to prevent this error
    * - [Cannot refetch a query that has not been started yet](https://redux-toolkit.js.org/Errors?code=38)
    */
-  if (!isFetching && needsToRetry) {
+  if (isAppEnabled === true && !isFetching && needsToRetry) {
     refetch();
   }
 
@@ -50,7 +72,7 @@ export const LocIndicator: FC<LocIndicatorProps> = ({
     <Chip
       disabled={isFetching}
       color={isFetching ? undefined : isError ? 'error' : 'success'}
-      label={loc}
+      label={isAppEnabled ? loc : 'App is disabled'}
       avatar={
         isFetching ? (
           <CircularProgress size='16px' />
