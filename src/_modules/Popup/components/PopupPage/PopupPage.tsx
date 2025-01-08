@@ -1,4 +1,10 @@
+/* eslint-disable max-len */
+import { LinearProgressWithLabel } from 'src/_lib/components/LinearProgressWithLabel/LinearProgressWithLabel';
 import { SYSTEM_DEFAULTS } from 'src/_shared/consts/defaults';
+import {
+  TrackEventsService,
+  TrackEventsState,
+} from 'src/_shared/services/TrackEvent/TrackEvent';
 
 import React, { FC, useEffect } from 'react';
 
@@ -31,14 +37,50 @@ export const PopupPage: FC = () => {
     SYSTEM_DEFAULTS.STORAGE.APP_MODE.DEFAULT_VALUE,
   );
 
+  const [freeHourlyApiUsage, setFreeHourlyApiStatPercent] = React.useState(0);
+  const [tokenizedHourlyApiUsage, setTokenizedHourlyApiStatPercent] =
+    React.useState(0);
+
   useEffect(() => {
     chrome?.storage?.sync?.get(
       {
         [SYSTEM_DEFAULTS.STORAGE.APP_MODE.KEY]:
           SYSTEM_DEFAULTS.STORAGE.APP_MODE.DEFAULT_VALUE,
+        [SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.KEY]:
+          SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.DEFAULT_VALUE,
       },
       result => {
         setAppStatus(result[SYSTEM_DEFAULTS.STORAGE.APP_MODE.KEY]);
+
+        if (
+          (result[SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.KEY] as TrackEventsState)[
+            SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.REQUESTS_STAT
+          ]
+        ) {
+          setFreeHourlyApiStatPercent(
+            TrackEventsService.calculatePercentOfHourlyEventUsage({
+              state: result[
+                SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.KEY
+              ] as TrackEventsState,
+              eventName: SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.REQUESTS_STAT,
+              limit: Number(
+                import.meta.env.VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT,
+              ),
+            }),
+          );
+
+          setTokenizedHourlyApiStatPercent(
+            TrackEventsService.calculatePercentOfHourlyEventUsage({
+              state: result[
+                SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.KEY
+              ] as TrackEventsState,
+              eventName: SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.REQUESTS_STAT,
+              limit: Number(
+                import.meta.env.VITE_APP_GITHUB_API_TOKENIZED_HOURLY_LIMIT,
+              ),
+            }),
+          );
+        }
       },
     );
   }, []);
@@ -101,6 +143,26 @@ export const PopupPage: FC = () => {
           onChange={handleChangeAppMode}
           title={`App is ${isAppEnabled ? 'enabled' : 'disabled'}`}
         />
+
+        <Stack style={{ width: '100%' }}>
+          <Typography variant='body2'>
+            Free requests (GitHub limit -{' '}
+            {Number(import.meta.env.VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT)} per
+            hour)
+          </Typography>
+
+          <LinearProgressWithLabel value={freeHourlyApiUsage} />
+        </Stack>
+
+        <Stack style={{ width: '100%' }}>
+          <Typography variant='body2'>
+            Tokenised requests (GitHub limit -{' '}
+            {Number(import.meta.env.VITE_APP_GITHUB_API_TOKENIZED_HOURLY_LIMIT)}{' '}
+            per hour)
+          </Typography>
+
+          <LinearProgressWithLabel value={tokenizedHourlyApiUsage} />
+        </Stack>
 
         <Chip
           avatar={

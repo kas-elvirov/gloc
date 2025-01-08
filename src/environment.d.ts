@@ -5,6 +5,10 @@ declare global {
      */
     VITE_APP_APP_VERSION: string;
 
+    VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT: string;
+
+    VITE_APP_GITHUB_API_TOKENIZED_HOURLY_LIMIT: string;
+
     /**
      * # Base of chrome extension settings link
      */

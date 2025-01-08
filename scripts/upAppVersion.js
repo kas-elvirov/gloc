@@ -10,6 +10,8 @@ const manifest = require('../manifest.json');
 const env = '.env';
 let parsedEnv = envfile.parse(env);
 parsedEnv.VITE_APP_APP_VERSION = package.version;
+parsedEnv.VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT = 60;
+parsedEnv.VITE_APP_GITHUB_API_TOKENIZED_HOURLY_LIMIT = 5000;
 parsedEnv.VITE_APP_TOKEN_CREATION_LINK = 'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
 parsedEnv.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
 parsedEnv.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
@@ -22,6 +24,8 @@ fs.writeFileSync('./.env', envfile.stringify(parsedEnv));
 const envDevelopment = '.env.development';
 let parsedEnvDevelopment = envfile.parse(envDevelopment);
 parsedEnvDevelopment.VITE_APP_APP_VERSION = package.version;
+parsedEnvDevelopment.VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT = 60;
+parsedEnvDevelopment.VITE_APP_GITHUB_API_TOKENIZED_HOURLY_LIMIT = 5000;
 parsedEnvDevelopment.VITE_APP_TOKEN_CREATION_LINK =
   'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
 parsedEnvDevelopment.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
@@ -35,6 +39,8 @@ fs.writeFileSync('./.env.development', envfile.stringify(parsedEnvDevelopment));
 const envProduction = '.env.production';
 let parsedEnvProduction = envfile.parse(envProduction);
 parsedEnvProduction.VITE_APP_APP_VERSION = package.version;
+parsedEnvProduction.VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT = 60;
+parsedEnvProduction.VITE_APP_GITHUB_API_TOKENIZED_HOURLY_LIMIT = 5000;
 parsedEnvProduction.VITE_APP_TOKEN_CREATION_LINK =
   'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
 parsedEnvProduction.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';

@@ -25,12 +25,6 @@ const getErrorMessage = ({
   let isError = false;
   const castedError = error as ErrorType;
 
-  console.group('getErrorMessage');
-  console.log('data', data);
-  console.log('error', error);
-  console.log('isObjectValid(data)', isObjectValid(data));
-  console.groupEnd();
-
   if (castedError?.status === 202 && !isObjectValid(data)) {
     return {
       errorMessage: 'Needs to retry',

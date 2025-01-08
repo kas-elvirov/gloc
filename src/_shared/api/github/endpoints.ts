@@ -1,3 +1,6 @@
+import { SYSTEM_DEFAULTS } from 'src/_shared/consts/defaults';
+import { TrackEventsService } from 'src/_shared/services/TrackEvent/TrackEvent';
+
 import {
   BaseQueryFn,
   FetchBaseQueryError,
@@ -76,6 +79,11 @@ export const githubApi = createApi({
           Accept: 'application/vnd.github.v3+json',
         },
       }),
+      onQueryStarted: () => {
+        TrackEventsService.trackEvent(
+          SYSTEM_DEFAULTS.STORAGE.EVENTS_STAT.REQUESTS_STAT,
+        );
+      },
       extraOptions: { maxRetries: 5 },
     }),
     getAllUserRepos: builder.query<
