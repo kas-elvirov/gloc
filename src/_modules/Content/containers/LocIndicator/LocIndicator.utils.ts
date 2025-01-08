@@ -1,4 +1,3 @@
-import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 
 import { isObjectValid } from '../../../../_lib/utils/isObjectValid';
@@ -20,11 +19,25 @@ const getErrorMessage = ({
   error,
 }: {
   data?: CodeFrequency;
-  error?: FetchBaseQueryError | SerializedError;
+  error?: FetchBaseQueryError;
 }) => {
   let errorMessage = '';
   let isError = false;
   const castedError = error as ErrorType;
+
+  console.group('getErrorMessage');
+  console.log('data', data);
+  console.log('error', error);
+  console.log('isObjectValid(data)', isObjectValid(data));
+  console.groupEnd();
+
+  if (castedError?.status === 202 && !isObjectValid(data)) {
+    return {
+      errorMessage: 'Needs to retry',
+      isError: true,
+      needsToRetry: true,
+    };
+  }
 
   /**
    * For errors from 200
@@ -33,6 +46,7 @@ const getErrorMessage = ({
     return {
       errorMessage: `${castedError?.status} - ${castedError?.data?.message}`,
       isError: true,
+      needsToRetry: false,
     };
   }
 
@@ -43,6 +57,7 @@ const getErrorMessage = ({
     return {
       errorMessage: `${castedError?.status} - ${castedError?.data?.message}`,
       isError: true,
+      needsToRetry: false,
     };
   }
 
@@ -51,16 +66,19 @@ const getErrorMessage = ({
     isError = true;
   }
 
-  if (isObjectValid(data)) {
-    errorMessage =
-      'Response is empty for some reason.' +
-      '\n1. Check your access token in settings page' +
-      '\n2. Or try to load locs one more time' +
-      '\n3. Or try to load locs a few more times :)';
-    isError = true;
+  if (!isObjectValid(data)) {
+    return {
+      errorMessage:
+        'Response is empty for some reason.' +
+        '\n1. Check your access token in settings page' +
+        '\n2. Or try to load locs one more time' +
+        '\n3. Or try to load locs a few more times :)',
+      isError: true,
+      needsToRetry: true,
+    };
   }
 
-  if (data && !isObjectValid(data)) {
+  if (data && isObjectValid(data)) {
     isError = false;
     errorMessage = '';
   }
@@ -68,6 +86,7 @@ const getErrorMessage = ({
   return {
     errorMessage,
     isError,
+    needsToRetry: false,
   };
 };
 
@@ -76,10 +95,10 @@ export const tryCalculateLocAndGiveProperMessageForError = ({
   error,
 }: {
   data?: CodeFrequency;
-  error?: FetchBaseQueryError | SerializedError;
+  error?: FetchBaseQueryError;
 }) => {
   const dataToProcess: CodeFrequency =
-    !data || isObjectValid(data) ? [[0, 0, 0]] : data;
+    !data || !isObjectValid(data) ? [[0, 0, 0]] : data;
 
   const loc = calculateLoc(dataToProcess);
 
@@ -94,6 +113,7 @@ export const tryCalculateLocAndGiveProperMessageForError = ({
           'Sometimes it works, sometimes not. ' +
           'Some repos shows negative LOC. Why is that happening i dont know. ' +
           'Let me know if you have some information about this',
+        needsToRetry: false,
       },
     };
   }

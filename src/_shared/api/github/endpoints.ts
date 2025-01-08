@@ -1,8 +1,57 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import {
+  BaseQueryFn,
+  FetchBaseQueryError,
+  RetryOptions,
+  createApi,
+  fetchBaseQuery,
+  retry,
+} from '@reduxjs/toolkit/query/react';
+
+/**
+ * FetchBaseQueryError is not assignable to unknown
+ */
+// @ts-expect-error
+const customRetryCondition: RetryOptions['retryCondition'] = (
+  error: FetchBaseQueryError,
+  args,
+  extraOptions,
+) => {
+  const maxRetries = extraOptions?.extraOptions.maxRetries || 5;
+
+  if (error?.status === 200) {
+    return true;
+  }
+
+  if (extraOptions.attempt < maxRetries) {
+    return true;
+  }
+
+  // do not retry for other errors
+  return false;
+};
+
+const baseQuery: BaseQueryFn = retry(
+  async (...args) => {
+    const res = await fetchBaseQuery({ baseUrl: 'https://api.github.com' })(
+      ...args,
+    );
+
+    return {
+      ...res,
+      meta: {
+        ...res.meta,
+        status: res.data,
+      },
+    };
+  },
+  {
+    retryCondition: customRetryCondition,
+  },
+);
 
 export const githubApi = createApi({
   reducerPath: 'githubApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://api.github.com' }),
+  baseQuery,
   endpoints: builder => ({
     getRepoStat: builder.query<RepoStat, { author: string; repoName: string }>({
       query: queryArg => ({
@@ -27,6 +76,7 @@ export const githubApi = createApi({
           Accept: 'application/vnd.github.v3+json',
         },
       }),
+      extraOptions: { maxRetries: 5 },
     }),
     getAllUserRepos: builder.query<
       | RepoStat[]

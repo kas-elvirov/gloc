@@ -2,9 +2,11 @@ import { useGetRepoCodeFrequencyQuery } from 'src/_shared/api/github/endpoints';
 
 import { FC } from 'react';
 
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 import ErrorIcon from '@mui/icons-material/Error';
-import { Chip, Tooltip } from '@mui/material';
+import { Chip, CircularProgress, Tooltip } from '@mui/material';
 
 import { LocIndicatorProps } from '../LocIndicator/LocIndicator.types';
 
@@ -20,24 +22,39 @@ export const LocIndicator: FC<LocIndicatorProps> = ({
   repository,
   token,
 }) => {
-  const { data, error, isFetching, refetch } = useGetRepoCodeFrequencyQuery({
+  const response = useGetRepoCodeFrequencyQuery({
     repoName: repository,
     author: author,
     token,
   });
 
+  const { data, error, isFetching, refetch } = response;
+
   const {
     loc,
-    error: { isError, errorMessage },
-  } = tryCalculateLocAndGiveProperMessageForError({ data, error });
+    error: { isError, errorMessage, needsToRetry },
+  } = tryCalculateLocAndGiveProperMessageForError({
+    data,
+    error: error as FetchBaseQueryError | undefined,
+  });
+
+  /**
+   * In order to prevent this error
+   * - [Cannot refetch a query that has not been started yet](https://redux-toolkit.js.org/Errors?code=38)
+   */
+  if (!isFetching && needsToRetry) {
+    refetch();
+  }
 
   return (
     <Chip
       disabled={isFetching}
-      color={isFetching ? 'primary' : isError ? 'error' : 'success'}
+      color={isFetching ? undefined : isError ? 'error' : 'success'}
       label={loc}
       avatar={
-        isError ? (
+        isFetching ? (
+          <CircularProgress size='16px' />
+        ) : isError ? (
           <Tooltip title={errorMessage}>
             <ErrorIcon />
           </Tooltip>
