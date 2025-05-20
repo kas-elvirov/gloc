@@ -52,9 +52,9 @@ ___
 
 ## ![credits](screens/heart.png)  **Credits**
 ### Assets
-* App [icon](https://www.flaticon.com/free-icon/github_23586#term=github&page=1&position=15) made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
-* Ads icon made by [SimpleIcon](https://www.flaticon.com/authors/simpleicon) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
-* Browser's [icons](https://www.flaticon.com/packs/logo-502) made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from [www.flaticon.com](https://www.flaticon.com/) is lecensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+* App [icon](https://www.flaticon.com/free-icon/github_23586#term=github&page=1&position=15) made by [Icomoon](https://www.flaticon.com/authors/icomoon) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+* Ads icon made by [SimpleIcon](https://www.flaticon.com/authors/simpleicon) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
+* Browser's [icons](https://www.flaticon.com/packs/logo-502) made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0)
 
 ### Sponsors
 - [Curtis Conard](https://github.com/cconard96)
