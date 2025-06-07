@@ -7,7 +7,7 @@ export const SYSTEM_DEFAULTS = {
      */
     APP_MODE: {
       KEY: 'x-app-mode',
-      DEFAULT_VALUE: false,
+      DEFAULT_VALUE: true,
     },
     GITHUB_TOKEN: {
       KEY: 'x-github-token',

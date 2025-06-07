@@ -58,8 +58,7 @@ export const POSSIBLE_REPO_LOCATIONS: RepoLocationConfig[] = [
     userLocation: CurrentUserLocation.SinglePage,
     selector: 'querySelector',
     pathToSelectRepoName: 'div.d-flex.mb-3.px-3.px-lg-5 > div > div > strong a',
-    placeToInsert:
-      'div.AppHeader-globalBar-start > div > div.AppHeader-context-full > nav > ul',
+    placeToInsert: '[data-target="context-region-controller.contextRegion"]',
   },
   {
     userLocation: CurrentUserLocation.Unknown,
