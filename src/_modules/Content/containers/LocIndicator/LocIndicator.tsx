@@ -87,13 +87,13 @@ export const LocIndicator: FC<LocIndicatorProps> = ({
       color={isFetching ? undefined : isError ? 'error' : 'success'}
       label={isAppEnabled ? loc : 'App is disabled'}
       avatar={
-        isFetching ? (
-          <CircularProgress size='16px' />
-        ) : isError ? (
-          <Tooltip title={errorMessage}>
+        <>
+          <CircularProgress data-if={isFetching} size='16px' />
+
+          <Tooltip data-if={isError && !isFetching} title={errorMessage}>
             <ErrorIcon />
           </Tooltip>
-        ) : undefined
+        </>
       }
       deleteIcon={
         <Tooltip title='Request LOCs one more time'>

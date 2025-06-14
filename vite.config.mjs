@@ -22,7 +22,16 @@ export default defineConfig(() => {
       },
     },
     plugins: [
-      react(),
+      react({
+        babel: {
+          plugins: [
+            ['@kas-tools/babel-plugin-react-visibility-attribute', {
+              attrName: 'data-if',
+              enabled: true
+            }]
+          ]
+        }
+      }),
 
       viteTsConfigPaths(),
 

@@ -34,7 +34,11 @@ export const logCrashlytics = (props: ICrashlyticsLoggerProps) => {
     payload: {
       // eslint-disable-next-line camelcase
       event_name: eventName,
-      data,
+      data: {
+        ...data,
+        env: import.meta.env.MODE,
+        version: import.meta.env.VITE_APP_APP_VERSION,
+      },
     },
   });
 };

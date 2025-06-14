@@ -12,11 +12,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         payload: {
           website: import.meta.env.VITE_APP_CRASHLYTICS_ID,
           event_name: payload.eventName,
-          data: {
-            ...payload.data,
-            env: import.meta.env.MODE,
-            version: import.meta.env.VITE_APP_APP_VERSION
-          },
+          data: payload.data,
         },
       }),
     }).then(() => {
