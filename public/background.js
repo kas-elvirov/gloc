@@ -10,8 +10,15 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       body: JSON.stringify({
         type: 'event',
         payload: {
-          website: import.meta.env.VITE_APP_CRASHLYTICS_ID,
           event_name: payload.eventName,
+          website: import.meta.env.VITE_APP_CRASHLYTICS_ID,
+          hostname: window.location.hostname,
+          language: navigator.language,
+          referrer: document.referrer,
+          screen: `${window.screen.width}x${window.screen.height}`,
+          title: document.title,
+          url: window.location.pathname,
+          name: 'event-name',
           data: payload.data,
         },
       }),
