@@ -49,7 +49,7 @@ parsedEnvProduction.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://ext
 fs.writeFileSync('./.env.production', envfile.stringify(parsedEnvProduction));
 
 /**
- * Update manifest
+ * Update index manifest
 */
 manifest.version = package.version;
 fs.writeFileSync('./manifest.json', JSON.stringify(manifest, null, 4));
