@@ -5,6 +5,21 @@ declare global {
      */
     VITE_APP_APP_VERSION: string;
 
+    /**
+     * # Crashlytics url
+     */
+    VITE_APP_CRASHLYTICS_API: string;
+
+    /**
+     * # Crashlytics url
+     */
+    VITE_APP_CRASHLYTICS_ID: string;
+
+    /**
+     * # App version
+     */
+    VITE_APP_APP_VERSION: string;
+
     VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT: string;
 
     VITE_APP_GITHUB_API_TOKENIZED_HOURLY_LIMIT: string;

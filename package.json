@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "10.0.15",
+  "version": "10.1.2",
   "engines": {
     "node": "16.19.0",
     "npm": "0.39.3"
@@ -31,7 +31,8 @@
     "=== VITE ===": "",
     "start": "env-cmd -f .env vite --port 666",
     "build": "env-cmd -f .env vite build",
-    "build:prod": "env-cmd -f .env vite build && grunt",
+    "build:dev": "env-cmd -f .env.kas vite build --mode dev && grunt",
+    "build:prod": "env-cmd -f .env vite build --mode prod && grunt",
     "preview": "env-cmd -f .env vite preview",
     "=== PRECOMMIT ===": "",
     "version:up": "npm version patch --no-git-tag-version --force && node ./scripts/upAppVersion.js",

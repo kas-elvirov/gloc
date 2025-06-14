@@ -1,4 +1,7 @@
 /* eslint-disable max-len */
+import { detectBrowser } from 'src/_lib/utils/detectBrowser';
+import { logCrashlytics } from 'src/_shared/utils/logCrashlytics';
+
 import { FC, useEffect, useState } from 'react';
 
 import Visibility from '@mui/icons-material/Visibility';
@@ -44,6 +47,17 @@ export const OptionsPage: FC = () => {
         }
       },
     );
+
+    logCrashlytics({
+      eventName: 'user_action',
+      data: {
+        level: 'info',
+        message: 'Options page is visited',
+        targetScript: 'options',
+        browser: detectBrowser(),
+        component: 'OptionsPage',
+      },
+    });
   }, []);
 
   const handleClickShowPassword = () => setShowPassword(show => !show);

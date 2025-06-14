@@ -1,50 +1,45 @@
 {
-    "manifest_version": 3,
-    "name": "Gloc",
-    "short_name": "Gloc",
-    "author": "Kas Elvirov",
-    "description": "Github Gloc - counts locs on GitHub pages",
-    "version": "10.0.8",
-    "action": {
-        "default_icon": {
-            "16": "img/icon16.png",
-            "32": "img/icon32.png",
-            "64": "img/icon64.png",
-            "128": "img/icon128.png"
-        },
-        "default_title": "Github Gloc - counts locs on GitHub pages",
-        "default_popup": "popup.html"
+  "manifest_version": 3,
+  "name": "Gloc",
+  "short_name": "Gloc",
+  "author": "Kas Elvirov",
+  "description": "Github Gloc - counts locs on GitHub pages",
+  "version": "10.1.1",
+  "action": {
+    "default_icon": {
+      "16": "img/icon16.png",
+      "32": "img/icon32.png",
+      "64": "img/icon64.png",
+      "128": "img/icon128.png"
     },
-    "options_ui": {
-        "page": "options.html"
-    },
-    "options_page": "options.html",
-    "content_scripts": [
-        {
-            "matches": [
-                "*://github.com/*"
-            ],
-            "js": [
-                "src/content.tsx"
-            ],
-            "run_at": "document_idle"
-        }
-    ],
-    "permissions": [
-        "storage"
-    ],
-    "host_permissions": [
-        "*://*.github.com/*"
-    ],
-    "icons": {
-        "16": "img/icon16.png",
-        "32": "img/icon32.png",
-        "64": "img/icon64.png",
-        "128": "img/icon128.png"
-    },
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "{bc2166c4-e7a2-46d5-ad9e-342cef57f1f7}"
-        }
+    "default_title": "Github Gloc - counts locs on GitHub pages",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*"],
+      "js": ["src/content.tsx"],
+      "run_at": "document_idle"
     }
+  ],
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["*://*.github.com/*"],
+  "icons": {
+    "16": "img/icon16.png",
+    "32": "img/icon32.png",
+    "64": "img/icon64.png",
+    "128": "img/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{bc2166c4-e7a2-46d5-ad9e-342cef57f1f7}"
+    }
+  }
 }

@@ -115,3 +115,6 @@ jspm_packages
 
 # Release
 .gloc_release
+
+# Env
+.env.kas

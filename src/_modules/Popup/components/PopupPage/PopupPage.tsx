@@ -1,10 +1,12 @@
 /* eslint-disable max-len */
 import { LinearProgressWithLabel } from 'src/_lib/components/LinearProgressWithLabel/LinearProgressWithLabel';
+import { detectBrowser } from 'src/_lib/utils/detectBrowser';
 import { SYSTEM_DEFAULTS } from 'src/_shared/consts/defaults';
 import {
   TrackEventsService,
   TrackEventsState,
 } from 'src/_shared/services/TrackEvent/TrackEvent';
+import { logCrashlytics } from 'src/_shared/utils/logCrashlytics';
 
 import React, { FC, useEffect } from 'react';
 
@@ -83,10 +85,32 @@ export const PopupPage: FC = () => {
         }
       },
     );
+
+    logCrashlytics({
+      eventName: 'visit',
+      data: {
+        level: 'info',
+        message: 'Popup page is visited',
+        targetScript: 'popup',
+        browser: detectBrowser(),
+        component: 'PopupPage',
+      },
+    });
   }, []);
 
   const handleChangeAppMode = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAppStatus(event.target.checked);
+
+    logCrashlytics({
+      eventName: 'user_action',
+      data: {
+        level: event.target.checked ? 'info' : 'warning',
+        message: event.target.checked ? 'App was enabled' : 'App was disabled',
+        targetScript: 'popup',
+        browser: detectBrowser(),
+        component: 'PopupPage',
+      },
+    });
 
     chrome.storage?.sync?.set?.(
       { [SYSTEM_DEFAULTS.STORAGE.APP_MODE.KEY]: event.target.checked },
@@ -103,6 +127,17 @@ export const PopupPage: FC = () => {
   };
 
   const goToRepo = () => {
+    logCrashlytics({
+      eventName: 'user_action',
+      data: {
+        level: 'info',
+        message: 'Go to repo',
+        targetScript: 'popup',
+        browser: detectBrowser(),
+        component: 'PopupPage',
+      },
+    });
+
     window.open(
       import.meta.env.VITE_APP_APPLICATION_REPO,
       '_blank',

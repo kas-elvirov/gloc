@@ -1,3 +1,9 @@
+import { detectBrowser } from 'src/_lib/utils/detectBrowser';
+import {
+  ICrashlyticsLoggerProps,
+  logCrashlytics,
+} from 'src/_shared/utils/logCrashlytics';
+
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 
 import { isObjectValid } from '../../../../_lib/utils/isObjectValid';
@@ -116,4 +122,97 @@ export const tryCalculateLocAndGiveProperMessageForError = ({
     loc,
     error: getErrorMessage({ data, error }),
   };
+};
+
+/**
+ * # Log data to crashlytics service
+ */
+export const logToCrashlyticsService = ({
+  author,
+  repository,
+  loc,
+  isError,
+  errorMessage,
+  isAppEnabled,
+  isFetching,
+}: {
+  author: string;
+  repository: string;
+  loc: string | number;
+  isError: boolean;
+  errorMessage: string;
+  isAppEnabled: boolean;
+  isFetching: boolean;
+}) => {
+  const commonCrashlyticsProps: Pick<
+    ICrashlyticsLoggerProps['data'],
+    | 'targetScript'
+    | 'browser'
+    | 'component'
+    | 'url'
+    | 'author'
+    | 'loc'
+    | 'repository'
+  > = {
+    targetScript: 'content',
+    browser: detectBrowser(),
+    component: 'LocIndicator',
+    url: window.location.href,
+    repository,
+    author,
+    loc,
+  };
+
+  if (false === isError) {
+    logCrashlytics({
+      eventName: 'something_happened',
+      data: {
+        level: 'error',
+        message: errorMessage,
+
+        ...commonCrashlyticsProps,
+      },
+    });
+  }
+
+  if (false === isAppEnabled) {
+    logCrashlytics({
+      eventName: 'app_is_disabled',
+      data: {
+        level: 'info',
+        message: 'App is disabled',
+
+        ...commonCrashlyticsProps,
+      },
+    });
+  }
+
+  if (isAppEnabled && isFetching === false && repository && author && loc) {
+    logCrashlytics({
+      eventName: 'gloc_widget_is_ready_to_mount',
+      data: {
+        level: 'success',
+        message: 'Gloc widget is ready to mount',
+
+        ...commonCrashlyticsProps,
+      },
+    });
+  }
+
+  if (
+    isAppEnabled &&
+    isFetching === false &&
+    typeof loc === 'number' &&
+    loc < 0
+  ) {
+    logCrashlytics({
+      eventName: 'loc_is_negative',
+      data: {
+        level: 'warning',
+        message: 'LOC is negative',
+
+        ...commonCrashlyticsProps,
+      },
+    });
+  }
 };

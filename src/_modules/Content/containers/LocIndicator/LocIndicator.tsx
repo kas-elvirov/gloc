@@ -11,7 +11,10 @@ import { Chip, CircularProgress, Tooltip } from '@mui/material';
 
 import { LocIndicatorProps } from '../LocIndicator/LocIndicator.types';
 
-import { tryCalculateLocAndGiveProperMessageForError } from './LocIndicator.utils';
+import {
+  logToCrashlyticsService,
+  tryCalculateLocAndGiveProperMessageForError,
+} from './LocIndicator.utils';
 
 /**
  * # LOC indicator
@@ -67,6 +70,16 @@ export const LocIndicator: FC<LocIndicatorProps> = ({
   if (isAppEnabled === true && !isFetching && needsToRetry) {
     refetch();
   }
+
+  logToCrashlyticsService({
+    author,
+    repository,
+    loc,
+    isError,
+    errorMessage,
+    isAppEnabled,
+    isFetching,
+  });
 
   return (
     <Chip
