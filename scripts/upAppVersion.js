@@ -31,6 +31,8 @@ parsedEnvDevelopment.VITE_APP_TOKEN_CREATION_LINK =
 parsedEnvDevelopment.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
 parsedEnvDevelopment.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
 parsedEnvDevelopment.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://extensions/?options=';
+parsedEnvDevelopment.VITE_APP_CRASHLYTICS_API = '';
+parsedEnvDevelopment.VITE_APP_CRASHLYTICS_ID = '';
 fs.writeFileSync('./.env.development', envfile.stringify(parsedEnvDevelopment));
 
 /**
@@ -46,6 +48,8 @@ parsedEnvProduction.VITE_APP_TOKEN_CREATION_LINK =
 parsedEnvProduction.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
 parsedEnvProduction.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
 parsedEnvProduction.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://extensions/?options=';
+parsedEnvProduction.VITE_APP_CRASHLYTICS_API = '';
+parsedEnvProduction.VITE_APP_CRASHLYTICS_ID = '';
 fs.writeFileSync('./.env.production', envfile.stringify(parsedEnvProduction));
 
 /**
@@ -61,6 +65,8 @@ parsedEnvKas.VITE_APP_TOKEN_CREATION_LINK =
 parsedEnvKas.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
 parsedEnvKas.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
 parsedEnvKas.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://extensions/?options=';
+parsedEnvKas.VITE_APP_CRASHLYTICS_API = '';
+parsedEnvKas.VITE_APP_CRASHLYTICS_ID = '';
 fs.writeFileSync('./.env.kas', envfile.stringify(parsedEnvKas));
 
 
