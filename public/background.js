@@ -10,16 +10,21 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       body: JSON.stringify({
         type: 'event',
         payload: {
-          event_name: payload.eventName,
-          website: import.meta.env.VITE_APP_CRASHLYTICS_ID,
-          hostname: window.location.hostname,
-          language: navigator.language,
-          referrer: document.referrer,
-          screen: `${window.screen.width}x${window.screen.height}`,
-          title: document.title,
-          url: window.location.pathname,
-          name: 'event-name',
           data: payload.data,
+
+          website: import.meta.env.VITE_APP_CRASHLYTICS_ID,
+          /**
+           * Because of snake_case
+          */
+          // eslint-disable-next-line camelcase
+          event_name: payload.eventName,
+          name: payload.eventName,
+          hostname: payload.hostname,
+          language: payload.language,
+          referrer: payload.referrer,
+          screen: payload.screen,
+          title: payload.title,
+          url: payload.pathname,
         },
       }),
     }).then(() => {

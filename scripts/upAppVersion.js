@@ -49,6 +49,22 @@ parsedEnvProduction.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://ext
 fs.writeFileSync('./.env.production', envfile.stringify(parsedEnvProduction));
 
 /**
+ * Update .env.kas
+*/
+const envKas = '.env.kas';
+let parsedEnvKas = envfile.parse(envKas);
+parsedEnvKas.VITE_APP_APP_VERSION = package.version;
+parsedEnvKas.VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT = 60;
+parsedEnvKas.VITE_APP_GITHUB_API_TOKENIZED_HOURLY_LIMIT = 5000;
+parsedEnvKas.VITE_APP_TOKEN_CREATION_LINK =
+  'https://github.com/settings/tokens/new?scopes=repo&description=Github%20GLOC';
+parsedEnvKas.VITE_APP_APPLICATION_REPO = 'https://github.com/kas-elvirov/gloc';
+parsedEnvKas.VITE_APP_DEVELOPER_WEBSITE = 'https://kas-elvirov.com';
+parsedEnvKas.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://extensions/?options=';
+fs.writeFileSync('./.env.kas', envfile.stringify(parsedEnvKas));
+
+
+/**
  * Update index manifest
 */
 manifest.version = package.version;
