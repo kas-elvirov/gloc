@@ -12,13 +12,18 @@ const initApp = debounce(() => {
   const injectionPoints = getInjectionPoints(POSSIBLE_REPO_LOCATIONS);
 
   injectionPoints.applicationConfigs.forEach(appConfig => {
-    const list = appConfig.placeToInsertAnApp;
+    console.log(
+      '[GLOC] - preparing to mount a widget with next config',
+      appConfig,
+    );
+
+    const placeToMountNode = appConfig.placeToInsertAnApp;
 
     const newItem = document.createElement('li');
     newItem.id = appConfig.appId;
     newItem.textContent = '';
 
-    list.appendChild(newItem.cloneNode(true));
+    placeToMountNode.appendChild(newItem.cloneNode(true));
 
     chrome.storage.sync.get({ 'x-github-token': '' }, result => {
       if (result && result['x-github-token'] !== null) {
