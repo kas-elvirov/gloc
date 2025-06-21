@@ -26,6 +26,7 @@ export interface ICrashlyticsLoggerProps {
 export const DEFAULT_MESSAGE = 'unknown';
 
 export const DEFAULT_MESSAGE_FOR = {
+  EVENT_NAME: DEFAULT_MESSAGE,
   HOSTNAME: DEFAULT_MESSAGE,
   SCREEN: DEFAULT_MESSAGE,
   URL: DEFAULT_MESSAGE,
@@ -43,8 +44,7 @@ export const logCrashlytics = (props: ICrashlyticsLoggerProps) => {
   chrome.runtime.sendMessage({
     type: 'gloc_event',
     payload: {
-      // eslint-disable-next-line camelcase
-      event_name: eventName,
+      eventName: eventName || DEFAULT_MESSAGE_FOR.EVENT_NAME,
       data: {
         ...data,
         env: import.meta.env.MODE,
