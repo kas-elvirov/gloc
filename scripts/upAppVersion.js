@@ -55,7 +55,7 @@ fs.writeFileSync('./.env.production', envfile.stringify(parsedEnvProduction));
 /**
  * Update .env.kas
 */
-const envKas = '.env.kas';
+/* const envKas = '.env.kas';
 let parsedEnvKas = envfile.parse(envKas);
 parsedEnvKas.VITE_APP_APP_VERSION = package.version;
 parsedEnvKas.VITE_APP_GITHUB_API_FREE_HOURLY_LIMIT = 60;
@@ -68,7 +68,7 @@ parsedEnvKas.VITE_APP_CHROME_EXTENSION_SETTINGS_LINK_BASE = 'chrome://extensions
 parsedEnvKas.VITE_APP_CRASHLYTICS_API = '';
 parsedEnvKas.VITE_APP_CRASHLYTICS_ID = '';
 fs.writeFileSync('./.env.kas', envfile.stringify(parsedEnvKas));
-
+ */
 
 /**
  * Update index manifest
