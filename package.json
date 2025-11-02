@@ -1,6 +1,6 @@
 {
   "name": "gloc",
-  "version": "10.1.19",
+  "version": "10.1.20",
   "engines": {
     "node": "16.19.0",
     "npm": "0.39.3"
@@ -40,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run version:up && npm run prettier:fix && git add ."
+      "pre-commit": "npm run prettier:fix && git add ."
     }
   },
   "dependencies": {
